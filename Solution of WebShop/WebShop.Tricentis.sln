@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Tricentis.Framework", "WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj", "{D043745D-8C58-40FF-814A-F224C3BC766E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Tricentis.Tests", "WebShop.Tricentis.Tests\WebShop.Tricentis.Tests.csproj", "{56CB8187-701A-462A-B6A9-9629175587D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D043745D-8C58-40FF-814A-F224C3BC766E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D043745D-8C58-40FF-814A-F224C3BC766E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D043745D-8C58-40FF-814A-F224C3BC766E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D043745D-8C58-40FF-814A-F224C3BC766E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CB8187-701A-462A-B6A9-9629175587D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CB8187-701A-462A-B6A9-9629175587D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D93F8A82-7858-41B9-AA10-13ED7D74A0C5}
+	EndGlobalSection
+EndGlobal
