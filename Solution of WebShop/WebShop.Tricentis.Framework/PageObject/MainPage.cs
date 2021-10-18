@@ -11,7 +11,7 @@ namespace WebShop.Tricentis.Framework.PageObject
     {
 
         #region MapsOfElements
-        private readonly By _login = By.CssSelector("");
+        private readonly By _login = By.CssSelector(".ico-login");
         #endregion
     }
 }
