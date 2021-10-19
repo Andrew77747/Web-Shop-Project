@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
-    class MainPage
+    public class MainPage
     {
+        private IWebDriver _driver;
+
+        public MainPage(IWebDriver driver)
+        {
+            _driver = driver;
+        }
 
         #region MapsOfElements
         private readonly By _login = By.CssSelector(".ico-login");

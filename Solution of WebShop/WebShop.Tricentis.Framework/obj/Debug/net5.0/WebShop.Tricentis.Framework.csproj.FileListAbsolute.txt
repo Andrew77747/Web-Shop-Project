@@ -1,0 +1,5 @@
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\obj\Debug\net5.0\WebShop.Tricentis.Framework.csproj.AssemblyReference.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\obj\Debug\net5.0\WebShop.Tricentis.Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\obj\Debug\net5.0\WebShop.Tricentis.Framework.AssemblyInfoInputs.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\obj\Debug\net5.0\WebShop.Tricentis.Framework.AssemblyInfo.cs
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\obj\Debug\net5.0\WebShop.Tricentis.Framework.csproj.CoreCompileInputs.cache
