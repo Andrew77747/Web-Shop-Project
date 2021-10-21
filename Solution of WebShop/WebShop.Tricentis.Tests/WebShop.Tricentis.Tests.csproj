@@ -21,4 +21,8 @@
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.22" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj" />
+  </ItemGroup>
+
 </Project>
