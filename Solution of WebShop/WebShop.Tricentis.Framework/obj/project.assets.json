@@ -43,6 +43,12 @@
         "runtime": {
           "lib/net5.0/WebDriver.dll": {}
         }
+      },
+      "Selenium.WebDriver.ChromeDriver/95.0.4638.1700": {
+        "type": "package",
+        "build": {
+          "build/Selenium.WebDriver.ChromeDriver.targets": {}
+        }
       }
     }
   },
@@ -135,13 +141,32 @@
         "selenium.webdriver.4.0.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
       ]
+    },
+    "Selenium.WebDriver.ChromeDriver/95.0.4638.1700": {
+      "sha512": "RuziiapHW2Yhw77AuvWmACzPOjjw7QdoSh9rhXxB+brO5ihsJE4V3xVY7tYX1VxKJOjRjB6ITAzmavlA1StkGw==",
+      "type": "package",
+      "path": "selenium.webdriver.chromedriver/95.0.4638.1700",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/DefinePropertiesChromeDriver.targets",
+        "build/Selenium.WebDriver.ChromeDriver.targets",
+        "driver/linux64/chromedriver",
+        "driver/mac64/chromedriver",
+        "driver/win32/chromedriver.exe",
+        "nupkg-icon.png",
+        "selenium.webdriver.chromedriver.95.0.4638.1700.nupkg.sha512",
+        "selenium.webdriver.chromedriver.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.Extensions.Logging.Abstractions >= 5.0.0",
       "Selenium.Support >= 4.0.0",
-      "Selenium.WebDriver >= 4.0.0"
+      "Selenium.WebDriver >= 4.0.0",
+      "Selenium.WebDriver.ChromeDriver >= 95.0.4638.1700"
     ]
   },
   "packageFolders": {
@@ -194,6 +219,10 @@
           "Selenium.WebDriver": {
             "target": "Package",
             "version": "[4.0.0, )"
+          },
+          "Selenium.WebDriver.ChromeDriver": {
+            "target": "Package",
+            "version": "[95.0.4638.1700, )"
           }
         },
         "imports": [

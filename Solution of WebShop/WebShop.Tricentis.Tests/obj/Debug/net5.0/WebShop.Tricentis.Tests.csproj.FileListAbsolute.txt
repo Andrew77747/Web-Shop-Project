@@ -8,7 +8,6 @@ C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\ne
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\nunit.engine.api.dll
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\nunit.engine.core.dll
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\testcentric.engine.metadata.dll
-C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Tests.exe
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Tests.deps.json
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Tests.runtimeconfig.json
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Tests.runtimeconfig.dev.json
@@ -132,3 +131,7 @@ C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\obj\Debug\ne
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\obj\Debug\net5.0\ref\WebShop.Tricentis.Tests.dll
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\obj\Debug\net5.0\WebShop.Tricentis.Tests.pdb
 C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\obj\Debug\net5.0\WebShop.Tricentis.Tests.genruntimeconfig.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebDriver.Support.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebDriver.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Framework.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Tests\bin\Debug\net5.0\WebShop.Tricentis.Framework.pdb

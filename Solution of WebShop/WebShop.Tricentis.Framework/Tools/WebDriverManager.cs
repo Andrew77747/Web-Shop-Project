@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace WebShop.Tricentis.Framework.Tools
 {
-    class WebDriverManager
+    public class WebDriverManager
     {
         public IWebDriver driver;
         public readonly int timeout = 1000;

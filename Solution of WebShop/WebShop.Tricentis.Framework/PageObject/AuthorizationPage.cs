@@ -18,6 +18,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public string GetUrl()
         {
+            _driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             return _driver.Url;
         }
     }

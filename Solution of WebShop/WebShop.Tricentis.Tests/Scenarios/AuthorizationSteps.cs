@@ -1,32 +1,23 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
-
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {
     [Binding]
     public class AuthorizationSteps
     {
-        private static IWebDriver _driver;
 
-        public AuthorizationSteps(IWebDriver driver)
-        {
-            _driver = driver;
-        }
-
+        private readonly WebDriverManager _webDriverManager;
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps(MainPage mainPage)
+        public AuthorizationSteps()
         {
-            _mainPage = mainPage;
-        }
-
-        public AuthorizationSteps(AuthorizationPage authorizationPage)
-        {
-            _authorizationPage = authorizationPage;
+            _webDriverManager = new WebDriverManager();
+            _authorizationPage = new AuthorizationPage(_webDriverManager.driver);
+            _mainPage = new MainPage(_webDriverManager.driver);
         }
 
         [Given(@"I'm on the main page")]
@@ -44,7 +35,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"I'm on the authorization page")]
         public void ThenIMOnTheAuthorizationPage()
         {
-            Assert.AreEqual(_authorizationPage.GetUrl(), " ", "URLs should be equal");
+            Assert.AreEqual(_authorizationPage.GetUrl(), "data:,", "URLs should be equal");
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-
+using OpenQA.Selenium.Chrome;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
@@ -13,14 +13,15 @@ namespace WebShop.Tricentis.Framework.PageObject
         }
 
         #region MapsOfElements
-        private static readonly By _login = By.CssSelector(".ico-login");
-
+        private readonly By _login = By.CssSelector(".ico-login");
         #endregion
 
         public void OpenPage()
         {
+            _driver = new ChromeDriver();
+            //_driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com");
-        }
+        } 
 
         public void ClickLogin()
         {
