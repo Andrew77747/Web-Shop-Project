@@ -1,14 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tYpupf/SJVPPLPSUKgVHpgtdNJfWI8f4oJ5MsPCRdGVQcMZsUGbfxt+mOn2/BOcUG6Rr4fW5y5iNn6kMnkCUEQ==",
+  "dgSpecHash": "VadlKskO32dkHSqfBOokZNbdVOujjT2KkAcSnfeRnWVzfTzXfCZE3Uy7nq8Eexd0flW7MgQYCzsUsWhV3ywGDA==",
   "success": true,
   "projectFilePath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\WebShop.Tricentis.Framework\\WebShop.Tricentis.Framework.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andy7\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\selenium.support\\4.0.0\\selenium.support.4.0.0.nupkg.sha512",
-    "C:\\Users\\andy7\\.nuget\\packages\\selenium.webdriver\\4.0.0\\selenium.webdriver.4.0.0.nupkg.sha512",
-    "C:\\Users\\andy7\\.nuget\\packages\\selenium.webdriver.chromedriver\\95.0.4638.1700\\selenium.webdriver.chromedriver.95.0.4638.1700.nupkg.sha512"
+    "C:\\Users\\andy7\\.nuget\\packages\\selenium.webdriver\\4.0.0\\selenium.webdriver.4.0.0.nupkg.sha512"
   ],
   "logs": []
 }

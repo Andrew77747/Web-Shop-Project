@@ -1,15 +1,15 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
     public class MainPage
     {
-        private static IWebDriver _driver;
+        public IWebDriver _driver;
 
-        public MainPage(IWebDriver driver)
+        public MainPage(WebDriverManager manager)
         {
-            _driver = driver;
+            _driver = manager.GetDriver();
         }
 
         #region MapsOfElements
@@ -18,8 +18,6 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void OpenPage()
         {
-            _driver = new ChromeDriver();
-            //_driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com");
         } 
 
@@ -27,11 +25,5 @@ namespace WebShop.Tricentis.Framework.PageObject
         {
             _driver.FindElement(_login).Click();
         }
-
-        //public string GetUrl()
-        //{
-        //    return _driver.Url;
-        //}
-
     }
 }

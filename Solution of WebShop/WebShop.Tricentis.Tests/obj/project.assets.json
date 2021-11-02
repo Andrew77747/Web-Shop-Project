@@ -922,12 +922,6 @@
           "lib/net5.0/WebDriver.dll": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/95.0.4638.1700": {
-        "type": "package",
-        "build": {
-          "build/_._": {}
-        }
-      },
       "SpecFlow/3.9.22": {
         "type": "package",
         "dependencies": {
@@ -1858,8 +1852,7 @@
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
           "Selenium.Support": "4.0.0",
-          "Selenium.WebDriver": "4.0.0",
-          "Selenium.WebDriver.ChromeDriver": "95.0.4638.1700"
+          "Selenium.WebDriver": "4.0.0"
         },
         "compile": {
           "bin/placeholder/WebShop.Tricentis.Framework.dll": {}
@@ -3643,24 +3636,6 @@
         "lib/netstandard2.1/WebDriver.dll",
         "selenium.webdriver.4.0.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
-      ]
-    },
-    "Selenium.WebDriver.ChromeDriver/95.0.4638.1700": {
-      "sha512": "RuziiapHW2Yhw77AuvWmACzPOjjw7QdoSh9rhXxB+brO5ihsJE4V3xVY7tYX1VxKJOjRjB6ITAzmavlA1StkGw==",
-      "type": "package",
-      "path": "selenium.webdriver.chromedriver/95.0.4638.1700",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "build/DefinePropertiesChromeDriver.targets",
-        "build/Selenium.WebDriver.ChromeDriver.targets",
-        "driver/linux64/chromedriver",
-        "driver/mac64/chromedriver",
-        "driver/win32/chromedriver.exe",
-        "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.95.0.4638.1700.nupkg.sha512",
-        "selenium.webdriver.chromedriver.nuspec"
       ]
     },
     "SpecFlow/3.9.22": {

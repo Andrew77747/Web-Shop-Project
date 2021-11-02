@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
@@ -11,14 +12,13 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         private static IWebDriver _driver;
 
-        public AuthorizationPage(IWebDriver driver)
+        public AuthorizationPage(WebDriverManager manager)
         {
-            _driver = driver;
+            _driver = manager.GetDriver();
         }
 
         public string GetUrl()
         {
-            _driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             return _driver.Url;
         }
     }
