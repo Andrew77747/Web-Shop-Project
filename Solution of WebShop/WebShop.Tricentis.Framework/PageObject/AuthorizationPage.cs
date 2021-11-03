@@ -10,11 +10,11 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _chekboxRememberMe = By.CssSelector("#RememberMe");
         private readonly By _loginButton = By.CssSelector(".login-button");
 
-        private static IWebDriver _driver;
+        private IWebDriver _driver;
 
-        public AuthorizationPage(WebDriverManager manager)
+        public AuthorizationPage(IWebDriver driver)
         {
-            _driver = manager.GetDriver();
+            _driver = driver;
         }
 
         public string GetUrl()

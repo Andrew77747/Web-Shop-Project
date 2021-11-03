@@ -1,15 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿using System.Reflection.Metadata.Ecma335;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
     public class MainPage
     {
-        public IWebDriver _driver;
+        private IWebDriver _driver;
 
-        public MainPage(WebDriverManager manager)
+        public MainPage(IWebDriver driver)
         {
-            _driver = manager.GetDriver();
+            _driver = driver;
         }
 
         #region MapsOfElements

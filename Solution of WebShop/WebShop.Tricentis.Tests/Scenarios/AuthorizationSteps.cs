@@ -11,18 +11,13 @@ namespace WebShop.Tricentis.Tests.Scenarios
     public class AuthorizationSteps
     {
 
-        private readonly WebDriverManager _webDriverManager;
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps()
+        public AuthorizationSteps(WebDriverManager manager)
         {
-            if (_webDriverManager == null)
-            {
-                _webDriverManager = new WebDriverManager();
-            }
-            _authorizationPage = new AuthorizationPage(_webDriverManager);
-            _mainPage = new MainPage(_webDriverManager);
+            _authorizationPage = new AuthorizationPage(manager.GetDriver());
+            _mainPage = new MainPage(manager.GetDriver());
         }
 
         [Given(@"I'm on the main page")]

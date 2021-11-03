@@ -5,39 +5,39 @@ using OpenQA.Selenium.Support.UI;
 
 namespace WebShop.Tricentis.Framework.Tools
 {
-    public class WebDriverManager : IDisposable
+    public class WebDriverManager : IWebDriverManager
 
     {
-        private IWebDriver _driver;
+        public IWebDriver Driver;
 
         public readonly int timeout = 1000;
         public WebDriverWait wait;
 
         public WebDriverManager()
         {
-            _driver = GetDriver();
-            wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeout));
-            _driver.Manage().Window.Maximize();
+            Driver = GetDriver();
+            wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeout));
+            Driver.Manage().Window.Maximize();
         }
 
         public IWebDriver GetDriver()
         {
-            if (_driver != null)
+            if (Driver != null)
             {
-                return _driver;
+                return Driver;
             }
 
-            _driver = new ChromeDriver();
-            return _driver;
+            Driver = new ChromeDriver();
+            return Driver;
         }
 
         public void Dispose()
         {
-            if (_driver == null) return;
+            if (Driver == null) return;
 
-            _driver.Close();
-            _driver.Quit();
-            _driver = null;
+            Driver.Close();
+            Driver.Quit();
+            Driver = null;
         }
     }
 }
