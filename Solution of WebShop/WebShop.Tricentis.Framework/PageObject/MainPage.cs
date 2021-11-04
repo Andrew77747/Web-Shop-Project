@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using OpenQA.Selenium;
-using WebShop.Tricentis.Framework.Tools;
+﻿using OpenQA.Selenium;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {

@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
@@ -13,7 +12,7 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _logOutButton = By.CssSelector(".ico-logout");
 
 
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
 
         public AuthorizationPage(IWebDriver driver)
         {

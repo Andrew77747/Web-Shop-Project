@@ -5,17 +5,17 @@ namespace WebShop.Tricentis.Framework.PageObject
 {
     public class BasePage
     {
-        protected IWebDriver _driver;
+        protected IWebDriver Driver;
         protected BasePage(IWebDriver driver)
         {
-            _driver = driver;
+            Driver = driver;
         }
 
         public bool IsTextExists(string text)
         {
             try
             {
-                _driver.FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
+                Driver.FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
                 Console.WriteLine($"Злобный Гурч злобно видит текст {text}");
                 return true;
             }

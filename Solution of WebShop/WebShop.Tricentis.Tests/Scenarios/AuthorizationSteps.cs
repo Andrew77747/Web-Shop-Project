@@ -1,10 +1,7 @@
-﻿using System;
-using System.Security.Cryptography.X509Certificates;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.Tools;
-using WebShop.Tricentis.Tests.Handlers;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {
@@ -119,5 +116,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             _mainPage.ClickFoundItem();
         }
+
     }
 }

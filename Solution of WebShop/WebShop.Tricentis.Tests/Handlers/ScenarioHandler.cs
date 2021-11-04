@@ -1,5 +1,4 @@
 ﻿using TechTalk.SpecFlow;
-using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Handlers
 {
