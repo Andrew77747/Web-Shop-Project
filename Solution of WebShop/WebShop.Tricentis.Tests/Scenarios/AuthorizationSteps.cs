@@ -44,22 +44,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
             WhenIClickLogin();
         }
 
-        [When(@"I enter login")]
-        public void WhenIEnterLogin()
+        [When(@"I enter login, password and click login button")]
+        public void WhenIEnter()
         {
-            _authorizationPage.EnterEmail();
-        }
-
-        [When(@"I enter password")]
-        public void WhenIEnterPassword()
-        {
-            _authorizationPage.EnterPassword();
-        }
-
-        [When(@"I click login the LogIn button")]
-        public void WhenIClickLoginTheLogInButton()
-        {
-            _authorizationPage.ClickLoginButton();
+            _authorizationPage.Authorization();
         }
 
         [Then(@"I see '(.*)'")]
@@ -80,9 +68,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             GivenIMOnTheMainPage();
             WhenIClickLogin();
-            WhenIEnterLogin();
-            WhenIEnterPassword();
-            WhenIClickLoginTheLogInButton();
+            WhenIEnter();
         }
 
         [When(@"I click logout")]
@@ -98,11 +84,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         }
 
         //Test4
-
         [When(@"I type my request and click the search button")]
         public void WhenITypeMyRequest()
         {
-            _mainPage.TypeRequestAndClickSearch();
+            _mainPage.Search();
         }
 
         [When(@"I click the found item")]

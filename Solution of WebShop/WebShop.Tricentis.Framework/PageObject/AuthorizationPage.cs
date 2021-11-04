@@ -2,7 +2,7 @@
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
-    public class AuthorizationPage
+    public class AuthorizationPage : BasePage
     {
         private readonly By _inputEmail = By.CssSelector(".email");
         private readonly By _inputPassword = By.CssSelector(".password");
@@ -14,7 +14,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         private readonly IWebDriver _driver;
 
-        public AuthorizationPage(IWebDriver driver)
+        public AuthorizationPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
         }
@@ -24,18 +24,10 @@ namespace WebShop.Tricentis.Framework.PageObject
             return _driver.Url;
         }
 
-        public void EnterEmail()
+        public void Authorization()
         {
             _driver.FindElement(_inputEmail).SendKeys("andrew-walker@yandex.ru");
-        }
-
-        public void EnterPassword()
-        {
             _driver.FindElement(_inputPassword).SendKeys("Test2021");
-        }
-
-        public void ClickLoginButton()
-        {
             _driver.FindElement(_loginButton).Click();
         }
 

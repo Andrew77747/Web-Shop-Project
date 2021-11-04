@@ -34,7 +34,7 @@ namespace WebShop.Tricentis.Framework.PageObject
             return _driver.Url;
         }
 
-        public void TypeRequestAndClickSearch()
+        public void Search()
         {
             _driver.FindElement(_inputSearch).SendKeys("Simple computer");
             _driver.FindElement(_searchButton).Click();
