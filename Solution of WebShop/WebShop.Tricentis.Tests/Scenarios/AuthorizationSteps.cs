@@ -1,0 +1,99 @@
+﻿using NUnit.Framework;
+using TechTalk.SpecFlow;
+using WebShop.Tricentis.Framework.PageObject;
+using WebShop.Tricentis.Framework.Tools;
+
+namespace WebShop.Tricentis.Tests.Scenarios
+{
+    [Binding]
+    public class AuthorizationSteps
+    {
+
+        private readonly MainPage _mainPage;
+        private readonly AuthorizationPage _authorizationPage;
+
+        public AuthorizationSteps(WebDriverManager manager)
+        {
+            _authorizationPage = new AuthorizationPage(manager.GetDriver());
+            _mainPage = new MainPage(manager.GetDriver());
+        }
+
+        [Given(@"I'm on the main page")]
+        public void GivenIMOnTheMainPage()
+        {
+            _mainPage.OpenPage();
+        }
+
+        [When(@"I click login")]
+        public void WhenIClickLogin()
+        {
+            _mainPage.ClickLogin();
+        }
+
+        [Then(@"I'm on the authorization page")]
+        public void ThenIMOnTheAuthorizationPage()
+        {
+            Assert.AreEqual("http://demowebshop.tricentis.com/login", _authorizationPage.GetUrl(), "URLs should be equal");
+        }
+
+        //Test2
+        [Given(@"I go to the authorization page")]
+        public void GivenIMOnTheAuthorizationPage()
+        {
+            GivenIMOnTheMainPage();
+            WhenIClickLogin();
+        }
+
+        [When(@"I enter login, password and click login button")]
+        public void WhenIEnter()
+        {
+            _authorizationPage.Authorization();
+        }
+
+        [Then(@"I see '(.*)'")]
+        public void ThenISee(string text)
+        {
+            Assert.IsTrue(_mainPage.IsTextExists(text), $"{text} is not found");
+        }
+
+        [Then(@"I don't see '(.*)'")]
+        public void ThenIDontSee(string text)
+        {
+            Assert.IsFalse(_mainPage.IsTextExists(text), $"{text} is found");
+        }
+
+        //Test 3
+        [Given(@"I'am registered")]
+        public void GivenIAmRegistered()
+        {
+            GivenIMOnTheMainPage();
+            WhenIClickLogin();
+            WhenIEnter();
+        }
+
+        [When(@"I click logout")]
+        public void WhenIClickLogout()
+        {
+            _authorizationPage.ClickLogout();
+        }
+
+        [Then(@"I'm on the main page")]
+        public void ThenIMOnTheMainPage()
+        {
+            Assert.AreEqual("http://demowebshop.tricentis.com/", _mainPage.GetUrl(), "URLs should be equal");
+        }
+
+        //Test4
+        [When(@"I type my request and click the search button")]
+        public void WhenITypeMyRequest()
+        {
+            _mainPage.Search();
+        }
+
+        [When(@"I click the found item")]
+        public void WhenIClickTheFoundItem()
+        {
+            _mainPage.ClickFoundItem();
+        }
+    }
+}

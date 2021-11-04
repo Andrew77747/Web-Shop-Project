@@ -1,8 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+    <UserSecretsId>4e074446-9c31-451f-8b0f-c7e9440aa52e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +22,10 @@
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
     <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.9.22" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj" />
   </ItemGroup>
 
 </Project>
