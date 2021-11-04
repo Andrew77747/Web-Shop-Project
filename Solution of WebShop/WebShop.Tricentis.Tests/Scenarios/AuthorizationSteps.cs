@@ -99,16 +99,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         //Test4
 
-        [When(@"I type my request")]
+        [When(@"I type my request and click the search button")]
         public void WhenITypeMyRequest()
         {
-            _mainPage.TypeRequest();
-        }
-
-        [When(@"I click the search button")]
-        public void WhenIClickTheSearchButton()
-        {
-            _mainPage.ClickSearch();
+            _mainPage.TypeRequestAndClickSearch();
         }
 
         [When(@"I click the found item")]
@@ -116,6 +110,5 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             _mainPage.ClickFoundItem();
         }
-
     }
 }

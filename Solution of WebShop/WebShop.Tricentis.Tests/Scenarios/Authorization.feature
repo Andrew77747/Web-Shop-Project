@@ -23,7 +23,6 @@ Scenario: Check LogIn
 
    Scenario: Check the search input
    Given I'm on the main page
-   When I type my request
-   And I click the search button
+   When I type my request and click the search button
    And I click the found item
    Then I see 'Simple Computer'

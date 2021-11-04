@@ -239,15 +239,12 @@ this.ScenarioInitialize(scenarioInfo);
    testRunner.Given("I\'m on the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 26
-   testRunner.When("I type my request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.When("I type my request and click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
-   testRunner.And("I click the search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 28
    testRunner.And("I click the found item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 28
    testRunner.Then("I see \'Simple Computer\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
