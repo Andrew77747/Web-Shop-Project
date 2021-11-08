@@ -5,7 +5,7 @@ using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {
-    [Binding]
+    [Binding, Scope(Feature = "Authorization")]
     public class AuthorizationSteps
     {
 
@@ -16,12 +16,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             _authorizationPage = new AuthorizationPage(manager.GetDriver());
             _mainPage = new MainPage(manager.GetDriver());
-        }
-
-        [Given(@"I'm on the main page")]
-        public void GivenIMOnTheMainPage()
-        {
-            _mainPage.OpenPage();
         }
 
         [When(@"I click login")]
@@ -40,7 +34,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Given(@"I go to the authorization page")]
         public void GivenIMOnTheAuthorizationPage()
         {
-            GivenIMOnTheMainPage();
             WhenIClickLogin();
         }
 
@@ -50,23 +43,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _authorizationPage.Authorization();
         }
 
-        [Then(@"I see '(.*)'")]
-        public void ThenISee(string text)
-        {
-            Assert.IsTrue(_mainPage.IsTextExists(text), $"{text} is not found");
-        }
-
-        [Then(@"I don't see '(.*)'")]
-        public void ThenIDontSee(string text)
-        {
-            Assert.IsFalse(_mainPage.IsTextExists(text), $"{text} is found");
-        }
-
         //Test 3
         [Given(@"I'am registered")]
         public void GivenIAmRegistered()
         {
-            GivenIMOnTheMainPage();
             WhenIClickLogin();
             WhenIEnter();
         }

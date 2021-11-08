@@ -3,10 +3,11 @@ using OpenQA.Selenium;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
-    public class BasePage
+    public class BaseElement
     {
         protected IWebDriver Driver;
-        protected BasePage(IWebDriver driver)
+
+        public BaseElement(IWebDriver driver)
         {
             Driver = driver;
         }

@@ -1,5 +1,5 @@
 ﻿Feature: Authorization
-	Simple calculator for adding two numbers
+	Checking the authorization
 
 Scenario: Check authorization page URL
 	Given I'm on the main page
@@ -7,13 +7,15 @@ Scenario: Check authorization page URL
 	Then I'm on the authorization page
 
 Scenario: Check LogIn
-	Given I go to the authorization page
+	Given I'm on the main page
+	And I go to the authorization page
 	When I enter login, password and click login button
 	Then I see 'andrew-walker@yandex.ru'
 	And I see 'Log out'
 
 Scenario: Check Logout
-	Given I'am registered
+	Given I'm on the main page
+	And I'am registered
 	When I click logout
 	Then I'm on the main page
 	And I don't see 'andrew-walker@yandex.ru'
