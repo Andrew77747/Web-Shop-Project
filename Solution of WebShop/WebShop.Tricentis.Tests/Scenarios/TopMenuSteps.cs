@@ -30,13 +30,13 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"I see dropdown")]
         public void WhenISeeDropdown()
         {
-            _topMenuElements.IsDropdownVisible();
+            Assert.IsTrue(_topMenuElements.IsDropdownVisible(), "Dropdown should be visible");
         }
 
         [Then(@"I don't see dropdown")]
         public void ThenIDonTSeeDropdown()
         {
-            _topMenuElements.IsDropdownVisible();
+            Assert.IsFalse(_topMenuElements.IsDropdownVisible(), "Dropdown shouldn't be visible");
         }
     }
 }

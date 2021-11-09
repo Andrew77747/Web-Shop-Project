@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 
@@ -15,6 +16,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
         #region MapsOfElements
 
         private readonly By _dropdown = By.CssSelector(".top-menu-triangle.active");
+        private readonly string myStruing = "sublist firstLevel active";
 
         #endregion
 
@@ -26,6 +28,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
                 Console.WriteLine(selector);
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_driver.FindElement(By.XPath(selector))).Build().Perform();
+                Thread.Sleep(1000);
             }
             catch (NoSuchElementException e)
             {
@@ -39,9 +42,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
             {
                 return _driver.FindElement(_dropdown).Displayed;
             }
-            catch (NoSuchElementException e)
+            catch (NoSuchElementException)
             {
-                Console.WriteLine("Здесь нет дропдауна: " + e);
+                Console.WriteLine("Здесь нет дропдауна");
                 return false;
             }
         }
