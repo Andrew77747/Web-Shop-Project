@@ -24,7 +24,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
         public void WhenIHoverOn(string name)
         {
             _topMenuElements.HoverMouse(name);
-            Thread.Sleep(1000);
         }
 
         [Then(@"I see dropdown")]

@@ -15,8 +15,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         #region MapsOfElements
 
-        private readonly By _dropdown = By.CssSelector(".top-menu-triangle.active");
-        private readonly string myStruing = "sublist firstLevel active";
+        private readonly By _dropdown = By.CssSelector(".sublist.firstLevel.active");
+        //private const string _myStruing = "sublist firstLevel active";
 
         #endregion
 
