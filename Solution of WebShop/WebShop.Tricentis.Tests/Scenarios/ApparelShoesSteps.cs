@@ -31,7 +31,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
         public void WhenIChooseSorting()
         {
             //_apparelShoesPage.ClickSortBY();
-            _apparelShoesPage.FakeGetElementText();
+            _apparelShoesPage.GetCardsName2();
+            //_apparelShoesPage.GetProductCardsNames();
         }
         
         [Then(@"The sorting is right")]

@@ -46,25 +46,5 @@ namespace WebShop.Tricentis.Framework.PageObject
             _driver.FindElement(_display).Click();
             _driver.FindElement(_dispaly12).Click();
         }
-
-        //public IEnumerable<DateTime> GetListOfItem()
-        //{
-        //    return _driver
-        //        .FindElements(_allItems)
-        //        .Select(x => DateTime.Parse(x.Text));
-        //}
-
-        public void TextFromTeg() //Метод 1. Получаем текст
-        {
-            String element = Driver.FindElement(_productCards).Text;
-        }
-
-        String [] arrayOfItems = {  };
-        public void ArrayItem()
-        {
-            
-
-
-        }
     }
 }
