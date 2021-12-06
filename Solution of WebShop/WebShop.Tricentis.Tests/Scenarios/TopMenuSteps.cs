@@ -1,10 +1,8 @@
-﻿using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
-using WebShop.Tricentis.Tests.Handlers;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {

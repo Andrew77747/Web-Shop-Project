@@ -42,18 +42,16 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
 
 
-        //[When(@"I choose sorting desc")]
-        //public void WhenIChooseSortingDesc()
-        //{
-        //    _apparelShoesPage.ClickSortBYNameZtoA();
-        //    //_apparelShoesPage.SortProductCardsNamesDesc();
+        [When(@"I choose sorting desc")]
+        public void WhenIChooseSortingDesc()
+        {
+            _apparelShoesPage.ClickSortBYNameZtoA();
+        }
 
-        //}
-
-        //[Then(@"The sorting desc is right")]
-        //public void ThenTheSortingIsRightDesc()
-        //{
-        //    Assert.AreEqual(expected: _apparelShoesPage.SortProductCardsNamesDesc(), actual: _apparelShoesPage.GetProductCardsNames());
-        //}
+        [Then(@"The sorting desc is right")]
+        public void ThenTheSortingIsRightDesc()
+        {
+            Assert.IsTrue(_apparelShoesPage.IsSortingDescRight(_apparelShoesPage.GetProductCardsNames()), "Array should be sorted desc");
+        }
     }
 }

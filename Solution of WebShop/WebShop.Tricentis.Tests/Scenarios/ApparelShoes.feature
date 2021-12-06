@@ -8,5 +8,5 @@ Scenario: Check Product Cards Sorting
 	#Given I'm on the apparel page
 	When I choose sorting
 	Then The sorting is right
-	#When I choose sorting desc
-	#Then The sorting desc is right
+	When I choose sorting desc
+	Then The sorting desc is right

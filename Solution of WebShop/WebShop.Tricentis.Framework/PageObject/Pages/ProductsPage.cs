@@ -74,6 +74,29 @@ namespace WebShop.Tricentis.Framework.PageObject
             }
         }
 
+        public bool IsSortingDescRight(string[] actualArray)
+        {
+
+            string[] expectedArray = new string[actualArray.Length];
+            actualArray.CopyTo(expectedArray, 0);
+
+            Array.Sort(expectedArray); 
+            Array.Reverse(expectedArray);
+
+            if (actualArray.SequenceEqual(expectedArray))
+            {
+                Console.WriteLine(expectedArray);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(expectedArray);
+                return false;
+            }
+        }
+
+
+
         public string[] SortProductCardsNamesAsc() //My double method to check the sorting
         {
             //_apparelShoesPage.ShowAllCards();
