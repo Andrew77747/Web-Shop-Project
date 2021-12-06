@@ -8,20 +8,24 @@
     ".NETCoreApp,Version=v5.0": {
       "WebShop.Tricentis.Framework/1.0.0": {
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "NUnit": "3.13.2",
-          "Selenium.Support": "4.0.0",
-          "Selenium.WebDriver": "4.0.0"
+          "Selenium.Support": "4.1.0",
+          "Selenium.WebDriver": "4.1.0"
         },
         "runtime": {
           "WebShop.Tricentis.Framework.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.4"
+        },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.20.51904"
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       },
@@ -50,9 +54,9 @@
           }
         }
       },
-      "Selenium.Support/4.0.0": {
+      "Selenium.Support/4.1.0": {
         "dependencies": {
-          "Selenium.WebDriver": "4.0.0"
+          "Selenium.WebDriver": "4.1.0"
         },
         "runtime": {
           "lib/net5.0/WebDriver.Support.dll": {
@@ -61,7 +65,7 @@
           }
         }
       },
-      "Selenium.WebDriver/4.0.0": {
+      "Selenium.WebDriver/4.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3"
         },
@@ -71,7 +75,9 @@
             "fileVersion": "4.0.0.0"
           }
         }
-      }
+      },
+      "System.Buffers/4.5.1": {},
+      "System.Memory/4.5.4": {}
     }
   },
   "libraries": {
@@ -80,12 +86,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+    "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
-      "path": "microsoft.extensions.logging.abstractions/5.0.0",
-      "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+      "sha512": "sha512-/HggWBbTwy8TgebGSX5DBZ24ndhzi93sHUBDvP1IxbZD7FDokYzdAr6+vbWGjw2XAfR2EJ1sfKUotpjHnFWPxA==",
+      "path": "microsoft.extensions.logging.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -115,19 +121,33 @@
       "path": "nunit/3.13.2",
       "hashPath": "nunit.3.13.2.nupkg.sha512"
     },
-    "Selenium.Support/4.0.0": {
+    "Selenium.Support/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YuCXXY2H5Vco1LgZPLo1MnAfLNs1BSMdaLrCYa3rlrDNQC2LBTiUQLOrh/hCsPzoQWnFHOsiqEe5hnX8HJ/ECw==",
-      "path": "selenium.support/4.0.0",
-      "hashPath": "selenium.support.4.0.0.nupkg.sha512"
+      "sha512": "sha512-wuK5cfgVaimOZqyuriY2geGpNsI9DWky8CuBlrkBnmebkSrRftxqwyUVy0NLooHaAB2iaMj7qM+VOdUEX5bCHQ==",
+      "path": "selenium.support/4.1.0",
+      "hashPath": "selenium.support.4.1.0.nupkg.sha512"
     },
-    "Selenium.WebDriver/4.0.0": {
+    "Selenium.WebDriver/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9v3Dfq/y2j0QMNu0X6YsnKTPstR2rhgbmO9yV/WWoQFBAmPN8yLHoSX6S9gdDUjQMfYJ9gaNFCHX2ZpUo4mQQA==",
-      "path": "selenium.webdriver/4.0.0",
-      "hashPath": "selenium.webdriver.4.0.0.nupkg.sha512"
+      "sha512": "sha512-d4smisz4a/wJCM2TzkKTl+BLfvZUTvaobhKElDfCVZlvY8ThsC8VAoBNWTlg1H/GGzIP//yVGko/W0FILTgkYA==",
+      "path": "selenium.webdriver/4.1.0",
+      "hashPath": "selenium.webdriver.4.1.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     }
   }
 }

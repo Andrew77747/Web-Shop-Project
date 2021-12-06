@@ -17,7 +17,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
         public TopMenuSteps(WebDriverManager manager)
         {
             _baseElement = new BaseElement(manager.GetDriver());
-            _topMenuElements = new TopMenuElement(manager.GetDriver());
+            var page = new MainPage(manager.GetDriver());
+            _topMenuElements = page.TopMenu;
         }
 
         [When(@"I hover on '(.*)'")]

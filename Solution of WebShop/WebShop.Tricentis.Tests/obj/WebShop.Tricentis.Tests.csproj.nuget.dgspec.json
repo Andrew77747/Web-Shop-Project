@@ -42,7 +42,7 @@
           "dependencies": {
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -50,11 +50,11 @@
             },
             "Selenium.Support": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.0, )"
             }
           },
           "imports": [
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -122,27 +122,27 @@
             },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Configuration.UserSecrets": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.11.0, )"
+              "version": "[17.0.0, )"
             },
             "NUnit": {
               "target": "Package",
@@ -150,23 +150,23 @@
             },
             "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.0, )"
             },
             "SpecFlow": {
               "target": "Package",
-              "version": "[3.9.22, )"
+              "version": "[3.9.40, )"
             },
             "SpecFlow.NUnit": {
               "target": "Package",
-              "version": "[3.9.22, )"
+              "version": "[3.9.40, )"
             },
             "SpecFlow.NUnit.Runners": {
               "target": "Package",
-              "version": "[3.9.22, )"
+              "version": "[3.9.40, )"
             },
             "SpecFlow.Tools.MsBuild.Generation": {
               "target": "Package",
-              "version": "[3.9.22, )"
+              "version": "[3.9.40, )"
             }
           },
           "imports": [
@@ -184,7 +184,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,13 +7,16 @@ namespace WebShop.Tricentis.Framework.PageObject
     public class ApparelShoesPage : ProductsPage
 
     {
+        public ProductsPage Products;
         private IWebDriver _driver;
-        private IWebDriver _getArray;
 
         public ApparelShoesPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+            Products = new ProductsPage(_driver);
         }
+
+        #region Maps of elements
 
         public readonly By _productCards = By.CssSelector(".item-box");
 
@@ -34,15 +37,25 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _viewGrid = By.XPath("//option[text()='Grid']");
         private readonly By _viewList = By.XPath("//option[text()='List']");
 
+        #endregion
+
         public void OpenApparelShoesPage()
         {
             _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com/apparel-shoes");
         }
 
-        public void ClickSortBY()
+        public void ClickSortBYNameAtoZ()
         {
             _driver.FindElement(_position).Click();
             _driver.FindElement(_sortByAtoZ).Click();
+            _driver.FindElement(_display).Click();
+            _driver.FindElement(_dispaly12).Click();
+        }
+
+        public void ClickSortBYNameZtoA()
+        {
+            _driver.FindElement(_position).Click();
+            _driver.FindElement(_sortByZtoA).Click();
             _driver.FindElement(_display).Click();
             _driver.FindElement(_dispaly12).Click();
         }

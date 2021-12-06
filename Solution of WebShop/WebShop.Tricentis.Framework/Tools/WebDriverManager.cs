@@ -10,14 +10,13 @@ namespace WebShop.Tricentis.Framework.Tools
     {
         public IWebDriver Driver;
 
-        public readonly int Timeout = 1000;
+        public readonly int Timeout = 10000;
         public WebDriverWait Wait;
 
         public WebDriverManager()
         {
             Driver = GetDriver();
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
-            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             Driver.Manage().Window.Maximize();
         }
 
