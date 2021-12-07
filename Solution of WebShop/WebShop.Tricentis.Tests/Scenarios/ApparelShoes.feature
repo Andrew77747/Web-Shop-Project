@@ -9,3 +9,7 @@ Scenario: Check Product Cards Sorting
 	Then The sorting is right
 	When I choose sorting desc
 	Then The sorting desc is right
+	When I choose sorting by price
+	Then The sorting by price is right
+	When I choose sorting by price desc
+	Then The sorting by price desc is right

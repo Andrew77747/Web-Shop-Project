@@ -35,8 +35,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
         }
 
 
-
-
         [When(@"I choose sorting desc")]
         public void WhenIChooseSortingDesc()
         {
@@ -48,5 +46,30 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.IsTrue(_apparelShoesPage.IsSortingDescRight(_apparelShoesPage.GetProductCardsNames()), "Array should be sorted desc");
         }
+
+        [When(@"I choose sorting by price")]
+        public void WhenIChooseSortingByPrice()
+        {
+            _apparelShoesPage.ClickSortByPriceLowToHigh();
+        }
+
+        [Then(@"The sorting by price is right")]
+        public void ThenTheSortingByPriceIsRight()
+        {
+            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceAskRight(_apparelShoesPage.GetProductCardsPrice()), "Array should be sorted");
+        }
+
+        [When(@"I choose sorting by price desc")]
+        public void WhenIChooseSortingByPriceDesc()
+        {
+            _apparelShoesPage.ClickSortByPriceHighToLow();
+        }
+
+        [Then(@"The sorting by price desc is right")]
+        public void ThenTheSortingByPriceDescIsRight()
+        {
+            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice()), "Array sould be sorted");
+        }
+
     }
 }

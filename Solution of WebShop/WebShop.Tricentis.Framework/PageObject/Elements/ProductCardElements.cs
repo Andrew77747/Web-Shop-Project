@@ -13,6 +13,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
         #region Maps of elements
 
         public readonly By ProductTitle = By.CssSelector(".product-title a");
+        public readonly By ActualPrice = By.CssSelector(".actual-price");
 
         #endregion
     }

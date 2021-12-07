@@ -56,5 +56,21 @@ namespace WebShop.Tricentis.Framework.PageObject
             _driver.FindElement(_display).Click();
             _driver.FindElement(_dispaly12).Click();
         }
+
+        public void ClickSortByPriceLowToHigh()
+        {
+            _driver.FindElement(_position).Click();
+            _driver.FindElement(_priceLowToHigh).Click();
+            _driver.FindElement(_display).Click();
+            _driver.FindElement(_dispaly12).Click();
+        }
+
+        public void ClickSortByPriceHighToLow()
+        {
+            _driver.FindElement(_position).Click();
+            _driver.FindElement(_priceHighToLow).Click();
+            _driver.FindElement(_display).Click();
+            _driver.FindElement(_dispaly12).Click();
+        }
     }
 }

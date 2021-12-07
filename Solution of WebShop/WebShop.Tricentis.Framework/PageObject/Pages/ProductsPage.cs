@@ -54,6 +54,20 @@ namespace WebShop.Tricentis.Framework.PageObject
             //return titles.ToArray();
         }
 
+        public string[] GetProductCardsPrice() // Get array of prices from cards
+        {
+            var listOfProductCards = GetElements(_productCards);
+            string[] prices = new string[listOfProductCards.Count];
+
+            for (int i = 0; i < prices.Length; i++) // method 1
+            {
+                prices[i] = listOfProductCards[i].FindElement(productCard.ActualPrice).Text;
+                Console.WriteLine(prices[i]);
+            }
+
+            return prices;
+        }
+
         public bool IsSortingAskRight(string[] actualArray)
         {
 
@@ -94,6 +108,46 @@ namespace WebShop.Tricentis.Framework.PageObject
                 return false;
             }
         }
+
+        public bool IsSortingByPriceAskRight(string[] actualArray)
+        {
+            string[] expectedArray = new string[actualArray.Length];
+            actualArray.CopyTo(expectedArray, 0);
+
+            Array.Sort(expectedArray);
+
+            if (actualArray.SequenceEqual(expectedArray))
+            {
+                Console.WriteLine(expectedArray);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(expectedArray);
+                return false;
+            }
+        }
+
+        public bool IsSortingByPriceDescRight(string[] actualArray)
+        {
+            string[] expectedArray = new string[actualArray.Length];
+            actualArray.CopyTo(expectedArray, 0);
+
+            Array.Sort(expectedArray);
+            Array.Reverse(expectedArray);
+
+            if (actualArray.SequenceEqual(expectedArray))
+            {
+                Console.WriteLine(expectedArray);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(expectedArray);
+                return false;
+            }
+        }
+
 
 
 
