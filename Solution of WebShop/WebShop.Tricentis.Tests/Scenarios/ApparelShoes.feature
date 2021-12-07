@@ -5,7 +5,6 @@ Given I'm on the main page
 And I go to the 'Apparel & Shoes' page
 
 Scenario: Check Product Cards Sorting
-	#Given I'm on the apparel page
 	When I choose sorting
 	Then The sorting is right
 	When I choose sorting desc

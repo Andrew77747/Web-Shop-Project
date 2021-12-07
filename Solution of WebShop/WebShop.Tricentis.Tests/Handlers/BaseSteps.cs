@@ -35,7 +35,7 @@ namespace WebShop.Tricentis.Tests.Handlers
         }
 
         [Given(@"I go to the '(.*)' page")]
-        public void GivenIGoToTheApparelPage(string name)
+        public void GivenIGoToThePageFromTopMenu(string name)
         {
             _mainPage.TopMenu.SelectMenu(name);
         }

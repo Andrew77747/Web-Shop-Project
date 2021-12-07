@@ -39,10 +39,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         #endregion
 
-        public void OpenApparelShoesPage()
-        {
-            _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com/apparel-shoes");
-        }
+
 
         public void ClickSortBYNameAtoZ()
         {

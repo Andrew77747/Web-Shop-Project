@@ -21,12 +21,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _apparelShoesPage = new ApparelShoesPage(manager.GetDriver());
         }
 
-        [Given(@"I'm on the apparel page")]
-        public void GivenIMOnTheApparelPage()
-        {
-            _apparelShoesPage.OpenApparelShoesPage();
-        }
-        
+
         [When(@"I choose sorting")]
         public void WhenIChooseSorting()
         {
