@@ -4,6 +4,15 @@ namespace WebShop.Tricentis.Framework.PageObject
 {
     public class AuthorizationPage : BasePage
     {
+        private readonly IWebDriver _driver;
+
+        public AuthorizationPage(IWebDriver driver) : base(driver)
+        {
+            _driver = driver;
+        }
+
+        #region Maps of elements
+
         private readonly By _inputEmail = By.CssSelector(".email");
         private readonly By _inputPassword = By.CssSelector(".password");
         private readonly By _chekboxRememberMe = By.CssSelector("#RememberMe");
@@ -11,13 +20,7 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _userName = By.CssSelector(".header - .account");
         private readonly By _logOutButton = By.CssSelector(".ico-logout");
 
-
-        private readonly IWebDriver _driver;
-
-        public AuthorizationPage(IWebDriver driver) : base(driver)
-        {
-            _driver = driver;
-        }
+        #endregion
 
         public string GetUrl()
         {
@@ -40,6 +43,5 @@ namespace WebShop.Tricentis.Framework.PageObject
         {
             _driver.FindElement(_logOutButton).Click();
         }
-
     }
 }

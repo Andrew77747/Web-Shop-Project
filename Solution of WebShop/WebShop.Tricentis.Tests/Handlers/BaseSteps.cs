@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Threading;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.Tools;
@@ -31,6 +32,12 @@ namespace WebShop.Tricentis.Tests.Handlers
         public void ThenIDontSee(string text)
         {
             Assert.IsFalse(_mainPage.IsTextExists(text), $"{text} is found");
+        }
+
+        [Given(@"I go to the '(.*)' page")]
+        public void GivenIGoToThePageFromTopMenu(string name)
+        {
+            _mainPage.TopMenu.SelectMenu(name);
         }
     }
 }

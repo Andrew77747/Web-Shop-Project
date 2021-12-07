@@ -10,7 +10,7 @@ namespace WebShop.Tricentis.Framework.Tools
     {
         public IWebDriver Driver;
 
-        public readonly int Timeout = 1000;
+        public readonly int Timeout = 10000;
         public WebDriverWait Wait;
 
         public WebDriverManager()

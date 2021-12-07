@@ -7,7 +7,7 @@ using global::NUnit.Framework;
 using global::TechTalk.SpecFlow;
 using global::System.Runtime.CompilerServices;
 
-[GeneratedCode("SpecFlow", "3.9.22")]
+[GeneratedCode("SpecFlow", "3.9.40")]
 [SetUpFixture]
 public class WebShop_Tricentis_Tests_NUnitAssemblyHooks
 {

@@ -1,14 +1,11 @@
 ﻿using OpenQA.Selenium;
+using System;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
     public class MainPage : BasePage
     {
         private IWebDriver _driver;
-        private readonly By _inputSearch = By.CssSelector(".search-box-text");
-        private readonly By _searchButton = By.CssSelector(".search-box .button-1");
-        private readonly By _simpleComputer = By.CssSelector(".product-title");
-
 
         public MainPage(IWebDriver driver) : base(driver)
         {
@@ -17,6 +14,9 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         #region MapsOfElements
         private readonly By _login = By.CssSelector(".ico-login");
+        private readonly By _inputSearch = By.CssSelector(".search-box-text");
+        private readonly By _searchButton = By.CssSelector(".search-box .button-1");
+        private readonly By _simpleComputer = By.CssSelector(".product-title");
         #endregion
 
         public void OpenPage()

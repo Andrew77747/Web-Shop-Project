@@ -15,8 +15,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         #region MapsOfElements
 
-        private readonly By _dropdown = By.CssSelector(".top-menu-triangle.active");
-        private readonly string myStruing = "sublist firstLevel active";
+        private readonly By _dropdown = By.CssSelector(".sublist.firstLevel.active");
 
         #endregion
 
@@ -28,11 +27,25 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
                 Console.WriteLine(selector);
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_driver.FindElement(By.XPath(selector))).Build().Perform();
-                Thread.Sleep(1000);
             }
             catch (NoSuchElementException e)
             {
                 Console.WriteLine("Хуй тебе, а не элемент! Ошибка: "+ e);
+            }
+        }
+
+        public void SelectMenu(string buttonName)
+        {
+            try
+            {
+                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
+                Console.WriteLine(selector);
+                _driver.FindElement(By.XPath(selector)).Click();
+
+            }
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine($"Element was not found. {Environment.NewLine} Error: " + e);
             }
         }
 
