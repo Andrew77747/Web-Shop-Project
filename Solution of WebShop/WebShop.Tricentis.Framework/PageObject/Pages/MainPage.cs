@@ -6,7 +6,7 @@ namespace WebShop.Tricentis.Framework.PageObject
     public class MainPage : BasePage
     {
         private IWebDriver _driver;
-
+        
         public MainPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;

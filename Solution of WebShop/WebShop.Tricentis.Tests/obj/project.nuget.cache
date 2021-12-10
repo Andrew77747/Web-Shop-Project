@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "6ybEEV+zvUmnxqnWv3eE0hW1uy5UehtcF6dcOwFP05pFKonz6kNyr3VgQoPrcCDtEgXGqOgl+jTSMIMI8vSvUQ==",
+  "dgSpecHash": "oeb2cdGpH9+t5owmS9QTEbJQbMEiGrMUMhACRcV2/L89MZTDco5GEUd6lGWSE9JNXBCV2TlRlQEk2of2olurrw==",
   "success": true,
   "projectFilePath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\WebShop.Tricentis.Tests\\WebShop.Tricentis.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andy7\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
+    "C:\\Users\\andy7\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\gherkin\\19.0.3\\gherkin.19.0.3.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\microsoft.codecoverage\\17.0.0\\microsoft.codecoverage.17.0.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

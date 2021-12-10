@@ -5,7 +5,7 @@ using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {
-    [Binding, Scope(Feature = "Authorization")]
+    [Binding]
     public class AuthorizationSteps
     {
 
