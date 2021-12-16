@@ -16,7 +16,7 @@ namespace WebShop.Tricentis.Framework.Tools
             _driver = driver;
         }
 
-        public void Waiter(By by)
+        public void WaitElement(By by)
         {
             //if (wait == null)
                 

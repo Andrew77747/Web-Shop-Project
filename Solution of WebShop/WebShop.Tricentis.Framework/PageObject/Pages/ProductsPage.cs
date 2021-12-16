@@ -20,7 +20,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         #region Maps of elements
 
-        private readonly By _productCards = By.CssSelector(".item-box");
+        public readonly By _productCards = By.CssSelector(".item-box");
 
         #endregion
 

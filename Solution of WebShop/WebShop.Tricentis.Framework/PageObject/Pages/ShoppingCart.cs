@@ -1,4 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using OpenQA.Selenium;
+using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
@@ -9,19 +14,24 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         private readonly IWebDriver _driver;
         private readonly Waiters wait;
+        private readonly ProductsPage _productsPage;
+        protected ProductCardElement productCard;
 
         public ShoppingCart(IWebDriver driver) : base(driver)
         {
             _driver = driver;
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1000));
             wait = new Waiters(_driver);
+            _productsPage = new ProductsPage(_driver);
+            productCard = new ProductCardElement(_driver);
         }
 
 
         #region Maps of elements
 
         private readonly By book1 = By.CssSelector("[data-productid='13'] .button-2");
+        public readonly By book1Card = By.CssSelector(".item-box [data-productid='13']");
         private readonly By book2 = By.CssSelector("[data-productid='45'] .button-2");
+        public readonly By book2Card = By.CssSelector("[data-productid='45']");
 
         private readonly By _desktops = By.CssSelector(("[alt='Picture for category Desktops']"));
         private readonly By _pc1Card = By.CssSelector("[data-productid='72'] .button-2");
@@ -29,7 +39,7 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _pc2Card = By.CssSelector("[data-productid='74'] .button-2");
         private readonly By _pc2Add = By.CssSelector("input#add-to-cart-button-74");
 
-        private readonly By _cellPhones = By.CssSelector("[title='Show products in category Cell phones']");
+        private readonly By _cellPhones = By.CssSelector("[alt='Picture for category Cell phones']");
         private readonly By _cellPhoneAdd1 = By.CssSelector("[data-productid='43'] .button-2");
         private readonly By _cellPhone2 = By.CssSelector("[data-productid='80'] .button-2");
         private readonly By _cellPhoneAdd2 = By.CssSelector("input#add-to-cart-button-80");
@@ -59,55 +69,102 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _recipientNameInputInCard3 = By.CssSelector(".recipient-name");
         private readonly By _preloader = By.CssSelector(".loading-image");
 
+        private readonly By _cartRow = By.CssSelector(".cart-item-row");
+        private readonly By __shoppingCartLink = By.CssSelector(".ico-cart .cart-label");
+        private readonly By _productName = By.CssSelector(".product-name");
+
         #endregion
 
-        //public void Waiter(By by)
+        //public List<IWebElement> listOfShoppingCartsElements;
+
+        //public string[] GetShoppingCartTitles() //Получаем текст. Отдельный метод, который должен получить текст из тега элемента
         //{
-        //    if (wait == null)
-        //        wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
+        //    listOfShoppingCartsElements = _productsPage.GetElements(_productsPage._productCards); //список карточек засовываем в лист
+        //    string[] names = new string[listOfShoppingCartsElements.Count]; //создаем массив длиной как у списка
 
-        //    wait.Until(d => d.FindElement(by));
-        //    //wait.Until(ExpectedConditions.ElementIsVisible(by));
+        //    for (int i = 0; i < names.Length; i++)
+        //    {
+        //        names[i] = listOfShoppingCartsElements[i].FindElement(productCard.ProductTitle).Text;
+        //        Console.WriteLine(names[i]);
+        //    }
+
+        //    return names;
         //}
+        private readonly By _addButton = By.CssSelector(".button-1.add-to-cart-button");
+        private readonly By _apparelTitle = By.XPath("//*[contains(@class, 'page-title')]//*[contains(text(), 'Apparel & Shoes')]");
+        private readonly By _dispaly12 = By.XPath("//option[text()='12']");
+        private readonly By _display = By.CssSelector("#products-pagesize");
 
-        //public void WaitUntil(By by)
-        //{
-        //    if (wait == null)
-        //        wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
-
-        //    wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
-        //    //wait.Until(d => d.FindElement(by));
-        //    //wait.Until(ExpectedConditions.StalenessOf());
-        //    //var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
-        //}
-
-        public void AddBook()
+        public void AddGood(string goodName)
         {
-            _driver.FindElement(book1).Click();
-            wait.WaitUntil(_preloader);
-            _driver.FindElement(book2).Click();
+            bool IsElementExists(By by)
+            {
+                try
+                {
+                    _driver.FindElement(by);
+                    return true;
+                }
+                catch (NoSuchElementException)
+                {
+                    return false;
+                }
+            }
+
+            if(IsElementExists(_desktops) == true)
+            {
+                _driver.FindElement(_desktops).Click();
+            }
+
+            else if (IsElementExists(_cellPhones) == true)
+            {
+                _driver.FindElement(_cellPhones).Click();
+            }
+
+            else if (IsElementExists(_apparelTitle) == true)
+            {
+                _driver.FindElement(_display).Click();
+                _driver.FindElement(_dispaly12).Click();
+            }
+
+
+            var selector = $"//*[contains(@class, 'product-grid')]//*[contains(text(), '{goodName}')]";
+                //Console.WriteLine(selector);
+                _driver.FindElement(By.XPath(selector)).Click();
+                _driver.FindElement(_addButton).Click();
+                _driver.Navigate().Back();
+            
+            
+
+            //_productsPage.GetElements(book1Card);
+            //this.GetShoppingCartTitles();
+            ////GetShoppingCartNamesActual2(book1Card);
+            //RealList.Add(GetShoppingCartNamesActual2(book1Card).ToString());
+            //_driver.FindElement(book1).Click();
+            //////////wait.WaitUntil(_preloader);
+            //////////RealList.Add(GetShoppingCartNamesActual2(book2Card).ToString());
+            //////////_driver.FindElement(book2).Click();
         }
 
         public void AddPc()
         {
             _driver.FindElement(_desktops).Click();
             _driver.FindElement(_pc1Card).Click();
-            wait.Waiter(_pc1Add);
+            wait.WaitElement(_pc1Add);
             _driver.FindElement(_pc1Add).Click();
             _driver.Navigate().Back();
             _driver.FindElement(_pc2Card).Click();
-            wait.Waiter(_pc2Add);
+            wait.WaitElement(_pc2Add);
             _driver.FindElement(_pc2Add).Click();
         }
 
         public void AddCellPhones()
         {
             _driver.FindElement(_cellPhones).Click();
-            wait.Waiter(_cellPhoneAdd1);
+            wait.WaitElement(_cellPhoneAdd1);
             _driver.FindElement(_cellPhoneAdd1).Click();
-            wait.Waiter(_cellPhone2);
+            wait.WaitElement(_cellPhone2);
             _driver.FindElement(_cellPhone2).Click();
-            wait.Waiter(_cellPhoneAdd2);
+            wait.WaitElement(_cellPhoneAdd2);
             _driver.FindElement(_cellPhoneAdd2).Click();
         }
 
@@ -116,7 +173,7 @@ namespace WebShop.Tricentis.Framework.PageObject
             _driver.FindElement(_bag).Click();
             _driver.FindElement(_nextPage).Click();
             _driver.FindElement(_shirt).Click();
-            wait.Waiter(_shirtAdd);
+            wait.WaitElement(_shirtAdd);
             _driver.FindElement(_shirtAdd).Click();
         }
 
@@ -129,35 +186,147 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void AddJewelry()
         {
-            wait.Waiter(_newJewelry);
+            wait.WaitElement(_newJewelry);
             _driver.FindElement(_newJewelry).Click();
-            wait.Waiter(_lengthInput);
+            wait.WaitElement(_lengthInput);
             _driver.FindElement(_lengthInput).SendKeys("25");
             _driver.FindElement(_pendantRadioBatton).Click();
             _driver.FindElement(_newJewerlyAdd).Click();
             _driver.Navigate().Back();
-            wait.Waiter(_diamondHeart);
+            wait.WaitElement(_diamondHeart);
             _driver.FindElement(_diamondHeart).Click();
         }
 
         public void AddGifts()
         {
             _driver.FindElement(_giftCard1).Click();
-            wait.Waiter(_recipientNameInput);
+            wait.WaitElement(_recipientNameInput);
             _driver.FindElement(_recipientNameInput).SendKeys("Юра");
             _driver.FindElement(_recipientEmailInput).SendKeys("salabon@mail.ru");
             _driver.FindElement(_giftCard1Add).Click();
             _driver.Navigate().Back();
             _driver.FindElement(_giftCard2).Click();
-            wait.Waiter(_recipientNameInput);
+            wait.WaitElement(_recipientNameInput);
             _driver.FindElement(_recipientNameInput).SendKeys("Саша");
             _driver.FindElement(_recipientEmailInput).SendKeys("alexander@mail.ru");
             _driver.FindElement(_giftCard2Add).Click();
             _driver.Navigate().Back();
             _driver.FindElement(_giftCard3).Click();
-            wait.Waiter(_recipientNameInputInCard3);
+            wait.WaitElement(_recipientNameInputInCard3);
             _driver.FindElement(_recipientNameInputInCard3).SendKeys("Виктор");
             _driver.FindElement(_giftCard3Add).Click();
         }
+
+        public void GoToShoppingCartPage()
+        {
+            _driver.FindElement(__shoppingCartLink).Click();
+        }
+
+        public List<string> GetShoppingCartTitlesExpected() //Получаем список названий карточе. Пока работает этот метод
+        {
+            GoToShoppingCartPage();
+            var listOfProductCards = _productsPage.GetElements(_cartRow);
+            string[] names = new string[listOfProductCards.Count];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                names[i] = listOfProductCards[i].FindElement(_productName).Text;
+                Console.WriteLine(names[i]);
+            }
+
+            return names.ToList();
+        }
+
+        
+
+        public List<string> GetShoppingCartNamesExpected() //Получаем список названий карточек - норм!
+        {
+            GoToShoppingCartPage();
+            var listOfProductCards = _productsPage.GetElements(_cartRow);
+            List<string> ShoppingCartNamesExpected = new List<string>();
+
+            foreach (var card in listOfProductCards)
+            {
+                ShoppingCartNamesExpected.Add(card.FindElement(_productName).Text);
+                Console.WriteLine(card);
+            }
+
+            return ShoppingCartNamesExpected;
+
+            //var listOfProductCards = _productsPage.GetElements(_cartRow);
+            //List<string> ShoppingCartNamesExpected = new List<string>();
+
+            //for (int i = 0; i < ShoppingCartNamesExpected.Count; i++) // method 2
+            //{
+            //    ShoppingCartNamesExpected[i] = listOfProductCards[i].FindElement(_productName).Text;
+            //    Console.WriteLine(ShoppingCartNamesExpected[i]);
+            //}
+
+            //return ShoppingCartNamesExpected;
+        }
+
+        //public List<string> GetShoppingCartNamesActual(By selector) //получаем название при добавлении
+        //{
+        //    var listOfProductCards = _productsPage.GetElements(selector);
+        //    List<string> ShoppingCartNamesActual = new List<string>();
+
+        //    foreach (var card in listOfProductCards)
+        //    {
+        //        ShoppingCartNamesActual.Add(card.FindElement(productCard.ProductTitle).Text);
+        //        Console.WriteLine(card);
+        //    }
+
+        //    return ShoppingCartNamesActual;
+
+            //var listOfProductCards = _productsPage.GetElements(_cartRow);
+            //List<string> ShoppingCartNamesExpected = new List<string>();
+
+            //for (int i = 0; i < ShoppingCartNamesExpected.Count; i++) // method 2
+            //{
+            //    ShoppingCartNamesExpected[i] = listOfProductCards[i].FindElement(_productName).Text;
+            //    Console.WriteLine(ShoppingCartNamesExpected[i]);
+            //}
+
+            //return ShoppingCartNamesExpected;
+        //}
+
+
+        //public List<string> GetShoppingCartNamesActual2(By selector) //Получаем список названий карточе. Пока работает этот метод
+        //{
+            
+        //    var listOfProductCards = _productsPage.GetElements(selector);
+        //    string[] names = new string[listOfProductCards.Count];
+
+        //    for (int i = 0; i < names.Length; i++)
+        //    {
+        //        names[i] = listOfProductCards[i].FindElement(productCard.ProductTitle).Text;
+        //        Console.WriteLine(names[i]);
+        //    }
+
+        //    return names.ToList();
+        //}
+
+
+
+
+
+
+
+
+
+        //public bool IsGoodsAddedCorrect(List<string>Actual, List<string> Expected) // Метод сравнивает массивы
+        //{
+
+        //    if (Actual == Expected)
+        //    {
+        //        Console.WriteLine("true");
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("false");
+        //        return false;
+        //    }
+        //}
     }
 }
