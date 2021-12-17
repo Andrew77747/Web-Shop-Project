@@ -53,6 +53,8 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _music = By.CssSelector("[data-productid='52'] .button-2");
         
         private readonly By _newJewelry = By.CssSelector("[data-productid='71'] .button-2");
+        private readonly By _description = By.CssSelector(".price-value-71");
+        //private readonly By _description = By.CssSelector("//*[contains(text(), 'The best Jewelry for the creative girl of today!')]");
         private readonly By _lengthInput = By.CssSelector(".textbox");
         private readonly By _pendantRadioBatton = By.CssSelector(".option-list #product_attribute_71_11_17_48");
         private readonly By _newJewerlyAdd = By.CssSelector("input#add-to-cart-button-71");
@@ -72,6 +74,10 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _cartRow = By.CssSelector(".cart-item-row");
         private readonly By __shoppingCartLink = By.CssSelector(".ico-cart .cart-label");
         private readonly By _productName = By.CssSelector(".product-name");
+
+        private readonly By _cart5dollars = By.CssSelector(".price-value-1");
+        private readonly By _cart25dollars = By.CssSelector(".price-value-2");
+        private readonly By _cart50dollars = By.CssSelector(".price-value-3");
 
         #endregion
 
@@ -128,21 +134,47 @@ namespace WebShop.Tricentis.Framework.PageObject
 
 
             var selector = $"//*[contains(@class, 'product-grid')]//*[contains(text(), '{goodName}')]";
-                //Console.WriteLine(selector);
-                _driver.FindElement(By.XPath(selector)).Click();
-                _driver.FindElement(_addButton).Click();
-                _driver.Navigate().Back();
-            
-            
+            _driver.FindElement(By.XPath(selector)).Click();//
 
-            //_productsPage.GetElements(book1Card);
-            //this.GetShoppingCartTitles();
-            ////GetShoppingCartNamesActual2(book1Card);
-            //RealList.Add(GetShoppingCartNamesActual2(book1Card).ToString());
-            //_driver.FindElement(book1).Click();
-            //////////wait.WaitUntil(_preloader);
-            //////////RealList.Add(GetShoppingCartNamesActual2(book2Card).ToString());
-            //////////_driver.FindElement(book2).Click();
+            bool IsElementExistsInsideCart(By by)
+            {
+                try
+                {
+                    _driver.FindElement(by);
+                    return true;
+                }
+                catch (NoSuchElementException)
+                {
+                    return false;
+                }
+            }
+
+            if (IsElementExistsInsideCart(_description) == true)
+            {
+                _driver.FindElement(_lengthInput).SendKeys("25");
+                _driver.FindElement(_pendantRadioBatton).Click();
+            }
+
+            else if (IsElementExistsInsideCart(_cart5dollars) == true)
+            {
+                _driver.FindElement(_recipientNameInput).SendKeys("Юра");
+                _driver.FindElement(_recipientEmailInput).SendKeys("salabon@mail.ru");
+            }
+
+            else if (IsElementExistsInsideCart(_cart25dollars) == true)
+            {
+                _driver.FindElement(_recipientNameInput).SendKeys("Саша");
+                _driver.FindElement(_recipientEmailInput).SendKeys("alexander@mail.ru");
+            }
+
+            else if (IsElementExistsInsideCart(_cart50dollars) == true)
+            {
+                _driver.FindElement(_recipientNameInputInCard3).SendKeys("Виктор");
+            }
+
+
+            _driver.FindElement(_addButton).Click();
+            _driver.Navigate().Back();
         }
 
         public void AddPc()
@@ -192,9 +224,9 @@ namespace WebShop.Tricentis.Framework.PageObject
             _driver.FindElement(_lengthInput).SendKeys("25");
             _driver.FindElement(_pendantRadioBatton).Click();
             _driver.FindElement(_newJewerlyAdd).Click();
-            _driver.Navigate().Back();
-            wait.WaitElement(_diamondHeart);
-            _driver.FindElement(_diamondHeart).Click();
+            //_driver.Navigate().Back();
+            //wait.WaitElement(_diamondHeart);
+            //_driver.FindElement(_diamondHeart).Click();
         }
 
         public void AddGifts()
@@ -222,7 +254,7 @@ namespace WebShop.Tricentis.Framework.PageObject
             _driver.FindElement(__shoppingCartLink).Click();
         }
 
-        public List<string> GetShoppingCartTitlesExpected() //Получаем список названий карточе. Пока работает этот метод
+        public List<string> GetShoppingCartTitlesExpected() //Получаем список названий карточек. Пока работает этот метод
         {
             GoToShoppingCartPage();
             var listOfProductCards = _productsPage.GetElements(_cartRow);
@@ -278,22 +310,22 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         //    return ShoppingCartNamesActual;
 
-            //var listOfProductCards = _productsPage.GetElements(_cartRow);
-            //List<string> ShoppingCartNamesExpected = new List<string>();
+        //var listOfProductCards = _productsPage.GetElements(_cartRow);
+        //List<string> ShoppingCartNamesExpected = new List<string>();
 
-            //for (int i = 0; i < ShoppingCartNamesExpected.Count; i++) // method 2
-            //{
-            //    ShoppingCartNamesExpected[i] = listOfProductCards[i].FindElement(_productName).Text;
-            //    Console.WriteLine(ShoppingCartNamesExpected[i]);
-            //}
+        //for (int i = 0; i < ShoppingCartNamesExpected.Count; i++) // method 2
+        //{
+        //    ShoppingCartNamesExpected[i] = listOfProductCards[i].FindElement(_productName).Text;
+        //    Console.WriteLine(ShoppingCartNamesExpected[i]);
+        //}
 
-            //return ShoppingCartNamesExpected;
+        //return ShoppingCartNamesExpected;
         //}
 
 
         //public List<string> GetShoppingCartNamesActual2(By selector) //Получаем список названий карточе. Пока работает этот метод
         //{
-            
+
         //    var listOfProductCards = _productsPage.GetElements(selector);
         //    string[] names = new string[listOfProductCards.Count];
 
@@ -314,19 +346,19 @@ namespace WebShop.Tricentis.Framework.PageObject
 
 
 
-        //public bool IsGoodsAddedCorrect(List<string>Actual, List<string> Expected) // Метод сравнивает массивы
-        //{
+        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected) // Метод сравнивает массивы
+        {
 
-        //    if (Actual == Expected)
-        //    {
-        //        Console.WriteLine("true");
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("false");
-        //        return false;
-        //    }
-        //}
+            if (Actual == Expected)
+            {
+                Console.WriteLine("true");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("false");
+                return false;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Threading;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -22,58 +23,24 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [When(@"I add '(.*)' add to shopping cart")]
         public void WhenIClickOnAddToCart(string good)
         {
-            //CartsToShoppingList.Add(good);
+            CartsToShoppingList.Add(good);
             _shoppingCartPage.AddGood(good);
         }
-
-        //[When(@"I add pc to cart")]
-        //public void WhenIClickOnAddToCartPc()
-        //{
-        //    _shoppingCartPage.AddPc();
-        //}
-
-        //[When(@"I add cell phones to cart")]
-        //public void WhenIClickOnAddToCartCellPhone()
-        //{
-        //    _shoppingCartPage.AddCellPhones();
-        //}
-
-        //[When(@"I add apparel to cart")]
-        //public void GivenIClickOnAddApparel()
-        //{
-        //    _shoppingCartPage.AddApparel();
-        //}
-
-        //[When(@"I add digital downloads to cart")]
-        //public void WhenIAddDigitalDownloadsToCart()
-        //{
-        //    _shoppingCartPage.AddDigitalDownloads();
-        //}
-
-        //[When(@"I add jewelry to cart")]
-        //public void WhenIAddJewelryToCart()
-        //{
-        //    _shoppingCartPage.AddJewelry();
-        //}
-
-        //[When(@"I add gift cards to cart")]
-        //public void WhenIAddGiftCardsToCart()
-        //{
-        //    _shoppingCartPage.AddGifts();
-        //}
 
         [Then(@"I check that all goods are added")]
         public void ThenICheckThatAllGoodsAreAdded()
         {
-            foreach (var VARIABLE in CartsToShoppingList)
-            {
-                Console.WriteLine(CartsToShoppingList.ToString());
-            }
-            CartsToShoppingList.ToString();
+            //CartsToShoppingList.ToArray();
+            //foreach (var VARIABLE in CartsToShoppingList)
+            //{
+            //    Console.WriteLine(VARIABLE);
+            //}
             //_shoppingCartPage.GetShoppingCartTitlesExpected();
             //_shoppingCartPage.GetShoppingCartNamesActual2(_shoppingCartPage.book2Card);
             //_shoppingCartPage.GetShoppingCartNamesExpected();
             //Assert.IsTrue(_shoppingCartPage.IsGoodsAddedCorrect(_shoppingCartPage.RealList, _shoppingCartPage.GetShoppingCartTitlesExpected()));
+
+            Assert.AreEqual(_shoppingCartPage.GetShoppingCartTitlesExpected(), CartsToShoppingList);
         }
 
     }
