@@ -4,6 +4,7 @@ Background: Authorization
 Given I'm on the main page
 When I click login
 And I enter login, password and click login button
+And I check if the card is clear
 Scenario: Add goods to cart
     When I go to the 'Books' page
 	And I add 'Computing and Internet' add to shopping cart

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
@@ -79,6 +80,14 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _cart25dollars = By.CssSelector(".price-value-2");
         private readonly By _cart50dollars = By.CssSelector(".price-value-3");
 
+        private readonly By _addButton = By.CssSelector(".button-1.add-to-cart-button");
+        private readonly By _apparelTitle = By.XPath("//*[contains(@class, 'page-title')]//*[contains(text(), 'Apparel & Shoes')]");
+        private readonly By _dispaly12 = By.XPath("//option[text()='12']");
+        private readonly By _display = By.CssSelector("#products-pagesize");
+
+        private readonly By _checkboxRemove = By.CssSelector(".remove-from-cart [type='checkbox']");
+        private readonly By _updateCart = By.CssSelector("input[name='updatecart']");
+
         #endregion
 
         //public List<IWebElement> listOfShoppingCartsElements;
@@ -96,25 +105,50 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         //    return names;
         //}
-        private readonly By _addButton = By.CssSelector(".button-1.add-to-cart-button");
-        private readonly By _apparelTitle = By.XPath("//*[contains(@class, 'page-title')]//*[contains(text(), 'Apparel & Shoes')]");
-        private readonly By _dispaly12 = By.XPath("//option[text()='12']");
-        private readonly By _display = By.CssSelector("#products-pagesize");
+
+        bool IsElementExists(By by) // - проверяем наличие элемента
+        {
+            try
+            {
+                _driver.FindElement(by);
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public void GET()
+        {
+            _driver.FindElement(_checkboxRemove).Click();
+        }
+        public void IsGoodsAlreadyAdded()
+        {
+            GoToShoppingCartPage();
+
+            if (IsElementExists(_cartRow) == true)
+            {
+                var ListOfCarts = _productsPage.GetElements(_cartRow); //список всех элементов
+
+
+                foreach (var cart in ListOfCarts)
+                {
+                    cart.FindElement(_checkboxRemove).Click();
+                }
+
+                _driver.FindElement(_updateCart).Click();
+
+                //for (int i = 0; i < ListOfCarts.Count; i++) // method 2
+                //{
+                //    ListOfCarts[i].FindElement(_checkboxRemove);
+                //}
+            }
+        }
+
 
         public void AddGood(string goodName)
         {
-            bool IsElementExists(By by)
-            {
-                try
-                {
-                    _driver.FindElement(by);
-                    return true;
-                }
-                catch (NoSuchElementException)
-                {
-                    return false;
-                }
-            }
 
             if(IsElementExists(_desktops) == true)
             {

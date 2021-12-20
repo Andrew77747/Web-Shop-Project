@@ -20,6 +20,13 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _shoppingCartPage = new ShoppingCart(manager.GetDriver());
         }
 
+        [When(@"I check if the card is clear")]
+        public void WhenICheckIfTheCardIsClear()
+        {
+            _shoppingCartPage.IsGoodsAlreadyAdded();
+        }
+
+
         [When(@"I add '(.*)' add to shopping cart")]
         public void WhenIClickOnAddToCart(string good)
         {

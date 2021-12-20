@@ -1,0 +1,76 @@
+Given I'm on the main page
+-> done: BaseSteps.GivenIMOnTheMainPage() (4,7s)
+When I click login
+-> done: AuthorizationSteps.WhenIClickLogin() (0,5s)
+And I enter login, password and click login button
+-> done: AuthorizationSteps.WhenIEnter() (0,8s)
+And I check if the card is clear
+-> done: ShoppingCartSteps.WhenICheckIfTheCardIsClear() (1,5s)
+When I go to the 'Books' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Books')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Books") (1,6s)
+And I add 'Computing and Internet' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Computing and Int...") (2,0s)
+And I add 'Fiction' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Fiction") (1,4s)
+And I go to the 'Computers' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Computers')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Computers") (0,5s)
+And I add 'Build your own cheap computer' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Build your own ch...") (2,5s)
+And I add 'Build your own expensive computer' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Build your own ex...") (1,6s)
+And I go to the 'Electronics' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Electronics')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Electronics") (0,7s)
+And I add 'Smartphone' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Smartphone") (2,3s)
+And I add 'Phone Cover' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Phone Cover") (1,5s)
+And I go to the 'Apparel & Shoes' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Apparel & Shoes')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Apparel & Shoes") (0,7s)
+And I add 'Genuine Leather Handbag with Cell Phone Holder & Many Pockets' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Genuine Leather H...") (2,5s)
+And I add 'Casual Golf Belt' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Casual Golf Belt") (2,0s)
+And I go to the 'Digital downloads' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Digital downloads')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Digital downloads") (0,7s)
+And I add '3rd Album' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("3rd Album") (2,3s)
+And I add 'Music 2' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Music 2") (2,5s)
+And I go to the 'Jewelry' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Jewelry')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Jewelry") (0,7s)
+And I add 'Create Your Own Jewelry' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Create Your Own J...") (2,5s)
+And I add 'Black & White Diamond Heart' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("Black & White Dia...") (2,0s)
+And I go to the 'Gift Cards' page
+//*[contains(@class, 'top-menu')]//*[contains(text(), 'Gift Cards')]
+-> done: BaseSteps.GivenIGoToThePageFromTopMenu("Gift Cards") (1,0s)
+And I add '$5 Virtual Gift Card' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("$5 Virtual Gift Card") (2,5s)
+And I add '$25 Virtual Gift Card' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("$25 Virtual Gift ...") (2,4s)
+And I add '$50 Physical Gift Card' add to shopping cart
+-> done: ShoppingCartSteps.WhenIClickOnAddToCart("$50 Physical Gift...") (2,4s)
+Then I check that all goods are added
+Computing and Internet
+Fiction
+Build your own cheap computer
+Build your own expensive computer
+Smartphone
+Phone Cover
+Genuine Leather Handbag with Cell Phone Holder & Many Pockets
+Casual Golf Belt
+3rd Album
+Music 2
+Create Your Own Jewelry
+Black & White Diamond Heart
+$5 Virtual Gift Card
+$25 Virtual Gift Card
+$50 Physical Gift Card
+-> done: ShoppingCartSteps.ThenICheckThatAllGoodsAreAdded() (1,8s)
