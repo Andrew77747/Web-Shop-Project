@@ -18,7 +18,7 @@ Scenario: Add goods to cart
 	And I go to the 'Apparel & Shoes' page
 	And I add 'Genuine Leather Handbag with Cell Phone Holder & Many Pockets' add to shopping cart
 	And I add 'Casual Golf Belt' add to shopping cart
-	#And I add 'Men's Wrinkle Free Long Sleeve' add to shopping cart - не ищется по локатору
+	#And I add 'Men//'s Wrinkle Free Long Sleeve' add to shopping cart
 	And I go to the 'Digital downloads' page
 	And I add '3rd Album' add to shopping cart
 	And I add 'Music 2' add to shopping cart

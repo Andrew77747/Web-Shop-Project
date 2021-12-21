@@ -21,7 +21,7 @@ namespace WebShop.Tricentis.Framework.Tools
             //if (wait == null)
                 
             wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
-            wait.Until(d => d.FindElement(by));
+            wait.Until(d => d.FindElement(by).Displayed);
 
             //wait.Until(ExpectedConditions.ElementIsVisible(by));
         }

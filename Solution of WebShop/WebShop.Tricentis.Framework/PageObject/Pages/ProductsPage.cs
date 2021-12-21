@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 
 namespace WebShop.Tricentis.Framework.PageObject
@@ -21,6 +24,9 @@ namespace WebShop.Tricentis.Framework.PageObject
         #region Maps of elements
 
         public readonly By _productCards = By.CssSelector(".item-box");
+        public readonly By _addToCart = By.CssSelector(".item-box [data-productid='13'] .button-2");
+        //public readonly By _addToCart = By.CssSelector("[data-productid='71'] .button-2");
+        public readonly By _successMessage = By.CssSelector("[class='content']");
 
         #endregion
 
@@ -217,7 +223,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         //    return names;
         //}
-
+        
         public string[] SortProductCardsNamesDesc()
         {
             var listOfProductCards3 = GetElements(_productCards);
@@ -247,5 +253,78 @@ namespace WebShop.Tricentis.Framework.PageObject
         //    }
         //    return sortDesc;
         //}
+
+        public void ClickAddToCartButton()
+        {
+            Driver.FindElement(_addToCart).Click();
+        }
+
+        //public bool IsSuccessMessageExists()
+        //{
+        //    try
+        //    {
+        //        //return Driver.FindElement(_successMessage).Displayed;
+
+        //        new WebDriverWait(Driver, TimeSpan.FromSeconds(2000)).Until(condition: ExpectedConditions.PresenceOfAllElementsLocatedBy(_successMessage));
+        //        return Driver.FindElement(_successMessage).Displayed;
+        //    }
+        //    catch (NoSuchElementException e)
+        //    {
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
+        bool IsElementExists(By selector) // - проверяем наличие элемента - вынести в отдельный tool
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(3));
+                wait.Until(d => IsElementDisplayed(selector));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+
+        bool IsElementDisplayed(By selector)
+        {
+            try
+            {
+                return Driver.FindElement(selector).Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool IsSuccessMessageExists()
+        {
+
+            return IsElementExists(_successMessage);
+            //try
+            //{
+
+            //    //new WebDriverWait(Driver, TimeSpan.FromSeconds(10))
+            //        //.Until(condition: ExpectedConditions.ElementIsVisible(_successMessage));
+
+            //    WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            //    wait.Until(d => d.FindElement(_successMessage).Displayed); !!!!!!!!!!!!!!!!!!!!!!!!!!
+            //    return true;
+
+            //}
+            //catch (NoSuchElementException)
+            //{
+            //    return false;
+            //}
+        }
+
     }
 }

@@ -106,11 +106,11 @@ namespace WebShop.Tricentis.Framework.PageObject
         //    return names;
         //}
 
-        bool IsElementExists(By by) // - проверяем наличие элемента
+        bool IsElementExists(By selector) // - проверяем наличие элемента
         {
             try
             {
-                _driver.FindElement(by);
+                _driver.FindElement(selector);
                 return true;
             }
             catch (NoSuchElementException)
@@ -119,10 +119,6 @@ namespace WebShop.Tricentis.Framework.PageObject
             }
         }
 
-        public void GET()
-        {
-            _driver.FindElement(_checkboxRemove).Click();
-        }
         public void IsGoodsAlreadyAdded()
         {
             GoToShoppingCartPage();
@@ -168,7 +164,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
 
             var selector = $"//*[contains(@class, 'product-grid')]//*[contains(text(), '{goodName}')]";
-            _driver.FindElement(By.XPath(selector)).Click();//
+            _driver.FindElement(By.XPath(selector)).Click();
 
             bool IsElementExistsInsideCart(By by)
             {
