@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 
 namespace WebShop.Tricentis.Framework.PageObject
@@ -20,46 +23,37 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         #region Maps of elements
 
-        private readonly By _productCards = By.CssSelector(".item-box");
+        public readonly By _productCards = By.CssSelector(".item-box");
+        public readonly By _addToCart = By.CssSelector(".item-box [data-productid='13'] .button-2");
+        public readonly By _successMessage = By.CssSelector("[class='content']");
 
         #endregion
 
-        public List<IWebElement> GetElements(By selector)  // 1.Общий метод, который получает все карточки
+        public List<IWebElement> GetElements(By selector)
         {
-            return Driver.FindElements(selector).ToList(); // - это список всех контейнеров, которые содержат текст
-            //                     =
-            //var x = Driver.FindElements(_productCards).ToList();
-            //return x;
+            return Driver.FindElements(selector).ToList();
         }
         
-        public string[] GetProductCardsNames() //Метод 2. Получаем текст. Отдельный метод, который должен получить текст из тега элемента
+        public string[] GetProductCardsNames()
         {
             var listOfProductCards = GetElements(_productCards);
             string[] names = new string[listOfProductCards.Count];
 
-            for (int i = 0; i < names.Length; i++) // method 1
+            for (int i = 0; i < names.Length; i++)
             {
                 names[i] = listOfProductCards[i].FindElement(productCard.ProductTitle).Text;
                 Console.WriteLine(names[i]);
             }
 
-            //List<string> titles = new List<string>(); // method 2
-
-            //foreach (var card in listOfProductCards)
-            //{
-            //    titles.Add(card.FindElement(productCard.ProductTitle).Text);
-            //}
-
             return names;
-            //return titles.ToArray();
         }
 
-        public string[] GetProductCardsPrice() // Get array of prices from cards
+        public string[] GetProductCardsPrice()
         {
             var listOfProductCards = GetElements(_productCards);
             string[] prices = new string[listOfProductCards.Count];
 
-            for (int i = 0; i < prices.Length; i++) // method 1
+            for (int i = 0; i < prices.Length; i++)
             {
                 prices[i] = listOfProductCards[i].FindElement(productCard.ActualPrice).Text;
                 Console.WriteLine(prices[i]);
@@ -148,104 +142,44 @@ namespace WebShop.Tricentis.Framework.PageObject
             }
         }
 
-
-
-
-        public string[] SortProductCardsNamesAsc() //My double method to check the sorting
+        public void ClickAddToCartButton()
         {
-            //_apparelShoesPage.ShowAllCards();
-            var listOfProductCards2 = GetElements(_productCards);
-            string[] sortNames = new string[listOfProductCards2.Count];
-
-            for (int i = 0; i < sortNames.Length; i++) // method 1
-            {
-                sortNames[i] = listOfProductCards2[i].FindElement(productCard.ProductTitle).Text;
-                //Console.WriteLine(names[i]);
-            }
-            Array.Sort(sortNames);
-            foreach (string s in sortNames)
-            {
-                Console.WriteLine(s);
-            }
-            return sortNames;
+            Driver.FindElement(_addToCart).Click();
         }
 
-
-
-        public bool AreArraySorted(string[] actualArray, bool asc = true) // Salabonchik's method
+        bool IsElementDisplayed(By selector)
         {
-            var expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
-            Array.Sort(expectedArray);
-            if (!asc)
+            try
             {
-                Array.Reverse(expectedArray);
+                return Driver.FindElement(selector).Displayed;
             }
-
-            return actualArray.Equals(expectedArray);
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
-        //public string[] SortProductCardsNamesAsc()
-        //{
-        //    string[] sortAsc = GetProductCardsNames();
-
-        //    Array.Sort(sortAsc);
-        //    foreach (string s in sortAsc)
-        //    {
-        //        Console.WriteLine(s);
-        //    }
-
-        //    return sortAsc;
-        //}
-
-
-
-
-
-
-        //public string[]
-        //    GetProductCardsNamesDesc()
-        //{
-        //    var listOfProductCards = GetElements(_productCards);
-        //    string[] names = new string[listOfProductCards.Count];
-
-        //    for (int i = 0; i < names.Length; i++)
-        //    {
-        //        names[i] = listOfProductCards[i].FindElement(productCard.ProductTitle).Text;
-        //        //Console.WriteLine(names[i]);
-        //    }
-
-        //    return names;
-        //}
-
-        public string[] SortProductCardsNamesDesc()
+        bool IsElementExists(By selector)
         {
-            var listOfProductCards3 = GetElements(_productCards);
-            string[] sortNamesDesc = new string[listOfProductCards3.Count];
-
-            for (int i = 0; i < sortNamesDesc.Length; i++) // method 1
+            try
             {
-                sortNamesDesc[i] = listOfProductCards3[i].FindElement(productCard.ProductTitle).Text;
-                //Console.WriteLine(names[i]);
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(3));
+                wait.Until(d => IsElementDisplayed(selector));
+                return true;
             }
-            Array.Sort(sortNamesDesc);
-            Array.Reverse(sortNamesDesc);
-            foreach (string s in sortNamesDesc)
+            catch (NoSuchElementException)
             {
-                Console.WriteLine(s);
+                return false;
             }
-            return sortNamesDesc;
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
         }
-        //public string[] SortProductCardsNamesDesc()
-        //{
-        //    string[] sortDesc = GetProductCardsNames();
 
-        //    Array.Reverse(sortDesc);
-        //    foreach (string s in sortDesc)
-        //    {
-        //        Console.WriteLine(s);
-        //    }
-        //    return sortDesc;
-        //}
+        public bool IsSuccessMessageExists()
+        {
+            return IsElementExists(_successMessage);
+        }
     }
 }

@@ -60,6 +60,17 @@
           }
         }
       },
+      "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.0.0"
+          }
+        }
+      },
       "Gherkin/19.0.3": {
         "runtime": {
           "lib/netstandard2.0/Gherkin.dll": {
@@ -1295,6 +1306,7 @@
       },
       "WebShop.Tricentis.Framework/1.0.0": {
         "dependencies": {
+          "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "NUnit": "3.13.2",
           "Selenium.Support": "4.1.0",
@@ -1332,6 +1344,13 @@
       "sha512": "sha512-CzIPzdIAFSd2zuLxI+0K9s48Qv3HQDbWiApn9h96j284rHs2bSPrn/PMca3mi4q3xLSEqOp+GUJ6+mXDD9prKg==",
       "path": "bodi/1.5.0",
       "hashPath": "bodi.1.5.0.nupkg.sha512"
+    },
+    "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xc6jVVl5ymgk3ZNWnC/KHxkEup1QpnwYbrwF+NQoCOGERsD8YMlLwmsX4lGhLXCLo/YQTRTIwlKCN9E/doGUNg==",
+      "path": "dotnetseleniumextras.waithelpers/3.11.0",
+      "hashPath": "dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512"
     },
     "Gherkin/19.0.3": {
       "type": "package",

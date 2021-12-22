@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oMdULLE6CM/acHe8Nkx19bemUrsifzKDbUaerQ2uDQuxZFer0azx2/2j+4CuC9LBQAKvQZH3ci3RIWv7HpQpBg==",
+  "dgSpecHash": "cHWaidNxIUqOKQyGRIPrhLh5xSe//gYhxAkLDtELe0GdtkzSUNjm60B4MjsQ3zE9UetUEt4R1uIJODkHJ/4O5g==",
   "success": true,
   "projectFilePath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\WebShop.Tricentis.Framework\\WebShop.Tricentis.Framework.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\andy7\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\andy7\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",

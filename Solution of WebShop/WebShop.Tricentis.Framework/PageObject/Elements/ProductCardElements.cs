@@ -14,6 +14,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         public readonly By ProductTitle = By.CssSelector(".product-title a");
         public readonly By ActualPrice = By.CssSelector(".actual-price");
+        public readonly By ProductTitleRow = By.CssSelector("a.product-name");
 
         #endregion
     }

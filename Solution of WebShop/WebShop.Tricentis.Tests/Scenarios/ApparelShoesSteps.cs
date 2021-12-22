@@ -15,7 +15,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         private readonly ApparelShoesPage _apparelShoesPage;
 
-
         public ApparelShoesSteps(WebDriverManager manager)
         {
             _apparelShoesPage = new ApparelShoesPage(manager.GetDriver());
@@ -70,6 +69,5 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice()), "Array sould be sorted");
         }
-
     }
 }
