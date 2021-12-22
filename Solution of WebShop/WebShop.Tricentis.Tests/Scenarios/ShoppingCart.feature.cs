@@ -124,6 +124,30 @@ this.FeatureBackground();
 #line 9
     testRunner.When("I go to the \'Books\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 10
+ testRunner.And("I add \'Computing and Internet\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 11
+ testRunner.And("I add \'Fiction\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+ testRunner.And("I go to the \'Computers\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 13
+ testRunner.And("I add \'Build your own cheap computer\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("I add \'Build your own expensive computer\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.And("I go to the \'Electronics\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.And("I add \'Smartphone\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.And("I add \'Phone Cover\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
 #line 18
  testRunner.And("I go to the \'Apparel & Shoes\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -135,39 +159,36 @@ this.FeatureBackground();
  testRunner.And("I add \'Casual Golf Belt\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 21
- testRunner.And("I add \'Wrinkle Free Long Sleeve\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 22
  testRunner.And("I go to the \'Digital downloads\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 23
+#line 22
  testRunner.And("I add \'3rd Album\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 23
  testRunner.And("I add \'Music 2\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 24
  testRunner.And("I go to the \'Jewelry\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 25
  testRunner.And("I add \'Create Your Own Jewelry\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 26
  testRunner.And("I add \'Black & White Diamond Heart\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 28
+#line 27
     testRunner.And("I go to the \'Gift Cards\' page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 29
+#line 28
  testRunner.And("I add \'$5 Virtual Gift Card\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 30
+#line 29
  testRunner.And("I add \'$25 Virtual Gift Card\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 30
  testRunner.And("I add \'$50 Physical Gift Card\' add to shopping cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 31
  testRunner.Then("I check that all goods are added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

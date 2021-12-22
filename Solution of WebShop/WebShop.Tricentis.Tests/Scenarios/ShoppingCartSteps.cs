@@ -37,18 +37,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"I check that all goods are added")]
         public void ThenICheckThatAllGoodsAreAdded()
         {
-            //CartsToShoppingList.ToArray();
-            //foreach (var VARIABLE in CartsToShoppingList)
-            //{
-            //    Console.WriteLine(VARIABLE);
-            //}
-            //_shoppingCartPage.GetShoppingCartTitlesExpected();
-            //_shoppingCartPage.GetShoppingCartNamesActual2(_shoppingCartPage.book2Card);
-            //_shoppingCartPage.GetShoppingCartNamesExpected();
-            //Assert.IsTrue(_shoppingCartPage.IsGoodsAddedCorrect(_shoppingCartPage.RealList, _shoppingCartPage.GetShoppingCartTitlesExpected()));
-
             Assert.AreEqual(_shoppingCartPage.GetShoppingCartTitlesExpected(), CartsToShoppingList);
         }
-
     }
 }

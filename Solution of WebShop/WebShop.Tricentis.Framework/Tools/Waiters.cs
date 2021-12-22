@@ -18,24 +18,14 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public void WaitElement(By by)
         {
-            //if (wait == null)
-                
             wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
             wait.Until(d => d.FindElement(by).Displayed);
-
-            //wait.Until(ExpectedConditions.ElementIsVisible(by));
         }
 
         public void WaitUntil(By by)
         {
-            //if (wait == null)
-                
             wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
-            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
-
-            //wait.Until(d => d.FindElement(by));
-            //wait.Until(ExpectedConditions.StalenessOf());
-            //var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
+            wait.Until(d => d.FindElement(by));
         }
     }
 }

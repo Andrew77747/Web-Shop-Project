@@ -30,7 +30,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
             Assert.AreEqual("http://demowebshop.tricentis.com/login", _authorizationPage.GetUrl(), "URLs should be equal");
         }
 
-        //Test2
         [Given(@"I go to the authorization page")]
         public void GivenIMOnTheAuthorizationPage()
         {
@@ -43,7 +42,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _authorizationPage.Authorization();
         }
 
-        //Test 3
         [Given(@"I'am registered")]
         public void GivenIAmRegistered()
         {
@@ -63,7 +61,6 @@ namespace WebShop.Tricentis.Tests.Scenarios
             Assert.AreEqual("http://demowebshop.tricentis.com/", _mainPage.GetUrl(), "URLs should be equal");
         }
 
-        //Test4
         [When(@"I type my request and click the search button")]
         public void WhenITypeMyRequest()
         {

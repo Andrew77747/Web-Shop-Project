@@ -69,6 +69,5 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice()), "Array sould be sorted");
         }
-
     }
 }
