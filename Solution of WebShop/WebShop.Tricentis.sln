@@ -4,16 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Framework", "WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj", "{D043745D-8C58-40FF-814A-F224C3BC766E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{381211FA-0EBE-4B6E-B402-D8336B48CFAA} = {381211FA-0EBE-4B6E-B402-D8336B48CFAA}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Tests", "WebShop.Tricentis.Tests\WebShop.Tricentis.Tests.csproj", "{56CB8187-701A-462A-B6A9-9629175587D7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D043745D-8C58-40FF-814A-F224C3BC766E} = {D043745D-8C58-40FF-814A-F224C3BC766E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{381211FA-0EBE-4B6E-B402-D8336B48CFAA}"
-	ProjectSection(ProjectDependencies) = postProject
-		{56CB8187-701A-462A-B6A9-9629175587D7} = {56CB8187-701A-462A-B6A9-9629175587D7}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{381211FA-0EBE-4B6E-B402-D8336B48CFAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
