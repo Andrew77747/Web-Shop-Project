@@ -10,6 +10,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Tests", "
 		{D043745D-8C58-40FF-814A-F224C3BC766E} = {D043745D-8C58-40FF-814A-F224C3BC766E}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{381211FA-0EBE-4B6E-B402-D8336B48CFAA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56CB8187-701A-462A-B6A9-9629175587D7} = {56CB8187-701A-462A-B6A9-9629175587D7}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381211FA-0EBE-4B6E-B402-D8336B48CFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381211FA-0EBE-4B6E-B402-D8336B48CFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381211FA-0EBE-4B6E-B402-D8336B48CFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381211FA-0EBE-4B6E-B402-D8336B48CFAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
