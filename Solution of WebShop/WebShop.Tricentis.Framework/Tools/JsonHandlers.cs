@@ -1,4 +1,6 @@
 ﻿using System;
+using Infrastructure.Settings;
+using Microsoft.Extensions.Configuration;
 
 namespace WebShop.Tricentis.Framework.Tools
 {
@@ -14,10 +16,7 @@ namespace WebShop.Tricentis.Framework.Tools
             var appsettingsModel = section.Get<Appsettings>();
             model = appsettingsModel;
 
-            Console.WriteLine(model.Url);
-            Console.WriteLine(model.Driver);
-            Console.WriteLine(model.Timeout);
-            Console.WriteLine(model.Driver);
+            Console.WriteLine(model.BaseUrl);
         }
     }
 }
