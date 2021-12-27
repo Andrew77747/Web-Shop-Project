@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Infrastructure.Settings;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Elements;
@@ -15,7 +16,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         public TopMenuSteps(WebDriverManager manager)
         {
             _baseElement = new BaseElement(manager.GetDriver());
-            var page = new MainPage(manager.GetDriver());
+            var page = new MainPage(manager.GetDriver(), new Appsettings());
             _topMenuElements = page.TopMenu;
         }
 
