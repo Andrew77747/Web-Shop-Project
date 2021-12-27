@@ -12,11 +12,14 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
+        private readonly ConfigurationManager _configuration;
 
         public AuthorizationSteps(WebDriverManager manager)
         {
-            _authorizationPage = new AuthorizationPage(manager.GetDriver());
+            _configuration = new ConfigurationManager();
+            _authorizationPage = new AuthorizationPage(manager.GetDriver(), _configuration.GetSettings());
             _mainPage = new MainPage(manager.GetDriver(), new Appsettings());
+                //= new MainPage(manager.GetDriver(), _configuration.GetSettings());
         }
 
         [When(@"I click login")]

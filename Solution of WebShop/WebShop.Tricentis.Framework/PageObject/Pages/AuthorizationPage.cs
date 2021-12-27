@@ -1,14 +1,17 @@
-﻿using OpenQA.Selenium;
+﻿using Infrastructure.Settings;
+using OpenQA.Selenium;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
     public class AuthorizationPage : BasePage
     {
         private readonly IWebDriver _driver;
+        private Appsettings _settings;
 
-        public AuthorizationPage(IWebDriver driver) : base(driver)
+        public AuthorizationPage(IWebDriver driver, Appsettings settings) : base(driver)
         {
             _driver = driver;
+            _settings = settings;
         }
 
         #region Maps of elements
@@ -29,8 +32,8 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void Authorization()
         {
-            _driver.FindElement(_inputEmail).SendKeys("andrew-walker@yandex.ru");
-            _driver.FindElement(_inputPassword).SendKeys("Test2021");
+            _driver.FindElement(_inputEmail).SendKeys(_settings.Login);
+            _driver.FindElement(_inputPassword).SendKeys(_settings.Password);
             _driver.FindElement(_loginButton).Click();
         }
 
