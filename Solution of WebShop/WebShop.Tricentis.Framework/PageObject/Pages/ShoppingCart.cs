@@ -17,6 +17,7 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly Waiters wait;
         private readonly ProductsPage _productsPage;
         protected ProductCardElement productCard;
+        private SeleniumWrapper _wrapper;
 
         public ShoppingCart(IWebDriver driver) : base(driver)
         {
@@ -24,6 +25,7 @@ namespace WebShop.Tricentis.Framework.PageObject
             wait = new Waiters(_driver);
             _productsPage = new ProductsPage(_driver);
             productCard = new ProductCardElement(_driver);
+            _wrapper = new SeleniumWrapper(_driver);
         }
 
 
@@ -80,24 +82,11 @@ namespace WebShop.Tricentis.Framework.PageObject
         #endregion
 
 
-        bool IsElementExists(By selector)
-        {
-            try
-            {
-                _driver.FindElement(selector);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
         public void IsGoodsAlreadyAdded()
         {
             GoToShoppingCartPage();
 
-            if (IsElementExists(_cartRow) == true)
+            if (_wrapper.IsElementExists(_cartRow) == true)
             {
                 var ListOfCarts = _productsPage.GetElements(_cartRow);
 
@@ -115,17 +104,17 @@ namespace WebShop.Tricentis.Framework.PageObject
         public void AddGood(string goodName)
         {
 
-            if(IsElementExists(_desktops) == true)
+            if(_wrapper.IsElementExists(_desktops) == true)
             {
                 _driver.FindElement(_desktops).Click();
             }
 
-            else if (IsElementExists(_cellPhones) == true)
+            else if (_wrapper.IsElementExists(_cellPhones) == true)
             {
                 _driver.FindElement(_cellPhones).Click();
             }
 
-            else if (IsElementExists(_apparelTitle) == true)
+            else if (_wrapper.IsElementExists(_apparelTitle) == true)
             {
                 _driver.FindElement(_display).Click();
                 _driver.FindElement(_dispaly12).Click();

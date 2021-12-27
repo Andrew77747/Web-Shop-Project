@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using WebShop.Tricentis.Framework.PageObject.Elements;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject
 {
@@ -13,12 +14,14 @@ namespace WebShop.Tricentis.Framework.PageObject
     {
         protected new IWebDriver Driver;
         protected ProductCardElement productCard;  //todo Investigate todo
+        private SeleniumWrapper _wrapper;
 
         public ProductsPage(IWebDriver driver) : base(driver)
 
         {
             Driver = driver;
             productCard = new ProductCardElement(driver);
+            _wrapper = new SeleniumWrapper(Driver);
         }
 
         #region Maps of elements
@@ -147,24 +150,12 @@ namespace WebShop.Tricentis.Framework.PageObject
             Driver.FindElement(_addToCart).Click();
         }
 
-        bool IsElementDisplayed(By selector)
-        {
-            try
-            {
-                return Driver.FindElement(selector).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
-
         bool IsElementExists(By selector)
         {
             try
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(3));
-                wait.Until(d => IsElementDisplayed(selector));
+                wait.Until(d => _wrapper.IsElementDisplayed(selector));
                 return true;
             }
             catch (NoSuchElementException)
