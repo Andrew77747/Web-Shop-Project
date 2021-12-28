@@ -39,5 +39,12 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.AreEqual(_shoppingCartPage.GetShoppingCartTitlesExpected(), CartsToShoppingList);
         }
+
+        [Then(@"The good is added twice")]
+        public void ThenTheGoodIsAddedTwice()
+        {
+            string expected = Convert.ToString(2);
+            Assert.AreEqual(expected, _shoppingCartPage.GetValuesOfAttribute());
+        }
     }
 }

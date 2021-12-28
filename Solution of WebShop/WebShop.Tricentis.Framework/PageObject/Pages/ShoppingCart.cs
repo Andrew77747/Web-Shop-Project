@@ -76,6 +76,7 @@ namespace WebShop.Tricentis.Framework.PageObject
         private readonly By _display = By.CssSelector("#products-pagesize");
         private readonly By _checkboxRemove = By.CssSelector(".remove-from-cart [type='checkbox']");
         private readonly By _updateCart = By.CssSelector("input[name='updatecart']");
+        private readonly By _inputAmount = By.CssSelector(".qty-input");
 
         #endregion
 
@@ -110,7 +111,6 @@ namespace WebShop.Tricentis.Framework.PageObject
                 _driver.FindElement(_updateCart).Click();
             }
         }
-
 
         public void AddGood(string goodName)
         {
@@ -209,6 +209,12 @@ namespace WebShop.Tricentis.Framework.PageObject
                 Console.WriteLine("false");
                 return false;
             }
+        }
+
+        public string GetValuesOfAttribute()
+        {
+            GoToShoppingCartPage();
+            return _driver.FindElement(_inputAmount).GetAttribute("value");
         }
     }
 }

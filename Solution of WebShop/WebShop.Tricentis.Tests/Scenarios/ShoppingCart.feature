@@ -28,4 +28,10 @@ Scenario: Add goods to cart
 	And I add '$5 Virtual Gift Card' add to shopping cart
 	And I add '$25 Virtual Gift Card' add to shopping cart
 	And I add '$50 Physical Gift Card' add to shopping cart
-	Then I check that all goods are added
+	#Then I check that all goods are added
+
+Scenario: Add one good to cart twice
+     When I go to the 'Books' page
+	 And I add 'Computing and Internet' add to shopping cart
+	 And I add 'Computing and Internet' add to shopping cart
+	 Then The good is added twice
