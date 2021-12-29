@@ -1,12 +1,14 @@
 ﻿Feature: ShoppingCart
 
 Background: Authorization
-Given I'm on the main page
-When I click login
-And I enter login, password and click login button
-And I check if the card is clear
+	Given I'm on the main page
+	When I click login
+	And I enter login, password and click login button
+	And I go to shopping cart
+	And I check if the card is clear
+@Ignore
 Scenario: Add goods to cart
-    When I go to the 'Books' page
+	When I go to the 'Books' page
 	And I add 'Computing and Internet' add to shopping cart
 	And I add 'Fiction' add to shopping cart
 	And I go to the 'Computers' page
@@ -24,14 +26,15 @@ Scenario: Add goods to cart
 	And I go to the 'Jewelry' page
 	And I add 'Create Your Own Jewelry' add to shopping cart
 	And I add 'Black & White Diamond Heart' add to shopping cart
-    And I go to the 'Gift Cards' page
+	And I go to the 'Gift Cards' page
 	And I add '$5 Virtual Gift Card' add to shopping cart
 	And I add '$25 Virtual Gift Card' add to shopping cart
 	And I add '$50 Physical Gift Card' add to shopping cart
-	#Then I check that all goods are added
+	And I go to shopping cart
+	Then I check that all goods are added
 
 Scenario: Add one good to cart twice
-     When I go to the 'Books' page
-	 And I add 'Computing and Internet' add to shopping cart
-	 And I add 'Computing and Internet' add to shopping cart
-	 Then The good is added twice
+	When I go to the 'Books' page
+	And I add 'Computing and Internet' add to shopping cart
+	And I add 'Computing and Internet' add to shopping cart
+	Then The good is added twice

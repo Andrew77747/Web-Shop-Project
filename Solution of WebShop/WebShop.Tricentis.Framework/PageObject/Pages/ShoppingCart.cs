@@ -96,8 +96,6 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void IsGoodsAlreadyAdded()
         {
-            GoToShoppingCartPage();
-
             if (IsElementExists(_cartRow) == true)
             {
                 var ListOfCarts = _productsPage.GetElements(_cartRow);
@@ -213,7 +211,6 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public string GetValuesOfAttribute()
         {
-            GoToShoppingCartPage();
             return _driver.FindElement(_inputAmount).GetAttribute("value");
         }
     }

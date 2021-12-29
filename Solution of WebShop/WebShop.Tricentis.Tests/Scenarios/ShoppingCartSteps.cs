@@ -26,6 +26,11 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _shoppingCartPage.IsGoodsAlreadyAdded();
         }
 
+        [When(@"I go to shopping cart")]
+        public void OpenShoppingCart()
+        {
+            _shoppingCartPage.GoToShoppingCartPage();
+        }
 
         [When(@"I add '(.*)' add to shopping cart")]
         public void WhenIClickOnAddToCart(string good)
@@ -43,8 +48,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The good is added twice")]
         public void ThenTheGoodIsAddedTwice()
         {
-            string expected = Convert.ToString(2);
-            Assert.AreEqual(expected, _shoppingCartPage.GetValuesOfAttribute());
+            OpenShoppingCart();
+            Assert.AreEqual("2", _shoppingCartPage.GetValuesOfAttribute());
         }
     }
 }
