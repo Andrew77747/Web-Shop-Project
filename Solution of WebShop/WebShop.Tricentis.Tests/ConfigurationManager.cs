@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace WebShop.Tricentis.Tests
 {
-    class ConfigurationManager
+    public class ConfigurationManager
     {
         public Appsettings GetSettings()
         {

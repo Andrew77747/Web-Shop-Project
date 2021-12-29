@@ -10,13 +10,11 @@ namespace WebShop.Tricentis.Tests.Scenarios
     [Binding, Scope(Feature = "TopMenu")]
     public class TopMenuSteps
     {
-        private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(WebDriverManager manager)
+        public TopMenuSteps(WebDriverManager manager, ConfigurationManager configuration)
         {
-            _baseElement = new BaseElement(manager.GetDriver());
-            var page = new MainPage(manager.GetDriver(), new Appsettings());
+            var page = new MainPage(manager.GetDriver(), configuration.GetSettings());
             _topMenuElements = page.TopMenu;
         }
 

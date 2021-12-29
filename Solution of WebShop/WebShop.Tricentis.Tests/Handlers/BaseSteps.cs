@@ -11,12 +11,11 @@ namespace WebShop.Tricentis.Tests.Handlers
     public class BaseSteps
     {
         private readonly MainPage _mainPage;
-        private readonly ConfigurationManager _configuration;
 
         public BaseSteps(WebDriverManager manager)
         {
-            _configuration = new ConfigurationManager();
-            _mainPage = new MainPage(manager.GetDriver(), _configuration.GetSettings());
+            var configuration = new ConfigurationManager();
+            _mainPage = new MainPage(manager.GetDriver(), configuration.GetSettings());
         }
 
         [Given(@"I'm on the main page")]

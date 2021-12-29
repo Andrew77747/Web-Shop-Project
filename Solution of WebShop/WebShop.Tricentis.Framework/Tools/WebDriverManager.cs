@@ -13,13 +13,13 @@ namespace WebShop.Tricentis.Framework.Tools
         public IWebDriver Driver;
 
         public WebDriverWait Wait;
-        public Appsettings _settings;
+        public Appsettings Settings;
 
         public WebDriverManager()
         {
             Driver = GetDriver();
-            _settings = new Appsettings();
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(_settings.Timeout));
+            Settings = new Appsettings();
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Settings.Timeout));
             Driver.Manage().Window.Maximize();
         }
 
