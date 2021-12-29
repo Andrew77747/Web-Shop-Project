@@ -15,9 +15,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         private readonly By _inputEmail = By.CssSelector(".email");
         private readonly By _inputPassword = By.CssSelector(".password");
-        private readonly By _chekboxRememberMe = By.CssSelector("#RememberMe");
         private readonly By _loginButton = By.CssSelector(".login-button");
-        private readonly By _userName = By.CssSelector(".header - .account");
         private readonly By _logOutButton = By.CssSelector(".ico-logout");
 
         #endregion
