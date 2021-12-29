@@ -1,8 +1,6 @@
-﻿using System;
-using OpenQA.Selenium;
-using System.Collections.Generic;
+﻿using OpenQA.Selenium;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class ApparelShoesPage : ProductsPage
 

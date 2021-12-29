@@ -3,6 +3,7 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
+using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Handlers

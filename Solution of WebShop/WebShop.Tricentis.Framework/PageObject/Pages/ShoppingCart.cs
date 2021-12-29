@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class ShoppingCart : BasePage
 

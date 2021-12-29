@@ -1,15 +1,14 @@
 ﻿using OpenQA.Selenium;
-using System;
+using WebShop.Tricentis.Framework.Tools;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class MainPage : BasePage
     {
-        private IWebDriver _driver;
-        
-        public MainPage(IWebDriver driver) : base(driver)
+
+        public MainPage(IWebDriverManager manager) : base(manager)
         {
-            _driver = driver;
+            
         }
 
         #region MapsOfElements
@@ -21,28 +20,28 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void OpenPage()
         {
-            _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com");
+            Wrapper.Navigate().GoToUrl("http://demowebshop.tricentis.com");
         } 
 
         public void ClickLogin()
         {
-            _driver.FindElement(_login).Click();
+            Wrapper.ClickElement(_login);
         }
 
         public string GetUrl()
         {
-            return _driver.Url;
+            return Wrapper.Url;
         }
 
         public void Search()
         {
-            _driver.FindElement(_inputSearch).SendKeys("Simple computer");
-            _driver.FindElement(_searchButton).Click();
+            Wrapper.FindElement(_inputSearch).SendKeys("Simple computer");
+            Wrapper.FindElement(_searchButton).Click();
         }
 
         public void ClickFoundItem()
         {
-            _driver.FindElement(_simpleComputer).Click();
+            Wrapper.FindElement(_simpleComputer).Click();
         }
     }
 }

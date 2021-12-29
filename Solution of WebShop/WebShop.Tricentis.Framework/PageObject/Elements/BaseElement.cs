@@ -1,30 +1,19 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using WebShop.Tricentis.Framework.Tools;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Elements
 {
     public class BaseElement
     {
-        protected IWebDriver Driver;
+        protected SeleniumWrapper Wrapper;
 
-        public BaseElement(IWebDriver driver)
+        public BaseElement(IWebDriverManager manager)
         {
-            Driver = driver;
+            Wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
         }
 
         public bool IsTextExists(string text)
         {
-            try
-            {
-                Driver.FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
-                Console.WriteLine($"Злобный Гурч злобно видит текст {text}");
-                return true;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine($"Злобный Гурч не видит текст {text}. Выпускаем шмеля");
-                return false;
-            }
+            return Wrapper.IsTextExists(text);
         }
     }
 }
