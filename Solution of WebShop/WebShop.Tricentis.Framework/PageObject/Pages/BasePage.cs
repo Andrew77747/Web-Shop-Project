@@ -6,12 +6,17 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class BasePage : BaseElement
     {
-        public TopMenuElement TopMenu;
-        protected new IWebDriver Driver;
+        //public TopMenuElement TopMenu;
+        //protected new IWebDriver Driver;
+
+        //public SeleniumWrapper Wrapper;
+
         protected BasePage(IWebDriverManager manager) : base(manager)
         {
-            Driver = driver;
-            TopMenu = new TopMenuElement(driver);
+            //Wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
+
+            //Driver = _driver;
+            //TopMenu = new TopMenuElement(driver);
         }
     }
 }

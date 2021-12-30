@@ -5,6 +5,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class MainPage : BasePage
     {
+        public string Url = "http://demowebshop.tricentis.com";
 
         public MainPage(IWebDriverManager manager) : base(manager)
         {
@@ -20,17 +21,12 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void OpenPage()
         {
-            Wrapper.Navigate().GoToUrl("http://demowebshop.tricentis.com");
+            Wrapper.Navigate(Url);
         } 
 
         public void ClickLogin()
         {
             Wrapper.ClickElement(_login);
-        }
-
-        public string GetUrl()
-        {
-            return Wrapper.Url;
         }
 
         public void Search()

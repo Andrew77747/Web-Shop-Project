@@ -11,15 +11,16 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class ProductsPage : BasePage
     {
         protected new IWebDriver Driver;
-        protected ProductCardElement productCard;  //todo Investigate todo
-        private SeleniumWrapper _wrapper;
+        protected ProductCardElement productCard;
+        //private SeleniumWrapper _wrapper;
+        //private WebDriverWait _wait;
 
-        public ProductsPage(IWebDriver driver) : base(driver)
+        public ProductsPage(IWebDriverManager manager) : base(manager)
 
         {
             Driver = driver;
-            productCard = new ProductCardElement(driver);
-            _wrapper = new SeleniumWrapper(Driver);
+            productCard = new ProductCardElement(manager);
+            //_wrapper = new SeleniumWrapper(Driver, _wait);
         }
 
         #region Maps of elements
@@ -153,7 +154,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             try
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(3));
-                wait.Until(d => _wrapper.IsElementDisplayed(selector));
+                wait.Until(d => Wrapper.IsElementDisplayed(selector));
                 return true;
             }
             catch (NoSuchElementException)

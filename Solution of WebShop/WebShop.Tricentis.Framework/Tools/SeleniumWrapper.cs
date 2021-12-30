@@ -18,15 +18,45 @@ namespace WebShop.Tricentis.Framework.Tools
 
         #region Actions
 
+        public void NavigateBack()
+        {
+            _driver.Navigate().Back();
+        }
+
+        public void Navigate(string url)
+        {
+            _driver.Navigate().GoToUrl(url);
+        }
+
+        public void TypeAndSend(By by, string text)
+        {
+            _driver.FindElement(by).SendKeys(text);
+        }
+
         public IWebElement FindElement(By by)
         {
             WaitElementDisplayed(by);
             return _driver.FindElement(by);
         }
 
+        //public IWebElement FindElements(By by)
+        //{
+        //    return _driver.FindElements(by);
+        //}
+
         public void ClickElement(By by)
         {
             FindElement(by).Click();
+        }
+
+        public string GetUrl()
+        {
+            return _driver.Url;
+        }
+
+        public string GetUserName()
+        {
+            return _driver.PageSource;
         }
 
         #endregion
@@ -73,6 +103,11 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
+        public string GetValuesOfAttribute(By by)
+        {
+            return _driver.FindElement(by).GetAttribute("value");
+        }
+
         #endregion
 
         #region Waiters
@@ -90,9 +125,6 @@ namespace WebShop.Tricentis.Framework.Tools
 
         #endregion
 
-        public void Navigate()
-        {
-            
-        }
+        
     }
 }

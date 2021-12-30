@@ -9,14 +9,14 @@ namespace WebShop.Tricentis.Framework.Tools
 
     {
         public IWebDriver Driver;
-
         public readonly int Timeout = 10000;
         public WebDriverWait Wait;
 
         public WebDriverManager()
         {
             Driver = GetDriver();
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
+            Wait = GetWaiter();
+            //Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
             Driver.Manage().Window.Maximize();
         }
 
@@ -29,6 +29,17 @@ namespace WebShop.Tricentis.Framework.Tools
 
             Driver = new ChromeDriver();
             return Driver;
+        }
+
+        public WebDriverWait GetWaiter()
+        {
+            if (Wait != null)
+            {
+                return Wait;
+            }
+
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
+            return Wait;
         }
 
         public void Dispose()

@@ -11,9 +11,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
             Wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
         }
 
-        public bool IsTextExists(string text)
-        {
-            return Wrapper.IsTextExists(text);
-        }
+        //public bool IsTextExists(string text)
+        //{
+        //    return Wrapper.IsTextExists(text);
+        //}
     }
 }

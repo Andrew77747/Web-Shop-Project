@@ -8,11 +8,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class TopMenuElement : BaseElement
     {
         private IWebDriver _driver;
-        private readonly Waiters wait;
-        public TopMenuElement(IWebDriver driver) : base(driver)
+        //private readonly Waiters wait;
+        public TopMenuElement(IWebDriverManager manager) : base(manager)
         {
-            _driver = driver;
-            wait = new Waiters(_driver);
+            //_driver = driver;
+            //wait = new Waiters(_driver);
         }
 
         #region MapsOfElements

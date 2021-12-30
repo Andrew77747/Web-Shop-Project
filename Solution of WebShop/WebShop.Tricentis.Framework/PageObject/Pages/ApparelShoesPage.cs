@@ -1,17 +1,17 @@
 ﻿using OpenQA.Selenium;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class ApparelShoesPage : ProductsPage
 
     {
-        public ProductsPage Products;
-        private IWebDriver _driver;
+        //public ProductsPage Products;
+        //private IWebDriver _driver;
 
-        public ApparelShoesPage(IWebDriver driver) : base(driver)
+        public ApparelShoesPage(IWebDriverManager manager) : base(manager)
         {
-            _driver = driver;
-            Products = new ProductsPage(_driver);
+            
         }
 
         #region Maps of elements
@@ -36,34 +36,34 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void ClickSortBYNameAtoZ()
         {
-            _driver.FindElement(_position).Click();
-            _driver.FindElement(_sortByAtoZ).Click();
-            _driver.FindElement(_display).Click();
-            _driver.FindElement(_dispaly12).Click();
+            Wrapper.ClickElement(_position);
+            Wrapper.ClickElement(_sortByAtoZ);
+            Wrapper.ClickElement(_display);
+            Wrapper.ClickElement(_dispaly12);
         }
 
         public void ClickSortBYNameZtoA()
         {
-            _driver.FindElement(_position).Click();
-            _driver.FindElement(_sortByZtoA).Click();
-            _driver.FindElement(_display).Click();
-            _driver.FindElement(_dispaly12).Click();
+            Wrapper.ClickElement(_position);
+            Wrapper.ClickElement(_sortByZtoA);
+            Wrapper.ClickElement(_display);
+            Wrapper.ClickElement(_dispaly12);
         }
 
         public void ClickSortByPriceLowToHigh()
         {
-            _driver.FindElement(_position).Click();
-            _driver.FindElement(_priceLowToHigh).Click();
-            _driver.FindElement(_display).Click();
-            _driver.FindElement(_dispaly12).Click();
+            Wrapper.ClickElement(_position);
+            Wrapper.ClickElement(_priceLowToHigh);
+            Wrapper.ClickElement(_display);
+            Wrapper.ClickElement(_dispaly12);
         }
 
         public void ClickSortByPriceHighToLow()
         {
-            _driver.FindElement(_position).Click();
-            _driver.FindElement(_priceHighToLow).Click();
-            _driver.FindElement(_display).Click();
-            _driver.FindElement(_dispaly12).Click();
+            Wrapper.ClickElement(_position);
+            Wrapper.ClickElement(_priceHighToLow);
+            Wrapper.ClickElement(_display);
+            Wrapper.ClickElement(_dispaly12);
         }
     }
 }

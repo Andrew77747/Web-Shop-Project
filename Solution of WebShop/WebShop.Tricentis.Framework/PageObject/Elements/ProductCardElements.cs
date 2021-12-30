@@ -1,11 +1,12 @@
 ﻿using OpenQA.Selenium;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Elements
 {
     public class ProductCardElement : BaseElement
 
     {
-        public ProductCardElement(IWebDriver driver) : base(driver)
+        public ProductCardElement(IWebDriverManager manager) : base(manager)
         {
 
         }

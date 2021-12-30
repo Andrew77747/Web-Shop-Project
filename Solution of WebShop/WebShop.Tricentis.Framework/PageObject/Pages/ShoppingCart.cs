@@ -11,19 +11,19 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
     {
 
-        private readonly IWebDriver _driver;
-        private readonly Waiters wait;
+        //private readonly IWebDriver _driver;
+        //private readonly Waiters wait;
         private readonly ProductsPage _productsPage;
-        protected ProductCardElement productCard;
-        private SeleniumWrapper _wrapper;
+        //protected ProductCardElement productCard;
+        //private SeleniumWrapper _wrapper;
 
-        public ShoppingCart(IWebDriver driver) : base(driver)
+        public ShoppingCart(IWebDriverManager manager) : base(manager)
         {
-            _driver = driver;
-            wait = new Waiters(_driver);
-            _productsPage = new ProductsPage(_driver);
-            productCard = new ProductCardElement(_driver);
-            _wrapper = new SeleniumWrapper(_driver);
+            //_driver = driver;
+            //wait = new Waiters(_driver);
+            _productsPage = new ProductsPage(manager);
+            //productCard = new ProductCardElement(_driver);
+            //_wrapper = new SeleniumWrapper(_driver);
         }
 
 
@@ -83,9 +83,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void IsGoodsAlreadyAdded()
         {
-            
 
-            if (_wrapper.IsElementExists(_cartRow) == true)
+            if (Wrapper.IsElementExists(_cartRow) == true)
             {
                 var ListOfCarts = _productsPage.GetElements(_cartRow);
 
@@ -95,38 +94,39 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
                     cart.FindElement(_checkboxRemove).Click();
                 }
 
-                _driver.FindElement(_updateCart).Click();
+                Wrapper.ClickElement(_updateCart);
             }
         }
 
         public void AddGood(string goodName)
         {
 
-            if(_wrapper.IsElementExists(_desktops) == true)
+            if(Wrapper.IsElementExists(_desktops) == true)
             {
-                _driver.FindElement(_desktops).Click();
+                Wrapper.ClickElement(_desktops);
             }
 
-            else if (_wrapper.IsElementExists(_cellPhones) == true)
+            else if (Wrapper.IsElementExists(_cellPhones) == true)
             {
-                _driver.FindElement(_cellPhones).Click();
+                Wrapper.ClickElement(_cellPhones);
             }
 
-            else if (_wrapper.IsElementExists(_apparelTitle) == true)
+            else if (Wrapper.IsElementExists(_apparelTitle) == true)
             {
-                _driver.FindElement(_display).Click();
-                _driver.FindElement(_dispaly12).Click();
+                Wrapper.FindElement(_display).Click();
+                Wrapper.FindElement(_dispaly12).Click();
             }
 
 
             var selector = $"//*[contains(@class, 'product-grid')]//*[contains(text(), '{goodName}')]";
-            _driver.FindElement(By.XPath(selector)).Click();
+            //_driver.FindElement(By.XPath(selector)).Click();
+            Wrapper.ClickElement(By.XPath(selector));
 
             bool IsElementExistsInsideCart(By by)
             {
                 try
                 {
-                    _driver.FindElement(by);
+                    Wrapper.FindElement(by);
                     return true;
                 }
                 catch (NoSuchElementException)
@@ -137,35 +137,35 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
             if (IsElementExistsInsideCart(_description) == true)
             {
-                _driver.FindElement(_lengthInput).SendKeys("25");
-                _driver.FindElement(_pendantRadioBatton).Click();
+                Wrapper.TypeAndSend(_lengthInput, "25");
+                Wrapper.ClickElement(_pendantRadioBatton);
             }
 
             else if (IsElementExistsInsideCart(_cart5dollars) == true)
-            {
-                _driver.FindElement(_recipientNameInput).SendKeys("Юра");
-                _driver.FindElement(_recipientEmailInput).SendKeys("salabon@mail.ru");
+            {;
+                Wrapper.TypeAndSend(_recipientNameInput, "Юра");
+                Wrapper.TypeAndSend(_recipientEmailInput, "salabon@mail.ru");
             }
 
             else if (IsElementExistsInsideCart(_cart25dollars) == true)
             {
-                _driver.FindElement(_recipientNameInput).SendKeys("Саша");
-                _driver.FindElement(_recipientEmailInput).SendKeys("alexander@mail.ru");
+                Wrapper.TypeAndSend(_recipientNameInput, "Саша");
+                Wrapper.TypeAndSend(_recipientEmailInput, "alexander@mail.ru");
             }
 
             else if (IsElementExistsInsideCart(_cart50dollars) == true)
             {
-                _driver.FindElement(_recipientNameInputInCard3).SendKeys("Виктор");
+                Wrapper.TypeAndSend(_recipientNameInputInCard3, "Виктор");
             }
 
-            _driver.FindElement(_addButton).Click();
-            _driver.Navigate().Back();
+            Wrapper.ClickElement(_addButton);
+            Wrapper.NavigateBack();
         }
 
 
         public void GoToShoppingCartPage()
         {
-            _driver.FindElement(__shoppingCartLink).Click();
+            Wrapper.ClickElement(__shoppingCartLink);
         }
 
         public List<string> GetShoppingCartTitlesExpected()
@@ -198,9 +198,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             }
         }
 
-        public string GetValuesOfAttribute()
+        public string ValuesOfAttribute()
         {
-            return _driver.FindElement(_inputAmount).GetAttribute("value");
+            return Wrapper.GetValuesOfAttribute(_inputAmount);
         }
     }
 }
