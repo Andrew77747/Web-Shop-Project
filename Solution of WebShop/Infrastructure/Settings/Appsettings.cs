@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Infrastructure.Settings
+﻿namespace Infrastructure.Settings
 {
     public class Appsettings
     {

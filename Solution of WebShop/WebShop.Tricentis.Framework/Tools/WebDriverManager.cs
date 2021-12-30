@@ -1,9 +1,8 @@
-﻿using System;
-using Infrastructure.Settings;
-using Microsoft.Extensions.Configuration;
+﻿using Infrastructure.Settings;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace WebShop.Tricentis.Framework.Tools
 {

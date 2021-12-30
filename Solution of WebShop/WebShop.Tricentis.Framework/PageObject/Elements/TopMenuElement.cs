@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using System;
 
 namespace WebShop.Tricentis.Framework.PageObject.Elements
 {
@@ -28,6 +27,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
                 Actions action = new Actions(_driver);
                 action.MoveToElement(_driver.FindElement(By.XPath(selector))).Build().Perform();
             }
+
             catch (NoSuchElementException e)
             {
                 Console.WriteLine("Хуй тебе, а не элемент! Ошибка: "+ e);
@@ -41,7 +41,6 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
                 var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
                 Console.WriteLine(selector);
                 _driver.FindElement(By.XPath(selector)).Click();
-
             }
             catch (NoSuchElementException e)
             {

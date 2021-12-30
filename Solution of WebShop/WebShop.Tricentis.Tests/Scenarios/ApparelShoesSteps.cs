@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using WebShop.Tricentis.Framework.PageObject;
+using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
@@ -25,7 +21,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [When(@"I choose sorting")]
         public void WhenIChooseSorting()
         {
-            _apparelShoesPage.ClickSortBYNameAtoZ();
+            _apparelShoesPage.ClickSortByNameAtoZ();
         }
 
         [Then(@"The sorting is right")]
@@ -34,11 +30,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
             Assert.IsTrue(_apparelShoesPage.IsSortingAskRight(_apparelShoesPage.GetProductCardsNames()), "Array should be sorted");
         }
 
-
         [When(@"I choose sorting desc")]
         public void WhenIChooseSortingDesc()
         {
-            _apparelShoesPage.ClickSortBYNameZtoA();
+            _apparelShoesPage.ClickSortByNameZtoA();
         }
 
         [Then(@"The sorting desc is right")]
@@ -70,6 +65,5 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice()), "Array sould be sorted");
         }
-
     }
 }
