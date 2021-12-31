@@ -11,14 +11,14 @@ using WebShop.Tricentis.Framework.Tools;
 namespace WebShop.Tricentis.Tests.Scenarios
 {
     [Binding, Scope(Feature = "ShoppingCart")]
-    public class ShoppingCartSteps
+    public class ShoppingCartSteps : BasePage
     {
         private readonly ShoppingCart _shoppingCartPage;
         public List<string> CartsToShoppingList = new List<string>();
 
-        public ShoppingCartSteps(WebDriverManager manager)
+        public ShoppingCartSteps(IWebDriverManager manager) : base(manager)
         {
-            _shoppingCartPage = new ShoppingCart(manager.GetDriver());
+            _shoppingCartPage = new ShoppingCart(manager);
         }
 
         [When(@"I check if the card is clear")]

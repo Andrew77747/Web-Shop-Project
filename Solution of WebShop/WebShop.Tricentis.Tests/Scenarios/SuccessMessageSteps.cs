@@ -14,7 +14,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         public SuccessMessageSteps(WebDriverManager manager)
         {
-            _productPage = new ProductsPage(manager.GetDriver());
+            _productPage = new ProductsPage(manager);
         }
 
         [When(@"I add book to cart")]

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
@@ -6,12 +7,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class ApparelShoesPage : ProductsPage
 
     {
-        //public ProductsPage Products;
-        //private IWebDriver _driver;
+        public IWebDriverManager driver;
 
         public ApparelShoesPage(IWebDriverManager manager) : base(manager)
         {
-            
+            driver = new WebDriverManager();
         }
 
         #region Maps of elements
@@ -33,13 +33,42 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         #endregion
 
-
         public void ClickSortBYNameAtoZ()
         {
             Wrapper.ClickElement(_position);
             Wrapper.ClickElement(_sortByAtoZ);
             Wrapper.ClickElement(_display);
             Wrapper.ClickElement(_dispaly12);
+        }
+
+        public bool IsSortingAskRight(string[] actualArray)
+        {
+            return Wrapper.IsSortingAskRight(actualArray);
+        }
+
+        public bool IsSortingDescRight(string[] actualArray)
+        {
+            return Wrapper.IsSortingDescRight(actualArray);
+        }
+
+        public string[] GetProductCardsNames(By selector, By selector2)
+        {
+            return Wrapper.GetProductCardsNames(selector, selector2);
+        }
+
+        public bool IsSortingByPriceAskRight(string[] actualArray)
+        {
+            return Wrapper.IsSortingByPriceAskRight(actualArray);
+        }
+
+        public bool IsSortingByPriceDescRight(string[] actualArray)
+        {
+            return Wrapper.IsSortingByPriceDescRight(actualArray);
+        }
+
+        public string[] GetProductCardsPrice(By selector, By selector2)
+        {
+            return Wrapper.GetProductCardsPrice(selector, selector);
         }
 
         public void ClickSortBYNameZtoA()

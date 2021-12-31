@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -15,8 +14,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         public AuthorizationSteps(WebDriverManager manager)
         {
-            _authorizationPage = new AuthorizationPage(manager.GetDriver());
-            _mainPage = new MainPage(manager.GetDriver());
+            _authorizationPage = new AuthorizationPage(manager);
+            _mainPage = new MainPage(manager);
         }
 
         [When(@"I click login")]

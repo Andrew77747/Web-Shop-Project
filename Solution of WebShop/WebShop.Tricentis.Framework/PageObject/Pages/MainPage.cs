@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
@@ -17,6 +18,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _inputSearch = By.CssSelector(".search-box-text");
         private readonly By _searchButton = By.CssSelector(".search-box .button-1");
         private readonly By _simpleComputer = By.CssSelector(".product-title");
+        public readonly TopMenuElement TopMenu;
         #endregion
 
         public void OpenPage()
@@ -38,6 +40,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public void ClickFoundItem()
         {
             Wrapper.FindElement(_simpleComputer).Click();
+        }
+
+        public string GetUrl()
+        {
+            return Wrapper.GetUrl();
         }
     }
 }

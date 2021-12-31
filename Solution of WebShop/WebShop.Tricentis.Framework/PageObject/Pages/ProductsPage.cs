@@ -10,17 +10,12 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class ProductsPage : BasePage
     {
-        protected new IWebDriver Driver;
-        protected ProductCardElement productCard;
-        //private SeleniumWrapper _wrapper;
-        //private WebDriverWait _wait;
+        public ProductCardElement productCard;
 
         public ProductsPage(IWebDriverManager manager) : base(manager)
 
         {
-            Driver = driver;
             productCard = new ProductCardElement(manager);
-            //_wrapper = new SeleniumWrapper(Driver, _wait);
         }
 
         #region Maps of elements
@@ -33,143 +28,27 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public List<IWebElement> GetElements(By selector)
         {
-            return Driver.FindElements(selector).ToList();
-        }
-        
-        public string[] GetProductCardsNames()
-        {
-            var listOfProductCards = GetElements(_productCards);
-            string[] names = new string[listOfProductCards.Count];
-
-            for (int i = 0; i < names.Length; i++)
-            {
-                names[i] = listOfProductCards[i].FindElement(productCard.ProductTitle).Text;
-                Console.WriteLine(names[i]);
-            }
-
-            return names;
+            return Wrapper.GetElements(selector);
         }
 
-        public string[] GetProductCardsPrice()
+        public string[] GetProductCardsNames(By selector, By selector2)
         {
-            var listOfProductCards = GetElements(_productCards);
-            string[] prices = new string[listOfProductCards.Count];
-
-            for (int i = 0; i < prices.Length; i++)
-            {
-                prices[i] = listOfProductCards[i].FindElement(productCard.ActualPrice).Text;
-                Console.WriteLine(prices[i]);
-            }
-
-            return prices;
+            return Wrapper.GetProductCardsNames(selector, selector2);
         }
 
-        public bool IsSortingAskRight(string[] actualArray)
+        public string[] GetProductCardsPrice(By selector, By selector2)
         {
-
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
-
-            Array.Sort(expectedArray);
-
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
-        }
-
-        public bool IsSortingDescRight(string[] actualArray)
-        {
-
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
-
-            Array.Sort(expectedArray); 
-            Array.Reverse(expectedArray);
-
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
-        }
-
-        public bool IsSortingByPriceAskRight(string[] actualArray)
-        {
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
-
-            Array.Sort(expectedArray);
-
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
-        }
-
-        public bool IsSortingByPriceDescRight(string[] actualArray)
-        {
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
-
-            Array.Sort(expectedArray);
-            Array.Reverse(expectedArray);
-
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
+            return Wrapper.GetProductCardsPrice(selector, selector2);
         }
 
         public void ClickAddToCartButton()
         {
-            Driver.FindElement(_addToCart).Click();
-        }
-
-        bool IsElementExists(By selector)
-        {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(3));
-                wait.Until(d => Wrapper.IsElementDisplayed(selector));
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (WebDriverTimeoutException)
-            {
-                return false;
-            }
+            Wrapper.ClickElement(_addToCart);
         }
 
         public bool IsSuccessMessageExists()
         {
-            return IsElementExists(_successMessage);
+            return Wrapper.IsElementExistsWithWaiter(_successMessage);
         }
     }
 }

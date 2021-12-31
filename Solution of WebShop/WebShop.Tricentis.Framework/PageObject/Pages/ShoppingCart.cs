@@ -11,19 +11,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
     {
 
-        //private readonly IWebDriver _driver;
-        //private readonly Waiters wait;
         private readonly ProductsPage _productsPage;
-        //protected ProductCardElement productCard;
-        //private SeleniumWrapper _wrapper;
 
         public ShoppingCart(IWebDriverManager manager) : base(manager)
         {
-            //_driver = driver;
-            //wait = new Waiters(_driver);
             _productsPage = new ProductsPage(manager);
-            //productCard = new ProductCardElement(_driver);
-            //_wrapper = new SeleniumWrapper(_driver);
         }
 
 
@@ -86,7 +78,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
             if (Wrapper.IsElementExists(_cartRow) == true)
             {
-                var ListOfCarts = _productsPage.GetElements(_cartRow);
+                var ListOfCarts = Wrapper.GetElements(_cartRow);
 
 
                 foreach (var cart in ListOfCarts)
@@ -119,41 +111,28 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
 
             var selector = $"//*[contains(@class, 'product-grid')]//*[contains(text(), '{goodName}')]";
-            //_driver.FindElement(By.XPath(selector)).Click();
             Wrapper.ClickElement(By.XPath(selector));
 
-            bool IsElementExistsInsideCart(By by)
-            {
-                try
-                {
-                    Wrapper.FindElement(by);
-                    return true;
-                }
-                catch (NoSuchElementException)
-                {
-                    return false;
-                }
-            }
 
-            if (IsElementExistsInsideCart(_description) == true)
+            if (Wrapper.IsElementExists(_description) == true)
             {
                 Wrapper.TypeAndSend(_lengthInput, "25");
                 Wrapper.ClickElement(_pendantRadioBatton);
             }
 
-            else if (IsElementExistsInsideCart(_cart5dollars) == true)
+            else if (Wrapper.IsElementExists(_cart5dollars) == true)
             {;
                 Wrapper.TypeAndSend(_recipientNameInput, "Юра");
                 Wrapper.TypeAndSend(_recipientEmailInput, "salabon@mail.ru");
             }
 
-            else if (IsElementExistsInsideCart(_cart25dollars) == true)
+            else if (Wrapper.IsElementExists(_cart25dollars) == true)
             {
                 Wrapper.TypeAndSend(_recipientNameInput, "Саша");
                 Wrapper.TypeAndSend(_recipientEmailInput, "alexander@mail.ru");
             }
 
-            else if (IsElementExistsInsideCart(_cart50dollars) == true)
+            else if (Wrapper.IsElementExists(_cart50dollars) == true)
             {
                 Wrapper.TypeAndSend(_recipientNameInputInCard3, "Виктор");
             }
@@ -161,7 +140,6 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             Wrapper.ClickElement(_addButton);
             Wrapper.NavigateBack();
         }
-
 
         public void GoToShoppingCartPage()
         {
@@ -171,7 +149,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public List<string> GetShoppingCartTitlesExpected()
         {
             GoToShoppingCartPage();
-            var listOfProductCards = _productsPage.GetElements(_cartRow);
+            var listOfProductCards = Wrapper.GetElements(_cartRow);
             string[] names = new string[listOfProductCards.Count];
 
             for (int i = 0; i < names.Length; i++)
@@ -185,20 +163,10 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected)
         {
-
-            if (Actual == Expected)
-            {
-                Console.WriteLine("true");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("false");
-                return false;
-            }
+            return Wrapper.IsGoodsAddedCorrect(Actual, Expected);
         }
 
-        public string ValuesOfAttribute()
+        public string GetValuesOfAttribute()
         {
             return Wrapper.GetValuesOfAttribute(_inputAmount);
         }

@@ -7,61 +7,31 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 {
     public class TopMenuElement : BaseElement
     {
-        private IWebDriver _driver;
-        //private readonly Waiters wait;
+
         public TopMenuElement(IWebDriverManager manager) : base(manager)
         {
-            //_driver = driver;
-            //wait = new Waiters(_driver);
+            
         }
 
         #region MapsOfElements
 
-        private readonly By _dropdown = By.CssSelector(".sublist.firstLevel.active");
+        public readonly By _dropdown = By.CssSelector(".sublist.firstLevel.active");
 
         #endregion
 
         public void HoverMouse(string buttonName)
         {
-            try
-            {
-                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
-                Console.WriteLine(selector);
-                Actions action = new Actions(_driver);
-                action.MoveToElement(_driver.FindElement(By.XPath(selector))).Build().Perform();
-            }
-            catch (NoSuchElementException e)
-            {
-                Console.WriteLine("Хуй тебе, а не элемент! Ошибка: "+ e);
-            }
+            Wrapper.HoverMouse(buttonName);
         }
 
         public void SelectMenu(string buttonName)
         {
-            try
-            {
-                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
-                Console.WriteLine(selector);
-                _driver.FindElement(By.XPath(selector)).Click();
-
-            }
-            catch (NoSuchElementException e)
-            {
-                Console.WriteLine($"Element was not found. {Environment.NewLine} Error: " + e);
-            }
+            Wrapper.SelectMenu(buttonName);
         }
 
-        public bool IsDropdownVisible()
+        public bool IsDropdownVisible(By selector)
         {
-            try
-            {
-                return _driver.FindElement(_dropdown).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Здесь нет дропдауна");
-                return false;
-            }
+            return Wrapper.IsDropdownVisible(selector);
         }
     }
 }

@@ -13,10 +13,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(WebDriverManager manager)
+        public TopMenuSteps(IWebDriverManager manager)
         {
-            _baseElement = new BaseElement(manager.GetDriver());
-            var page = new MainPage(manager.GetDriver());
+            _baseElement = new BaseElement(manager);
+            var page = new MainPage(manager);
             _topMenuElements = page.TopMenu;
         }
 
@@ -29,13 +29,13 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"I see dropdown")]
         public void WhenISeeDropdown()
         {
-            Assert.IsTrue(_topMenuElements.IsDropdownVisible(), "Dropdown should be visible");
+            Assert.IsTrue(_topMenuElements.IsDropdownVisible(_topMenuElements._dropdown), "Dropdown should be visible");
         }
 
         [Then(@"I don't see dropdown")]
         public void ThenIDonTSeeDropdown()
         {
-            Assert.IsFalse(_topMenuElements.IsDropdownVisible(), "Dropdown shouldn't be visible");
+            Assert.IsFalse(_topMenuElements.IsDropdownVisible(_topMenuElements._dropdown), "Dropdown shouldn't be visible");
         }
     }
 }

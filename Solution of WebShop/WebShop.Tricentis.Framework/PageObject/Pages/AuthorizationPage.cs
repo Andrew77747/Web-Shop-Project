@@ -5,8 +5,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class AuthorizationPage : BasePage
     {
-        //private readonly IWebDriver _driver;
-
+        
         public AuthorizationPage(IWebDriverManager manager) : base(manager)
         {
             
@@ -31,6 +30,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public void ClickLogout()
         {
             Wrapper.ClickElement(_logOutButton);
+        }
+
+        public string GetUrl()
+        {
+            return Wrapper.GetUrl();
         }
     }
 }
