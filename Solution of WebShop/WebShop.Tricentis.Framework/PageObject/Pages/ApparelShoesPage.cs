@@ -9,7 +9,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     {
         public IWebDriverManager driver;
 
-        public ApparelShoesPage(IWebDriverManager manager) : base(manager)
+        public ApparelShoesPage(IWebDriver manager) : base(manager)
         {
             driver = new WebDriverManager();
         }

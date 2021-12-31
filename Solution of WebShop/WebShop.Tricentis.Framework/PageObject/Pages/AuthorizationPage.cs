@@ -6,7 +6,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class AuthorizationPage : BasePage
     {
         
-        public AuthorizationPage(IWebDriverManager manager) : base(manager)
+        public AuthorizationPage(IWebDriver manager) : base(manager)
         {
             
         }

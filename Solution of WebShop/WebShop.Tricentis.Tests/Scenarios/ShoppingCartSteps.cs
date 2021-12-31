@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Threading;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -16,7 +17,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly ShoppingCart _shoppingCartPage;
         public List<string> CartsToShoppingList = new List<string>();
 
-        public ShoppingCartSteps(IWebDriverManager manager) : base(manager)
+        public ShoppingCartSteps(IWebDriver manager) : base(manager)
         {
             _shoppingCartPage = new ShoppingCart(manager);
         }

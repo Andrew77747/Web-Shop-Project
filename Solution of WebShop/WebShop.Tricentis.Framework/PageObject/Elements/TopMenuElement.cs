@@ -8,7 +8,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class TopMenuElement : BaseElement
     {
 
-        public TopMenuElement(IWebDriverManager manager) : base(manager)
+        public TopMenuElement(IWebDriver manager) : base(manager)
         {
             
         }

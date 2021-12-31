@@ -6,7 +6,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class ProductCardElement : BaseElement
 
     {
-        public ProductCardElement(IWebDriverManager manager) : base(manager)
+        public ProductCardElement(IWebDriver manager) : base(manager)
         {
 
         }

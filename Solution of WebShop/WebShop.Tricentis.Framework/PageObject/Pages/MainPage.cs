@@ -8,7 +8,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     {
         public string Url = "http://demowebshop.tricentis.com";
 
-        public MainPage(IWebDriverManager manager) : base(manager)
+        public MainPage(IWebDriver manager) : base(manager)
         {
             
         }

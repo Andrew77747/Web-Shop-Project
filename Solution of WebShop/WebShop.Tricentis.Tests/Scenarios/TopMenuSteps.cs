@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Elements;
@@ -13,7 +14,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(IWebDriverManager manager)
+        public TopMenuSteps(IWebDriver manager)
         {
             _baseElement = new BaseElement(manager);
             var page = new MainPage(manager);

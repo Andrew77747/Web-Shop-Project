@@ -13,7 +13,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         private readonly ProductsPage _productsPage;
 
-        public ShoppingCart(IWebDriverManager manager) : base(manager)
+        public ShoppingCart(IWebDriver manager) : base(manager)
         {
             _productsPage = new ProductsPage(manager);
         }

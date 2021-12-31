@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
@@ -12,7 +13,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps(WebDriverManager manager)
+        public AuthorizationSteps(IWebDriver manager)
         {
             _authorizationPage = new AuthorizationPage(manager);
             _mainPage = new MainPage(manager);

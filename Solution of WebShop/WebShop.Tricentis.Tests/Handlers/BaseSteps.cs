@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -15,10 +16,10 @@ namespace WebShop.Tricentis.Tests.Handlers
         private readonly TopMenuElement _topMenu;
 
 
-        public BaseSteps(IWebDriverManager manager)
+        public BaseSteps(IWebDriver manager)
         {
             _mainPage = new MainPage(manager);
-            _wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
+            //_wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             //_shoppingCart = new ShoppingCart(manager.GetDriver());
         }
 

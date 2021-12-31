@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -12,7 +13,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         private readonly ProductsPage _productPage;
 
-        public SuccessMessageSteps(WebDriverManager manager)
+        public SuccessMessageSteps(IWebDriver manager)
         {
             _productPage = new ProductsPage(manager);
         }
