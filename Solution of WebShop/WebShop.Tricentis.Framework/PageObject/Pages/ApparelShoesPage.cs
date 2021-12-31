@@ -7,11 +7,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class ApparelShoesPage : ProductsPage
 
     {
-        public IWebDriverManager driver;
+        public IWebDriver driver;
 
         public ApparelShoesPage(IWebDriver manager) : base(manager)
         {
-            driver = new WebDriverManager();
+            driver = manager;
         }
 
         #region Maps of elements
