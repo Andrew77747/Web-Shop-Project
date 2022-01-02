@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Elements
@@ -6,7 +7,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class ProductCardElement : BaseElement
 
     {
-        public ProductCardElement(IWebDriver manager) : base(manager)
+        public ProductCardElement(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
 
         }

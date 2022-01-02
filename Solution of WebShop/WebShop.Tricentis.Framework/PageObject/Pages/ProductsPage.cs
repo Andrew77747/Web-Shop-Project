@@ -12,10 +12,10 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     {
         public ProductCardElement productCard;
 
-        public ProductsPage(IWebDriver manager) : base(manager)
+        public ProductsPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
 
         {
-            productCard = new ProductCardElement(manager);
+            productCard = new ProductCardElement(driver, wait);
         }
 
         #region Maps of elements

@@ -12,16 +12,18 @@ namespace WebShop.Tricentis.Tests.Handlers
     {
         private readonly MainPage _mainPage;
         private readonly ShoppingCart _shoppingCart;
-        private readonly SeleniumWrapper _wrapper;
+        //private readonly SeleniumWrapper _wrapper;
         private readonly TopMenuElement _topMenu;
 
 
-        public BaseSteps(IWebDriver manager)
+        public BaseSteps(WebDriverManager manager)
         {
-            _mainPage = new MainPage(manager);
+            _mainPage = new MainPage(manager.GetDriver(), manager.GetWaiter());
+            _topMenu = new TopMenuElement(manager.GetDriver(), manager.GetWaiter());
             //_wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             //_shoppingCart = new ShoppingCart(manager.GetDriver());
         }
+
 
         [Given(@"I'm on the main page")]
         public void GivenIMOnTheMainPage()
@@ -32,13 +34,13 @@ namespace WebShop.Tricentis.Tests.Handlers
         [Then(@"I see '(.*)'")]
         public void ThenISee(string text)
         {
-            Assert.IsTrue(_wrapper.IsTextExists(text), $"{text} is not found");
+            Assert.IsTrue(_mainPage.IsTextExists(text), $"{text} is not found");
         }
 
         [Then(@"I don't see '(.*)'")]
         public void ThenIDontSee(string text)
         {
-            Assert.IsFalse(_wrapper.IsTextExists(text), $"{text} is found");
+            Assert.IsFalse(_mainPage.IsTextExists(text), $"{text} is found");
         }
 
         [Given(@"I go to the '(.*)' page")][When(@"I go to the '(.*)' page")]

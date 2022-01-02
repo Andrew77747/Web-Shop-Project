@@ -8,7 +8,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class BasePage : BaseElement
     {
 
-        protected BasePage(IWebDriver manager) : base(manager)
+        protected BasePage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
             
         }

@@ -1,14 +1,15 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class AuthorizationPage : BasePage
     {
-        
-        public AuthorizationPage(IWebDriver manager) : base(manager)
+        //private IWebDriver driver;
+        public AuthorizationPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
-            
+            //driver = manager;
         }
 
         #region Maps of elements

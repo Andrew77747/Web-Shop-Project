@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
@@ -13,10 +14,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps(IWebDriver manager)
+        public AuthorizationSteps(WebDriverManager manager, WebDriverWait wait)
         {
-            _authorizationPage = new AuthorizationPage(manager);
-            _mainPage = new MainPage(manager);
+            _authorizationPage = new AuthorizationPage(manager.GetDriver(), manager.GetWaiter());
+            _mainPage = new MainPage(manager.GetDriver(), manager.GetWaiter());
         }
 
         [When(@"I click login")]

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -8,7 +9,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     {
         public string Url = "http://demowebshop.tricentis.com";
 
-        public MainPage(IWebDriver manager) : base(manager)
+        public MainPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
             
         }
@@ -45,6 +46,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public string GetUrl()
         {
             return Wrapper.GetUrl();
+        }
+
+        public bool IsTextExists(string text)
+        {
+            return Wrapper.IsTextExists(text);
         }
     }
 }

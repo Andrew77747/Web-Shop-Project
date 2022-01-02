@@ -8,9 +8,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     {
         protected SeleniumWrapper Wrapper;
 
-        public BaseElement(IWebDriver manager)
+        public BaseElement(IWebDriver driver, WebDriverWait wait)
         {
-            //Wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
+            Wrapper = new SeleniumWrapper(driver, wait);
         }
 
         //public bool IsTextExists(string text)

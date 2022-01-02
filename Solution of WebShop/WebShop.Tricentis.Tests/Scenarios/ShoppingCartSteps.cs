@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -12,14 +13,14 @@ using WebShop.Tricentis.Framework.Tools;
 namespace WebShop.Tricentis.Tests.Scenarios
 {
     [Binding, Scope(Feature = "ShoppingCart")]
-    public class ShoppingCartSteps : BasePage
+    public class ShoppingCartSteps
     {
         private readonly ShoppingCart _shoppingCartPage;
         public List<string> CartsToShoppingList = new List<string>();
 
-        public ShoppingCartSteps(IWebDriver manager) : base(manager)
+        public ShoppingCartSteps(WebDriverManager manager, WebDriverWait wait)
         {
-            _shoppingCartPage = new ShoppingCart(manager);
+            _shoppingCartPage = new ShoppingCart(manager.GetDriver(), manager.GetWaiter());
         }
 
         [When(@"I check if the card is clear")]

@@ -4,14 +4,14 @@ using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
-    public class ApparelShoesPage : ProductsPage
+    public class ApparelShoesPage : BasePage
 
     {
-        public IWebDriver driver;
+        //public IWebDriver driver;
 
-        public ApparelShoesPage(IWebDriver manager) : base(manager)
+        public ApparelShoesPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
-            driver = manager;
+            //driver = manager;
         }
 
         #region Maps of elements

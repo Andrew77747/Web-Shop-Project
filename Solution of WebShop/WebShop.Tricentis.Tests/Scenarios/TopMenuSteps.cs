@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Elements;
@@ -14,10 +15,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(IWebDriver manager)
+        public TopMenuSteps(WebDriverManager manager, WebDriverWait wait)
         {
-            _baseElement = new BaseElement(manager);
-            var page = new MainPage(manager);
+            _baseElement = new BaseElement(manager.GetDriver(), manager.GetWaiter());
+            var page = new MainPage(manager.GetDriver(), manager.GetWaiter());
             _topMenuElements = page.TopMenu;
         }
 

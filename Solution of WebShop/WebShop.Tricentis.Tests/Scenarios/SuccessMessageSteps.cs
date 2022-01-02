@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -13,9 +14,9 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         private readonly ProductsPage _productPage;
 
-        public SuccessMessageSteps(IWebDriver manager)
+        public SuccessMessageSteps(WebDriverManager manager, WebDriverWait wait)
         {
-            _productPage = new ProductsPage(manager);
+            _productPage = new ProductsPage(manager.GetDriver(), manager.GetWaiter());
         }
 
         [When(@"I add book to cart")]

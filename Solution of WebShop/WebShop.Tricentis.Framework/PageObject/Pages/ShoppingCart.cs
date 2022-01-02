@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -13,9 +14,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         private readonly ProductsPage _productsPage;
 
-        public ShoppingCart(IWebDriver manager) : base(manager)
+        public ShoppingCart(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
         {
-            _productsPage = new ProductsPage(manager);
+            _productsPage = new ProductsPage(driver, wait);
         }
 
 
