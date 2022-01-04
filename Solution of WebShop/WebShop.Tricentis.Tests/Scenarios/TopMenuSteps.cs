@@ -15,11 +15,12 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(WebDriverManager manager, WebDriverWait wait)
+        public TopMenuSteps(WebDriverManager manager)
         {
             _baseElement = new BaseElement(manager.GetDriver(), manager.GetWaiter());
             var page = new MainPage(manager.GetDriver(), manager.GetWaiter());
-            _topMenuElements = page.TopMenu;
+            //_topMenuElements = page.TopMenu;
+            _topMenuElements = new TopMenuElement(manager.GetDriver(), manager.GetWaiter());
         }
 
         [When(@"I hover on '(.*)'")]

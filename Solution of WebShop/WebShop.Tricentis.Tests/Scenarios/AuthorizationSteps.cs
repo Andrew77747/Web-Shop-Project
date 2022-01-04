@@ -14,7 +14,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps(WebDriverManager manager, WebDriverWait wait)
+        public AuthorizationSteps(WebDriverManager manager)
         {
             _authorizationPage = new AuthorizationPage(manager.GetDriver(), manager.GetWaiter());
             _mainPage = new MainPage(manager.GetDriver(), manager.GetWaiter());

@@ -12,15 +12,15 @@ namespace WebShop.Tricentis.Tests.Scenarios
     {
 
         private readonly ApparelShoesPage _apparelShoesPage;
-        public ProductCardElement productCard;
+        public ProductCardElement ProductCard;
         //private readonly SeleniumWrapper selenium;
 
 
-        public ApparelShoesSteps(WebDriverManager manager, WebDriverWait wait)
+        public ApparelShoesSteps(WebDriverManager manager)
         {
             //selenium = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             _apparelShoesPage = new ApparelShoesPage(manager.GetDriver(), manager.GetWaiter());
-            productCard = new ProductCardElement(manager.GetDriver(), manager.GetWaiter());
+            ProductCard = new ProductCardElement(manager.GetDriver(), manager.GetWaiter());
         }
 
         [When(@"I choose sorting")]
@@ -32,7 +32,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The sorting is right")]
         public void ThenTheSortingIsRight()
         {
-            Assert.IsTrue(_apparelShoesPage.IsSortingAskRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, productCard.ActualPrice)), "Array should be sorted");
+            Assert.IsTrue(_apparelShoesPage.IsSortingAskRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, ProductCard.ActualPrice)), "Array should be sorted");
         }
 
 
@@ -45,7 +45,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The sorting desc is right")]
         public void ThenTheSortingIsRightDesc()
         {
-            Assert.IsTrue(_apparelShoesPage.IsSortingDescRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, productCard.ProductTitle)), "Array should be sorted desc");
+            Assert.IsTrue(_apparelShoesPage.IsSortingDescRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, ProductCard.ProductTitle)), "Array should be sorted desc");
         }
 
         [When(@"I choose sorting by price")]
@@ -57,7 +57,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The sorting by price is right")]
         public void ThenTheSortingByPriceIsRight()
         {
-            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceAskRight(_apparelShoesPage.GetProductCardsPrice(_apparelShoesPage._productCards, productCard.ActualPrice)), "Array should be sorted");
+            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceAskRight(_apparelShoesPage.GetProductCardsPrice(_apparelShoesPage._productCards, ProductCard.ActualPrice)), "Array should be sorted");
         }
 
         [When(@"I choose sorting by price desc")]
@@ -69,7 +69,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The sorting by price desc is right")]
         public void ThenTheSortingByPriceDescIsRight()
         {
-            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice(_apparelShoesPage._productCards, productCard.ActualPrice)), "Array sould be sorted");
+            Assert.IsTrue(_apparelShoesPage.IsSortingByPriceDescRight(_apparelShoesPage.GetProductCardsPrice(_apparelShoesPage._productCards, ProductCard.ActualPrice)), "Array sould be sorted");
         }
     }
 }

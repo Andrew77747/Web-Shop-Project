@@ -14,7 +14,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         private readonly ProductsPage _productPage;
 
-        public SuccessMessageSteps(WebDriverManager manager, WebDriverWait wait)
+        public SuccessMessageSteps(WebDriverManager manager)
         {
             _productPage = new ProductsPage(manager.GetDriver(), manager.GetWaiter());
         }

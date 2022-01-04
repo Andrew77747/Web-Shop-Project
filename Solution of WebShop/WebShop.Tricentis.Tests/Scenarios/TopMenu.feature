@@ -17,4 +17,3 @@
 	Then I don't see dropdown
 	When I hover on 'Gift Cards'
 	Then I don't see dropdown
-

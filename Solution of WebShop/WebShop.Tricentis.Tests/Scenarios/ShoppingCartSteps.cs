@@ -18,7 +18,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly ShoppingCart _shoppingCartPage;
         public List<string> CartsToShoppingList = new List<string>();
 
-        public ShoppingCartSteps(WebDriverManager manager, WebDriverWait wait)
+        public ShoppingCartSteps(WebDriverManager manager)
         {
             _shoppingCartPage = new ShoppingCart(manager.GetDriver(), manager.GetWaiter());
         }
