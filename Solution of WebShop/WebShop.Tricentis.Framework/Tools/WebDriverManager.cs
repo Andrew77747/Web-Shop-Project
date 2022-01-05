@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Infrastructure.Settings;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace WebShop.Tricentis.Framework.Tools
 {
@@ -10,13 +11,14 @@ namespace WebShop.Tricentis.Framework.Tools
     {
         public IWebDriver Driver;
 
-        public readonly int Timeout = 10000;
         public WebDriverWait Wait;
+        public Appsettings Settings;
 
         public WebDriverManager()
         {
             Driver = GetDriver();
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
+            Settings = new Appsettings();
+            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Settings.Timeout));
             Driver.Manage().Window.Maximize();
         }
 

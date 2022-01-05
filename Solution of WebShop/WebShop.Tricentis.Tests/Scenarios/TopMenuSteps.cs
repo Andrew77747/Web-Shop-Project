@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using WebShop.Tricentis.Framework.PageObject;
 using WebShop.Tricentis.Framework.PageObject.Elements;
+using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
@@ -9,13 +9,11 @@ namespace WebShop.Tricentis.Tests.Scenarios
     [Binding, Scope(Feature = "TopMenu")]
     public class TopMenuSteps
     {
-        private readonly BaseElement _baseElement;
         private readonly TopMenuElement _topMenuElements;
 
-        public TopMenuSteps(WebDriverManager manager)
+        public TopMenuSteps(WebDriverManager manager, ConfigurationManager configuration)
         {
-            _baseElement = new BaseElement(manager.GetDriver());
-            var page = new MainPage(manager.GetDriver());
+            var page = new MainPage(manager.GetDriver(), configuration.GetSettings());
             _topMenuElements = page.TopMenu;
         }
 

@@ -25,7 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

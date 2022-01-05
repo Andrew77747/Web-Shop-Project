@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Elements
 {
     public class BaseElement
     {

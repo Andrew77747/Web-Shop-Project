@@ -1,7 +1,6 @@
-﻿using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using WebShop.Tricentis.Framework.PageObject;
+using WebShop.Tricentis.Framework.PageObject.Pages;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Handlers
@@ -13,7 +12,8 @@ namespace WebShop.Tricentis.Tests.Handlers
 
         public BaseSteps(WebDriverManager manager)
         {
-            _mainPage = new MainPage(manager.GetDriver());
+            var configuration = new ConfigurationManager();
+            _mainPage = new MainPage(manager.GetDriver(), configuration.GetSettings());
         }
 
         [Given(@"I'm on the main page")]

@@ -1,15 +1,17 @@
-﻿using OpenQA.Selenium;
-using System;
+﻿using Infrastructure.Settings;
+using OpenQA.Selenium;
 
-namespace WebShop.Tricentis.Framework.PageObject
+namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class MainPage : BasePage
     {
         private IWebDriver _driver;
+        private Appsettings _settings;
 
-        public MainPage(IWebDriver driver) : base(driver)
+        public MainPage(IWebDriver driver, Appsettings settings) : base(driver)
         {
             _driver = driver;
+            _settings = settings;
         }
 
         #region MapsOfElements
@@ -21,7 +23,7 @@ namespace WebShop.Tricentis.Framework.PageObject
 
         public void OpenPage()
         {
-            _driver.Navigate().GoToUrl("http://demowebshop.tricentis.com");
+            _driver.Navigate().GoToUrl(_settings.Url);
         } 
 
         public void ClickLogin()

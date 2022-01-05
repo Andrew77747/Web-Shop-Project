@@ -4,11 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Framework", "WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj", "{D043745D-8C58-40FF-814A-F224C3BC766E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19} = {B3700336-CC40-426D-B9B3-72DE2F4E5C19}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Tests", "WebShop.Tricentis.Tests\WebShop.Tricentis.Tests.csproj", "{56CB8187-701A-462A-B6A9-9629175587D7}"
 	ProjectSection(ProjectDependencies) = postProject
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19} = {B3700336-CC40-426D-B9B3-72DE2F4E5C19}
 		{D043745D-8C58-40FF-814A-F224C3BC766E} = {D043745D-8C58-40FF-814A-F224C3BC766E}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B3700336-CC40-426D-B9B3-72DE2F4E5C19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,10 @@ Global
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56CB8187-701A-462A-B6A9-9629175587D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3700336-CC40-426D-B9B3-72DE2F4E5C19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
