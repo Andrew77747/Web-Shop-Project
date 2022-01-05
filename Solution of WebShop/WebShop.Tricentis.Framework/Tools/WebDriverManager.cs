@@ -16,7 +16,6 @@ namespace WebShop.Tricentis.Framework.Tools
         {
             Driver = GetDriver();
             Wait = GetWaiter();
-            //Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Timeout));
             Driver.Manage().Window.Maximize();
         }
 

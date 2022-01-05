@@ -20,7 +20,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         public ShoppingCartSteps(WebDriverManager manager)
         {
-            _shoppingCartPage = new ShoppingCart(manager.GetDriver(), manager.GetWaiter());
+            _shoppingCartPage = new ShoppingCart(manager);
         }
 
         [When(@"I check if the card is clear")]

@@ -14,9 +14,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         private readonly ProductsPage _productsPage;
 
-        public ShoppingCart(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
+        public ShoppingCart(IWebDriverManager manager) : base(manager)
         {
-            _productsPage = new ProductsPage(driver, wait);
+            _productsPage = new ProductsPage(manager);
         }
 
 
@@ -162,9 +162,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             return names.ToList();
         }
 
-        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected)
+        public bool IsGoodsAddedCorrect(List<string> actual, List<string> expected)
         {
-            return Wrapper.IsGoodsAddedCorrect(Actual, Expected);
+            return Wrapper.IsGoodsAddedCorrect(actual, expected);
         }
 
         public string GetValuesOfAttribute()

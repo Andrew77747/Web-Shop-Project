@@ -12,11 +12,13 @@ namespace WebShop.Tricentis.Framework.Tools
 
         private IWebDriver _driver;
         private WebDriverWait _wait;
+        private WebDriverWait _customDriverWait;
 
         public SeleniumWrapper(IWebDriver driver, WebDriverWait wait)
         {
             _driver = driver;
             _wait = wait;
+            _customDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
         }
 
         #region Actions
@@ -192,7 +194,7 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.FindElement(by).GetAttribute("value");
         }
 
-        public bool IsDropdownVisible(By by)
+        private bool IsElementVisible(By by)
         {
             try
             {
@@ -201,6 +203,20 @@ namespace WebShop.Tricentis.Framework.Tools
             catch (NoSuchElementException)
             {
                 Console.WriteLine("Здесь нет дропдауна");
+                return false;
+            }
+        }
+
+        public bool WaitElementVisible(By by)
+        {
+            try
+            {
+                _customDriverWait.Until(d => IsElementVisible(by)); //TODO investigate and fix
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 return false;
             }
         }

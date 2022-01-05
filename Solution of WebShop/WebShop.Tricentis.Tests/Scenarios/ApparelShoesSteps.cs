@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -19,8 +18,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
         public ApparelShoesSteps(WebDriverManager manager)
         {
             //selenium = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
-            _apparelShoesPage = new ApparelShoesPage(manager.GetDriver(), manager.GetWaiter());
-            ProductCard = new ProductCardElement(manager.GetDriver(), manager.GetWaiter());
+            _apparelShoesPage = new ApparelShoesPage(manager);
+            ProductCard = new ProductCardElement(manager);
         }
 
         [When(@"I choose sorting")]

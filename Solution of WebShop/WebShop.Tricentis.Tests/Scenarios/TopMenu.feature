@@ -1,6 +1,7 @@
 ﻿Feature: TopMenu
 	Checking Top Menu
 
+	@retry:2
 	Scenario: Hover on menu items
 	Given I'm on the main page
 	When I hover on 'Books'

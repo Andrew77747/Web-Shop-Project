@@ -7,7 +7,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class ProductCardElement : BaseElement
 
     {
-        public ProductCardElement(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
+        public ProductCardElement(IWebDriverManager manager) : base(manager)
         {
 
         }

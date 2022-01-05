@@ -9,7 +9,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
     public class TopMenuElement : BaseElement
     {
 
-        public TopMenuElement(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
+        public TopMenuElement(IWebDriverManager manager) : base(manager)
         {
             
         }
@@ -32,7 +32,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         public bool IsDropdownVisible(By selector)
         {
-            return Wrapper.IsDropdownVisible(selector);
+            return Wrapper.WaitElementVisible(selector);
         }
     }
 }

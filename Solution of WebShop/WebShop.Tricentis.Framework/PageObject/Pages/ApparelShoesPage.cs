@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
@@ -7,11 +6,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class ApparelShoesPage : BasePage
 
     {
-        //public IWebDriver driver;
 
-        public ApparelShoesPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
+        public ApparelShoesPage(IWebDriverManager manager) : base(manager)
         {
-            //driver = manager;
         }
 
         #region Maps of elements

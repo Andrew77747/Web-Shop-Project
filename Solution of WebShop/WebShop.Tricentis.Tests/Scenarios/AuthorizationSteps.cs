@@ -16,8 +16,8 @@ namespace WebShop.Tricentis.Tests.Scenarios
 
         public AuthorizationSteps(WebDriverManager manager)
         {
-            _authorizationPage = new AuthorizationPage(manager.GetDriver(), manager.GetWaiter());
-            _mainPage = new MainPage(manager.GetDriver(), manager.GetWaiter());
+            _authorizationPage = new AuthorizationPage(manager);
+            _mainPage = new MainPage(manager);
         }
 
         [When(@"I click login")]

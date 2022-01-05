@@ -9,9 +9,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     {
         public string Url = "http://demowebshop.tricentis.com";
 
-        public MainPage(IWebDriver driver, WebDriverWait wait) : base(driver, wait)
+        public MainPage(IWebDriverManager manager) : base(manager)
         {
-            
+            TopMenu = new TopMenuElement(manager);
         }
 
         #region MapsOfElements

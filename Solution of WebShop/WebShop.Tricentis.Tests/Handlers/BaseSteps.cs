@@ -18,8 +18,8 @@ namespace WebShop.Tricentis.Tests.Handlers
 
         public BaseSteps(WebDriverManager manager)
         {
-            _mainPage = new MainPage(manager.GetDriver(), manager.GetWaiter());
-            _topMenu = new TopMenuElement(manager.GetDriver(), manager.GetWaiter());
+            _mainPage = new MainPage(manager);
+            _topMenu = new TopMenuElement(manager);
             //_wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             //_shoppingCart = new ShoppingCart(manager.GetDriver());
         }

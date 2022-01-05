@@ -13,32 +13,30 @@ namespace WebShop.Tricentis.Tests.Scenarios
     public class TopMenuSteps
     {
         private readonly BaseElement _baseElement;
-        private readonly TopMenuElement _topMenuElements;
+        private readonly MainPage page;
 
         public TopMenuSteps(WebDriverManager manager)
         {
-            _baseElement = new BaseElement(manager.GetDriver(), manager.GetWaiter());
-            var page = new MainPage(manager.GetDriver(), manager.GetWaiter());
-            //_topMenuElements = page.TopMenu;
-            _topMenuElements = new TopMenuElement(manager.GetDriver(), manager.GetWaiter());
+            _baseElement = new BaseElement(manager);
+            page = new MainPage(manager);
         }
 
         [When(@"I hover on '(.*)'")]
         public void WhenIHoverOn(string name)
         {
-            _topMenuElements.HoverMouse(name);
+            page.TopMenu.HoverMouse(name);
         }
 
         [Then(@"I see dropdown")]
         public void WhenISeeDropdown()
         {
-            Assert.IsTrue(_topMenuElements.IsDropdownVisible(_topMenuElements._dropdown), "Dropdown should be visible");
+            Assert.IsTrue(page.TopMenu.IsDropdownVisible(page.TopMenu._dropdown), "Dropdown should be visible");
         }
 
         [Then(@"I don't see dropdown")]
         public void ThenIDonTSeeDropdown()
         {
-            Assert.IsFalse(_topMenuElements.IsDropdownVisible(_topMenuElements._dropdown), "Dropdown shouldn't be visible");
+            Assert.IsFalse(page.TopMenu.IsDropdownVisible(page.TopMenu._dropdown), "Dropdown shouldn't be visible");
         }
     }
 }
