@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.PageObject.Pages;
