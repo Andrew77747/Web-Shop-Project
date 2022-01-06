@@ -96,11 +96,9 @@ namespace WebShop.Tricentis.Tests.Scenarios
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add goods to cart")]
-        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public virtual void AddGoodsToCart()
         {
-            string[] tagsOfScenario = new string[] {
-                    "Ignore"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add goods to cart", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 10

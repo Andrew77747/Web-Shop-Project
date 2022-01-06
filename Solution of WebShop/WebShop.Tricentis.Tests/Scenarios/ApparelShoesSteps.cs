@@ -31,7 +31,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"The sorting is right")]
         public void ThenTheSortingIsRight()
         {
-            Assert.IsTrue(_apparelShoesPage.IsSortingAskRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, ProductCard.ActualPrice)), "Array should be sorted");
+            Assert.IsTrue(_apparelShoesPage.IsSortingAskRight(_apparelShoesPage.GetProductCardsNames(_apparelShoesPage._productCards, ProductCard.ProductTitle)), "Array should be sorted");
         }
 
 

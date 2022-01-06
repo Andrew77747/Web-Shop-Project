@@ -65,7 +65,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsPrice(By selector, By selector2)
         {
-            return Wrapper.GetProductCardsPrice(selector, selector);
+            return Wrapper.GetProductCardsPrice(selector, selector2);
         }
 
         public void ClickSortBYNameZtoA()

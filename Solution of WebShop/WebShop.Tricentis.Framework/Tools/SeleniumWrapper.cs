@@ -194,7 +194,7 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.FindElement(by).GetAttribute("value");
         }
 
-        private bool IsElementVisible(By by)
+        public bool IsElementVisible(By by)
         {
             try
             {
@@ -280,6 +280,7 @@ namespace WebShop.Tricentis.Framework.Tools
                 return false;
             }
         }
+
         public bool IsSortingByPriceDescRight(string[] actualArray)
         {
             string[] expectedArray = new string[actualArray.Length];
@@ -300,7 +301,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-                public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected)
+        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected)
         {
 
             if (Actual == Expected)

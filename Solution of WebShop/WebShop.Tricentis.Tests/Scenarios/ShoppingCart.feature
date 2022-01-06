@@ -6,7 +6,7 @@ Background: Authorization
 	And I enter login, password and click login button
 	And I go to shopping cart
 	And I check if the card is clear
-@Ignore
+#@Ignore
 Scenario: Add goods to cart
 	When I go to the 'Books' page
 	And I add 'Computing and Internet' add to shopping cart
