@@ -99,7 +99,7 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.FindElements(selector).ToList();
         }
 
-        public string[] GetProductCardsNames(By selector, By selector2)
+        public string[] GetProductCardsNames(By selector, By selector2) // вынести обратно
         {
             var listOfProductCards = GetElements(selector);
             string[] names = new string[listOfProductCards.Count];
@@ -113,7 +113,7 @@ namespace WebShop.Tricentis.Framework.Tools
             return names;
         }
 
-        public string[] GetProductCardsPrice(By selector, By selector2)
+        public string[] GetProductCardsPrice(By selector, By selector2)  // вынести обратно
         {
             var listOfProductCards = GetElements(selector);
             string[] prices = new string[listOfProductCards.Count];
@@ -262,7 +262,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        public bool IsSortingByPriceAskRight(string[] actualArray)
+        public bool IsSortingByPriceAskRight(string[] actualArray) //  IsSortingAskRight оставить, а этот удалить
         {
             string[] expectedArray = new string[actualArray.Length];
             actualArray.CopyTo(expectedArray, 0);
@@ -281,7 +281,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        public bool IsSortingByPriceDescRight(string[] actualArray)
+        public bool IsSortingByPriceDescRight(string[] actualArray) // тоже самое
         {
             string[] expectedArray = new string[actualArray.Length];
             actualArray.CopyTo(expectedArray, 0);
@@ -301,7 +301,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected)
+        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected) // вернуть
         {
 
             if (Actual == Expected)
