@@ -50,22 +50,22 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsNames(By selector, By selector2)
         {
-            return Wrapper.GetProductCardsNames(selector, selector2);
+            return base.GetProductCardsNames(selector, selector2);
         }
 
         public bool IsSortingByPriceAskRight(string[] actualArray)
         {
-            return Wrapper.IsSortingByPriceAskRight(actualArray);
+            return Wrapper.IsSortingAskRight(actualArray);
         }
 
         public bool IsSortingByPriceDescRight(string[] actualArray)
         {
-            return Wrapper.IsSortingByPriceDescRight(actualArray);
+            return Wrapper.IsSortingDescRight(actualArray);
         }
 
         public string[] GetProductCardsPrice(By selector, By selector2)
         {
-            return Wrapper.GetProductCardsPrice(selector, selector2);
+            return base.GetProductCardsPrice(selector, selector2);
         }
 
         public void ClickSortBYNameZtoA()

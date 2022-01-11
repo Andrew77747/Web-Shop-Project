@@ -44,11 +44,6 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.FindElement(by);
         }
 
-        //public IWebElement FindElements(By by)
-        //{
-        //    return _driver.FindElements(by);
-        //}
-
         public void ClickElement(By by)
         {
             FindElement(by).Click();
@@ -64,67 +59,22 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.PageSource;
         }
 
-        public void HoverMouse(string buttonName)
+        public void HoverMouseOnElement(string selector)
         {
             try
             {
-                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
-                Console.WriteLine(selector);
                 Actions action = new Actions(_driver);
-                action.MoveToElement(_driver.FindElement(By.XPath(selector))).Build().Perform();
+                action.MoveToElement(FindElement(By.XPath(selector))).Build().Perform();
             }
             catch (NoSuchElementException e)
             {
-                Console.WriteLine("Хуй тебе, а не элемент! Ошибка: " + e);
-            }
-        }
-
-        public void SelectMenu(string buttonName)
-        {
-            try
-            {
-                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
-                Console.WriteLine(selector);
-                _driver.FindElement(By.XPath(selector)).Click();
-
-            }
-            catch (NoSuchElementException e)
-            {
-                Console.WriteLine($"Element was not found. {Environment.NewLine} Error: " + e);
+                Console.WriteLine("There is no such element! Error: " + e);
             }
         }
 
         public List<IWebElement> GetElements(By selector)
         {
             return _driver.FindElements(selector).ToList();
-        }
-
-        public string[] GetProductCardsNames(By selector, By selector2) // вынести обратно
-        {
-            var listOfProductCards = GetElements(selector);
-            string[] names = new string[listOfProductCards.Count];
-
-            for (int i = 0; i < names.Length; i++)
-            {
-                names[i] = listOfProductCards[i].FindElement(selector2).Text;
-                Console.WriteLine(names[i]);
-            }
-
-            return names;
-        }
-
-        public string[] GetProductCardsPrice(By selector, By selector2)  // вынести обратно
-        {
-            var listOfProductCards = GetElements(selector);
-            string[] prices = new string[listOfProductCards.Count];
-
-            for (int i = 0; i < prices.Length; i++)
-            {
-                prices[i] = listOfProductCards[i].FindElement(selector2).Text;
-                Console.WriteLine(prices[i]);
-            }
-
-            return prices;
         }
 
         #endregion
@@ -262,59 +212,44 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        public bool IsSortingByPriceAskRight(string[] actualArray) //  IsSortingAskRight оставить, а этот удалить
-        {
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
+        //public bool IsSortingByPriceAskRight(string[] actualArray) //  IsSortingAskRight оставить, а этот удалить
+        //{
+        //    string[] expectedArray = new string[actualArray.Length];
+        //    actualArray.CopyTo(expectedArray, 0);
 
-            Array.Sort(expectedArray);
+        //    Array.Sort(expectedArray);
 
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
-        }
+        //    if (actualArray.SequenceEqual(expectedArray))
+        //    {
+        //        Console.WriteLine(expectedArray);
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(expectedArray);
+        //        return false;
+        //    }
+        //}
 
-        public bool IsSortingByPriceDescRight(string[] actualArray) // тоже самое
-        {
-            string[] expectedArray = new string[actualArray.Length];
-            actualArray.CopyTo(expectedArray, 0);
+        //public bool IsSortingByPriceDescRight(string[] actualArray) // тоже самое
+        //{
+        //    string[] expectedArray = new string[actualArray.Length];
+        //    actualArray.CopyTo(expectedArray, 0);
 
-            Array.Sort(expectedArray);
-            Array.Reverse(expectedArray);
+        //    Array.Sort(expectedArray);
+        //    Array.Reverse(expectedArray);
 
-            if (actualArray.SequenceEqual(expectedArray))
-            {
-                Console.WriteLine(expectedArray);
-                return true;
-            }
-            else
-            {
-                Console.WriteLine(expectedArray);
-                return false;
-            }
-        }
-
-        public bool IsGoodsAddedCorrect(List<string> Actual, List<string> Expected) // вернуть
-        {
-
-            if (Actual == Expected)
-            {
-                Console.WriteLine("true");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("false");
-                return false;
-            }
-        }
+        //    if (actualArray.SequenceEqual(expectedArray))
+        //    {
+        //        Console.WriteLine(expectedArray);
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(expectedArray);
+        //        return false;
+        //    }
+        //}
 
         #endregion
 

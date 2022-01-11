@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Elements
@@ -17,14 +18,29 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         #endregion
 
+        //public void HoverMouse(string buttonName)
+        //{
+        //    Wrapper.HoverMouseOnElement(buttonName);
+        //}
+
         public void HoverMouse(string buttonName)
         {
-            Wrapper.HoverMouse(buttonName);
+            var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
+            Wrapper.HoverMouseOnElement(selector);
         }
 
         public void SelectMenu(string buttonName)
         {
-            Wrapper.SelectMenu(buttonName);
+            try
+            {
+                var selector = $"//*[contains(@class, 'top-menu')]//*[contains(text(), '{buttonName}')]";
+                Console.WriteLine(selector);
+                Wrapper.FindElement(By.XPath(selector)).Click();
+            }
+            catch (NoSuchElementException e)
+            {
+                Console.WriteLine($"Element was not found. {Environment.NewLine} Error: " + e);
+            }
         }
 
         public bool IsDropdownVisible(By selector)

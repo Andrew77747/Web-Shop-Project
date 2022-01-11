@@ -160,10 +160,10 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             return names.ToList();
         }
 
-        public bool IsGoodsAddedCorrect(List<string> actual, List<string> expected)
-        {
-            return Wrapper.IsGoodsAddedCorrect(actual, expected);
-        }
+        //public bool IsGoodsAddedCorrect(List<string> actual, List<string> expected)
+        //{
+        //    return Wrapper.IsGoodsAddedCorrect(actual, expected);
+        //}
 
         public string GetValuesOfAttribute()
         {

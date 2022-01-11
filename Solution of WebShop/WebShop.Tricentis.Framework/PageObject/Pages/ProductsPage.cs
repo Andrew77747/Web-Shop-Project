@@ -30,12 +30,12 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsNames(By selector, By selector2)
         {
-            return Wrapper.GetProductCardsNames(selector, selector2);
+            return GetProductCardsNames(selector, selector2);
         }
 
         public string[] GetProductCardsPrice(By selector, By selector2)
         {
-            return Wrapper.GetProductCardsPrice(selector, selector2);
+            return GetProductCardsPrice(selector, selector2);
         }
 
         public void ClickAddToCartButton()

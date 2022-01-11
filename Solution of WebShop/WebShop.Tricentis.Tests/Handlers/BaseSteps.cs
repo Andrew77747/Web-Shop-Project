@@ -14,7 +14,6 @@ namespace WebShop.Tricentis.Tests.Handlers
         //private readonly SeleniumWrapper _wrapper;
         private readonly TopMenuElement _topMenu;
 
-
         public BaseSteps(WebDriverManager manager)
         {
             _mainPage = new MainPage(manager);
