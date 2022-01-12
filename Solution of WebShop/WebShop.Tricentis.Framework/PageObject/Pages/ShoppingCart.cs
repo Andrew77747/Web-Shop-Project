@@ -68,6 +68,9 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _checkboxRemove = By.CssSelector(".remove-from-cart [type='checkbox']");
         private readonly By _updateCart = By.CssSelector("input[name='updatecart']");
         private readonly By _inputAmount = By.CssSelector(".qty-input");
+        public readonly By _checkbox = By.CssSelector("[name='removefromcart']");
+        public readonly By _checkout = By.CssSelector(".button-1.checkout-button");
+        public readonly By _checkboxTerms = By.CssSelector(".terms-of-service #termsofservice");
 
         #endregion
 
@@ -168,6 +171,19 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public string GetValuesOfAttribute()
         {
             return Wrapper.GetValuesOfAttribute(_inputAmount);
+        }
+
+        public void CheckoutWithAlert()
+        {
+            Wrapper.ClickElement(_checkbox);
+            Wrapper.ClickElement(_checkout);
+        }
+
+        public void Checkout()
+        {
+            Wrapper.ClickElement(_checkbox);
+            Wrapper.ClickElement(_checkboxTerms);
+            Wrapper.ClickElement(_checkout);
         }
     }
 }

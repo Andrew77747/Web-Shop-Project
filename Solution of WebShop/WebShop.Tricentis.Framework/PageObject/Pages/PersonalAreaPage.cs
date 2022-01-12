@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
@@ -6,7 +7,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class PersonalAreaPage : BasePage
     {
         //public Alert Alert = new Alert
-        public IAlert alert;
+        //public IAlert alert;
         public PersonalAreaPage(IWebDriverManager manager) : base(manager)
         {
 

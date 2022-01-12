@@ -21,8 +21,6 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public readonly By _productCards = By.CssSelector(".item-box");
         public readonly By _addToCart = By.CssSelector(".item-box [data-productid='13'] .button-2");
         public readonly By _successMessage = By.CssSelector("[class='content']");
-        public readonly By _checkbox = By.CssSelector("[name='removefromcart']");
-        public readonly By _checkout = By.CssSelector(".button-1.checkout-button");
         public readonly By _alert = By.CssSelector(".ui-dialog");
 
         #endregion
@@ -52,11 +50,6 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             return Wrapper.IsElementExistsWithWaiter(_successMessage);
         }
 
-        public void Checkout()
-        {
-            Wrapper.ClickElement(_checkbox);
-            Wrapper.ClickElement(_checkout);
-        }
 
         public bool IsAlertExists()
         {

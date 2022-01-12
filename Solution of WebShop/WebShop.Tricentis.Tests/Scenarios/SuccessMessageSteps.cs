@@ -9,10 +9,12 @@ namespace WebShop.Tricentis.Tests.Scenarios
     public class SuccessMessageSteps
     {
 
+        private readonly ShoppingCart _shoppingCart;
         private readonly ProductsPage _productPage;
 
         public SuccessMessageSteps(WebDriverManager manager)
         {
+            _shoppingCart = new ShoppingCart(manager);
             _productPage = new ProductsPage(manager);
         }
 
@@ -31,7 +33,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [When(@"I checkout the good")]
         public void WhenIClickTheCheckbox()
         {
-            _productPage.Checkout();
+            _shoppingCart.CheckoutWithAlert();
         }
 
         [Then(@"Alert message is visible")]

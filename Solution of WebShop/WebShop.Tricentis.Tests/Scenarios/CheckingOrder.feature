@@ -8,9 +8,9 @@ And I go to shopping cart
 And I check if the card is clear
 And The address is clear
 
-@mytag
+#@mytag
 Scenario: Checking the order is correct
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+	Given I go to the 'Books' page
+	When I add book to cart
+	And I go to shopping cart
+	And I click checkout

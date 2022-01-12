@@ -13,7 +13,7 @@ namespace WebShop.Tricentis.Framework.Tools
         private IWebDriver _driver;
         private WebDriverWait _wait;
         private WebDriverWait _customDriverWait;
-        public IAlert alert;
+        //public IAlert alert;
 
         public SeleniumWrapper(IWebDriver driver, WebDriverWait wait)
         {
@@ -26,7 +26,10 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public void SwitchToAlertAccept()
         {
-            _driver.SwitchTo().Alert().Accept();
+            IAlert alert = _driver.SwitchTo().Alert();
+            alert.Accept();
+
+            //_driver.SwitchTo().Alert().Accept();
         }
 
         public void NavigateBack()
