@@ -6,7 +6,8 @@ using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Scenarios
 {
-    [Binding, Scope(Feature = "ShoppingCart")]
+    [Binding, Scope(Feature = "ShoppingCart")][Scope(Feature = "SuccessMessage")]
+    [Scope(Feature = "CheckingOrder")]
     public class ShoppingCartSteps
     {
         private readonly ShoppingCart _shoppingCartPage;
@@ -20,6 +21,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [When(@"I check if the card is clear")]
         public void WhenICheckIfTheCardIsClear()
         {
+            //_shoppingCartPage.GoToShoppingCartPage();
             _shoppingCartPage.IsGoodsAlreadyAdded();
         }
 

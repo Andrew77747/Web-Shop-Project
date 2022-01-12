@@ -27,5 +27,17 @@ namespace WebShop.Tricentis.Tests.Scenarios
         {
             Assert.IsTrue(_productPage.IsSuccessMessageExists());
         }
+
+        [When(@"I checkout the good")]
+        public void WhenIClickTheCheckbox()
+        {
+            _productPage.Checkout();
+        }
+
+        [Then(@"Alert message is visible")]
+        public void ThenAlertMessageIsVisible()
+        {
+            Assert.IsTrue(_productPage.IsAlertExists());
+        }
     }
 }
