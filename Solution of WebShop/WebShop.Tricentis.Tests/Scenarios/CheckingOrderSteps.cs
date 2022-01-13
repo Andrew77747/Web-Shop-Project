@@ -33,10 +33,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
             _orderPage.CheckoutOrder();
         }
 
-        [When(@"I feel the address")]
+        [When(@"I feel the order")]
         public void WhenIFeelTheAddress()
         {
-            _orderPage.FillAddress();
+            _orderPage.FillOrder();
         }
     }
 }

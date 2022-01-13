@@ -13,4 +13,4 @@ Scenario: Checking the order is correct
 	When I add book to cart
 	And I go to shopping cart
 	And I click checkout
-	And I feel the address
+	And I feel the order

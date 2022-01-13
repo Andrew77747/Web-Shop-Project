@@ -14,6 +14,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private string _address = "Mira str. 8";
         private string _postalCode = "1234567";
         private string _phoneNumber = "+79991234567";
+        private string _creditCardNumber = "123412341234123412";
+        private string _cvcCode = "343";
 
         public OrderPage(IWebDriverManager manager) : base(manager)
         {
@@ -34,6 +36,22 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _phoneNumberField = By.CssSelector("#BillingNewAddress_PhoneNumber");
         private readonly By _canada = By.CssSelector("[value='2']");
         private readonly By _continueButton = By.CssSelector("#billing-buttons-container .button-1");
+        private readonly By _continueButtonOnShippingAddress = By.CssSelector("[onclick='Shipping.save()']");
+        private readonly By _continueButtonOnShippingMethod = By.CssSelector("[onclick='ShippingMethod.save()']");
+        private readonly By _radioButtonNextDay = By.CssSelector("#shippingoption_1");
+        private readonly By _continueButtonOnPaymentMethod = By.CssSelector("[onclick='PaymentMethod.save()']");
+        private readonly By _radioButtonPayment = By.CssSelector("#paymentmethod_2");
+        private readonly By _continueButtonOnPaymentInformation = By.CssSelector("[onclick='PaymentInfo.save()']");
+        private readonly By _crediCardDropdown = By.CssSelector(".dropdownlists");
+        private readonly By _masterCard = By.CssSelector("[value='MasterCard']");
+        private readonly By _cardholderNameInput = By.CssSelector("#CardholderName");
+        private readonly By _cardNumberInput = By.CssSelector("#CardNumber");
+        private readonly By _expirationDateDropdownMonth = By.CssSelector("#ExpireMonth");
+        private readonly By _expirationDateMonth = By.CssSelector("#ExpireMonth [value='2']");
+        private readonly By _expirationDateDropdownYear = By.CssSelector("#ExpireYear");
+        private readonly By _expirationDateYear = By.CssSelector("[value='2024']");
+        private readonly By _cvc = By.CssSelector("#CardCode");
+        private readonly By _confirmButton = By.CssSelector("[onclick='ConfirmOrder.save()']");
 
         #endregion
 
@@ -48,7 +66,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             Wrapper.ClickElement(_checkoutButton);
         }
 
-        public void FillAddress()
+        public void FillOrder()
         {
             Wrapper.ClearTypeAndSend(_firstNameField, _firstName);
             Wrapper.ClearTypeAndSend(_lastNameField, _lastName);
@@ -60,6 +78,28 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             Wrapper.TypeAndSend(_postalCodeField, _postalCode);
             Wrapper.TypeAndSend(_phoneNumberField, _phoneNumber);
             Wrapper.ClickElement(_continueButton);
+
+            Wrapper.ClickElement(_continueButtonOnShippingAddress);
+
+            Wrapper.ClickElement(_radioButtonNextDay);
+            Wrapper.ClickElement(_continueButtonOnShippingMethod);
+
+            Wrapper.ClickElement(_radioButtonPayment);
+            Wrapper.ClickElement(_continueButtonOnPaymentMethod);
+
+            Wrapper.ClickElement(_crediCardDropdown);
+            Wrapper.ClickElement(_masterCard);
+            Wrapper.TypeAndSend(_cardholderNameInput, _firstName);
+            Wrapper.TypeAndSend(_cardNumberInput, _creditCardNumber);
+            Wrapper.ClickElement(_expirationDateDropdownMonth);
+            Wrapper.ClickElement(_expirationDateMonth);
+            Wrapper.ClickElement(_expirationDateDropdownYear);
+            Wrapper.ClickElement(_expirationDateYear);
+            Wrapper.TypeAndSend(_cvc, _cvcCode);
+            Wrapper.ClickElement(_continueButtonOnPaymentInformation);
+
+            Wrapper.ClickElement(_confirmButton);
+
         }
     }
 }
