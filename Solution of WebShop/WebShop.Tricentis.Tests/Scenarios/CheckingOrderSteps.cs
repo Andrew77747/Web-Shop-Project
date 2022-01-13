@@ -8,51 +8,35 @@ namespace WebShop.Tricentis.Tests.Scenarios
     public class CheckingOrderSteps
     {
 
-        private readonly PersonalAreaPage _orderPage;
+        private readonly PersonalAreaPage _personalAreaPage;
         private readonly ShoppingCart _shoppingCart;
+        private readonly OrderPage _orderPage;
 
         public CheckingOrderSteps(WebDriverManager manager)
         {
-            _orderPage = new PersonalAreaPage(manager);
+            _personalAreaPage = new PersonalAreaPage(manager);
             _shoppingCart = new ShoppingCart(manager);
+            _orderPage = new OrderPage(manager);
 
         }
 
-        [Given(@"the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Given(@"the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
         
         [When(@"The address is clear")]
         public void WhenTheAddressIsClear()
         {
-            _orderPage.CheckingAndClearAddressCard();
-        }
-        
-        [When(@"the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the result should be (.*)")]
-        public void ThenTheResultShouldBe(int p0)
-        {
-            ScenarioContext.Current.Pending();
+            _personalAreaPage.CheckingAndClearAddressCard();
         }
 
         [When(@"I click checkout")]
         public void WhenIClickCheckout()
         {
-            _shoppingCart.Checkout();
+            _orderPage.CheckoutOrder();
         }
 
+        [When(@"I feel the address")]
+        public void WhenIFeelTheAddress()
+        {
+            _orderPage.FillAddress();
+        }
     }
 }

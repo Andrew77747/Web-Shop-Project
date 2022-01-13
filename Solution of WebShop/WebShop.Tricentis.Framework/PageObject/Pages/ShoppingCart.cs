@@ -86,6 +86,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
                 foreach (var cart in ListOfCarts)
                 {
                     cart.FindElement(_checkboxRemove).Click();
+                    //Wrapper.ClickElement(_checkboxRemove);
                 }
 
                 Wrapper.ClickElement(_updateCart);
@@ -171,19 +172,6 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public string GetValuesOfAttribute()
         {
             return Wrapper.GetValuesOfAttribute(_inputAmount);
-        }
-
-        public void CheckoutWithAlert()
-        {
-            Wrapper.ClickElement(_checkbox);
-            Wrapper.ClickElement(_checkout);
-        }
-
-        public void Checkout()
-        {
-            Wrapper.ClickElement(_checkbox);
-            Wrapper.ClickElement(_checkboxTerms);
-            Wrapper.ClickElement(_checkout);
         }
     }
 }

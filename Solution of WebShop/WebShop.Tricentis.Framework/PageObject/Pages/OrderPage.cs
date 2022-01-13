@@ -1,10 +1,20 @@
-﻿using OpenQA.Selenium;
+﻿using System.Threading;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class OrderPage : BasePage
     {
+
+        private string _firstName = "Andrew";
+        private string _lastName = "Walker";
+        private string _email = "andrew@mail.ru";
+        private string _city = "St.Petersburg";
+        private string _address = "Mira str. 8";
+        private string _postalCode = "1234567";
+        private string _phoneNumber = "+79991234567";
+
         public OrderPage(IWebDriverManager manager) : base(manager)
         {
 
@@ -12,8 +22,44 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         #region MapsOfElements
 
-        private readonly By _myAccount = By.CssSelector(".account");
+        private readonly By _checkboxTerms = By.CssSelector(".terms-of-service #termsofservice");
+        private readonly By _checkoutButton = By.CssSelector(".button-1.checkout-button");
+        private readonly By _firstNameField = By.CssSelector("#BillingNewAddress_FirstName");
+        private readonly By _lastNameField = By.CssSelector("#BillingNewAddress_LastName");
+        private readonly By _emailField = By.CssSelector("#BillingNewAddress_Email");
+        private readonly By _countryField = By.CssSelector(".inputs #BillingNewAddress_CountryId");
+        private readonly By _cityField = By.CssSelector("#BillingNewAddress_City");
+        private readonly By _addressField = By.CssSelector("#BillingNewAddress_Address1");
+        private readonly By _postalCodeField = By.CssSelector("#BillingNewAddress_ZipPostalCode");
+        private readonly By _phoneNumberField = By.CssSelector("#BillingNewAddress_PhoneNumber");
+        private readonly By _canada = By.CssSelector("[value='2']");
+        private readonly By _continueButton = By.CssSelector("#billing-buttons-container .button-1");
 
         #endregion
+
+        public void CheckoutWithAlert()
+        {
+            Wrapper.ClickElement(_checkoutButton);
+        }
+
+        public void CheckoutOrder()
+        {
+            Wrapper.ClickElement(_checkboxTerms);
+            Wrapper.ClickElement(_checkoutButton);
+        }
+
+        public void FillAddress()
+        {
+            Wrapper.ClearTypeAndSend(_firstNameField, _firstName);
+            Wrapper.ClearTypeAndSend(_lastNameField, _lastName);
+            Wrapper.ClearTypeAndSend(_emailField, _email);
+            Wrapper.ClickElement(_countryField);
+            Wrapper.ClickElement(_canada);
+            Wrapper.TypeAndSend(_cityField, _city);
+            Wrapper.TypeAndSend(_addressField, _address);
+            Wrapper.TypeAndSend(_postalCodeField, _postalCode);
+            Wrapper.TypeAndSend(_phoneNumberField, _phoneNumber);
+            Wrapper.ClickElement(_continueButton);
+        }
     }
 }

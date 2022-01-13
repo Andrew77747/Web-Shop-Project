@@ -29,8 +29,16 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
             if (Wrapper.IsElementExists(_addressCard))
             {
-                Wrapper.ClickElement(_deleteButton);
-                Wrapper.SwitchToAlertAccept();
+
+                var ListOfCarts = Wrapper.GetElements(_deleteButton);
+
+                foreach (var cart in ListOfCarts)
+                {
+                    Wrapper.ClickElement(_deleteButton);
+                    //Thread.Sleep(2000);
+                    Wrapper.SwitchToAlertAccept();
+                    //Thread.Sleep(2000);
+                }
             }
         }
     }

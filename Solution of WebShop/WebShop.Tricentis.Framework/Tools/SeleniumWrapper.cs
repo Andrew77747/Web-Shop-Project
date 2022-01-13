@@ -26,10 +26,9 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public void SwitchToAlertAccept()
         {
-            IAlert alert = _driver.SwitchTo().Alert();
-            alert.Accept();
-
-            //_driver.SwitchTo().Alert().Accept();
+            //IAlert alert = _driver.SwitchTo().Alert();
+            //alert.Accept();
+            _driver.SwitchTo().Alert().Accept();
         }
 
         public void NavigateBack()
@@ -45,6 +44,13 @@ namespace WebShop.Tricentis.Framework.Tools
         public void TypeAndSend(By by, string text)
         {
             _driver.FindElement(by).SendKeys(text);
+        }
+
+        public void ClearTypeAndSend(By by, string text)
+        {
+            //_driver.FindElement(by).Clear();
+            //_driver.FindElement(by).SendKeys(text);
+            _driver.FindElement(by).SendKeys(Keys.Control + text);
         }
 
         public IWebElement FindElement(By by)
