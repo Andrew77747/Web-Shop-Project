@@ -34,6 +34,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
                 foreach (var cart in ListOfCarts)
                 {
+                    //////var x = RelativeBy.WithLocator(_deleteButton).RightOf(By.XPath());
+                    ////Wrapper.ClickElement(x);
                     Wrapper.ClickElement(_deleteButton);
                     //Thread.Sleep(2000);
                     Wrapper.SwitchToAlertAccept();

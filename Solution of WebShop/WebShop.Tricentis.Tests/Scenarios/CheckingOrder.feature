@@ -14,3 +14,4 @@ Scenario: Checking the order is correct
 	And I go to shopping cart
 	And I click checkout
 	And I feel the order
+	Then The order number is correct

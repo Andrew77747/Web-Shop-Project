@@ -40,5 +40,19 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
             return prices;
         }
+
+        public string[] GetProductCardsPartNames(By selector, By selector2) // вынести обратно
+        {
+            var listOfProductCards = Wrapper.GetElements(selector);
+            string[] names = new string[listOfProductCards.Count];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                names[i] = listOfProductCards[i].FindElement(selector2).Text.Substring(14, 7);
+                Console.WriteLine(names[i]);
+            }
+
+            return names;
+        }
     }
 }

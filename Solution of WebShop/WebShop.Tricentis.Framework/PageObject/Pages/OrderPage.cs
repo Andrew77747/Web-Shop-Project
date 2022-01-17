@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.Linq;
+using System.Threading;
 using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -16,6 +18,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private string _phoneNumber = "+79991234567";
         private string _creditCardNumber = "123412341234123412";
         private string _cvcCode = "343";
+        private string currentOrderNubNumber;
 
         public OrderPage(IWebDriverManager manager) : base(manager)
         {
@@ -51,7 +54,14 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _expirationDateDropdownYear = By.CssSelector("#ExpireYear");
         private readonly By _expirationDateYear = By.CssSelector("[value='2024']");
         private readonly By _cvc = By.CssSelector("#CardCode");
-        private readonly By _confirmButton = By.CssSelector("[onclick='ConfirmOrder.save()']");
+        private readonly By _confirmOrderButton = By.CssSelector("[onclick='ConfirmOrder.save()']");
+        private readonly By _completeContinueButton = By.CssSelector(".button-2.order-completed-continue-button");
+        private readonly By _orderNumber = By.XPath("//*[contains(text(), 'Order number')]");
+
+        private readonly By _orderCard = By.CssSelector(".section.order-item");
+        private readonly By _orderNumberInCard = By.CssSelector(".order-list .title");
+        private readonly By _account = By.CssSelector(".account");
+        private readonly By _orders = By.XPath("//*[contains(text(), 'Orders')]");
 
         #endregion
 
@@ -78,15 +88,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             Wrapper.TypeAndSend(_postalCodeField, _postalCode);
             Wrapper.TypeAndSend(_phoneNumberField, _phoneNumber);
             Wrapper.ClickElement(_continueButton);
-
             Wrapper.ClickElement(_continueButtonOnShippingAddress);
-
             Wrapper.ClickElement(_radioButtonNextDay);
             Wrapper.ClickElement(_continueButtonOnShippingMethod);
-
             Wrapper.ClickElement(_radioButtonPayment);
             Wrapper.ClickElement(_continueButtonOnPaymentMethod);
-
             Wrapper.ClickElement(_crediCardDropdown);
             Wrapper.ClickElement(_masterCard);
             Wrapper.TypeAndSend(_cardholderNameInput, _firstName);
@@ -97,9 +103,33 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             Wrapper.ClickElement(_expirationDateYear);
             Wrapper.TypeAndSend(_cvc, _cvcCode);
             Wrapper.ClickElement(_continueButtonOnPaymentInformation);
+            Wrapper.ClickElement(_confirmOrderButton);
+            GetOrderNumber();
+        }
 
-            Wrapper.ClickElement(_confirmButton);
+        public void GetOrderNumber() // получаем номер сделанного заказа
+        {
+            currentOrderNubNumber = Wrapper.FindElement(_orderNumber).Text.Substring(14, 7);
+            //string substrOrderNumber = orderNumber.Substring(14, 7);
+            Console.WriteLine(currentOrderNubNumber);
+            //return currentOrderNubNumber;
+        }
 
+        public string[] GetOrderNumberFromListsOfOrders() //Получаем массив номеров заказа на странице заказов
+        {
+            Wrapper.ClickElement(_account);
+            Wrapper.ClickElement(_orders);
+            return GetProductCardsPartNames(_orderCard, _orderNumberInCard);
+        }
+
+        public bool IsElementExistsInArray()
+        {
+            string[] myOrderArray = GetOrderNumberFromListsOfOrders();
+            var myCheck = Array.Exists(myOrderArray, x => x == currentOrderNubNumber);
+
+            if (myCheck)
+                return true;
+            return false;
         }
     }
 }
