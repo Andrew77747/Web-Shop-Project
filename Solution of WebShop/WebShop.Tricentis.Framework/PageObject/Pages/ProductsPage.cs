@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Threading;
 using WebShop.Tricentis.Framework.PageObject.Elements;
@@ -32,13 +33,31 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsNames(By selector, By selector2)
         {
-            return GetProductCardsNames(selector, selector2);
+            var listOfProductCards = Wrapper.GetElements(selector);
+            string[] names = new string[listOfProductCards.Count];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                names[i] = listOfProductCards[i].FindElement(selector2).Text;
+                Console.WriteLine(names[i]);
+            }
+
+            return names;
         }
 
-        public string[] GetProductCardsPrice(By selector, By selector2)
-        {
-            return GetProductCardsPrice(selector, selector2);
-        }
+        //public string[] GetProductCardsPrice(By selector, By selector2)
+        //{
+        //    var listOfProductCards = Wrapper.GetElements(selector);
+        //    string[] prices = new string[listOfProductCards.Count];
+
+        //    for (int i = 0; i < prices.Length; i++)
+        //    {
+        //        prices[i] = listOfProductCards[i].FindElement(selector2).Text;
+        //        Console.WriteLine(prices[i]);
+        //    }
+
+        //    return prices;
+        //}
 
         public void ClickAddToCartButton()
         {
@@ -49,11 +68,23 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         {
             return Wrapper.IsElementExistsWithWaiter(_successMessage);
         }
-
-
         public bool IsAlertExists()
         {
             return Wrapper.IsElementExistsWithWaiter(_alert);
+        }
+
+        public string[] GetProductCardsPartNames(By selector, By selector2, int startIndex, int length)
+        {
+            var listOfProductCards = Wrapper.GetElements(selector);
+            string[] names = new string[listOfProductCards.Count];
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                names[i] = listOfProductCards[i].FindElement(selector2).Text.Substring(startIndex, length);
+                Console.WriteLine(names[i]);
+            }
+
+            return names;
         }
     }
 }

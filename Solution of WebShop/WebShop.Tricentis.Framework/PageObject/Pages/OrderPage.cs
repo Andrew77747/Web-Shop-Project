@@ -8,7 +8,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class OrderPage : BasePage
     {
-
+        public ProductsPage ProductPage;
         private string _firstName = "Andrew";
         private string _lastName = "Walker";
         private string _email = "andrew@mail.ru";
@@ -18,11 +18,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private string _phoneNumber = "+79991234567";
         private string _creditCardNumber = "123412341234123412";
         private string _cvcCode = "343";
-        private string currentOrderNubNumber;
+        private string _currentOrderNubNumber;
 
         public OrderPage(IWebDriverManager manager) : base(manager)
         {
-
+            ProductPage = new ProductsPage(manager);
         }
 
         #region MapsOfElements
@@ -109,23 +109,23 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void GetOrderNumber() // получаем номер сделанного заказа
         {
-            currentOrderNubNumber = Wrapper.FindElement(_orderNumber).Text.Substring(14, 7);
+            _currentOrderNubNumber = Wrapper.FindElement(_orderNumber).Text.Substring(14, 7);
             //string substrOrderNumber = orderNumber.Substring(14, 7);
-            Console.WriteLine(currentOrderNubNumber);
-            //return currentOrderNubNumber;
+            Console.WriteLine(_currentOrderNubNumber);
+            //return _currentOrderNubNumber;
         }
 
         public string[] GetOrderNumberFromListsOfOrders() //Получаем массив номеров заказа на странице заказов
         {
             Wrapper.ClickElement(_account);
             Wrapper.ClickElement(_orders);
-            return GetProductCardsPartNames(_orderCard, _orderNumberInCard);
+            return ProductPage.GetProductCardsPartNames(_orderCard, _orderNumberInCard, 14, 7);
         }
 
         public bool IsElementExistsInArray()
         {
             string[] myOrderArray = GetOrderNumberFromListsOfOrders();
-            var myCheck = Array.Exists(myOrderArray, x => x == currentOrderNubNumber);
+            var myCheck = Array.Exists(myOrderArray, x => x == _currentOrderNubNumber);
 
             if (myCheck)
                 return true;

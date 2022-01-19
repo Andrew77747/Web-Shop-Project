@@ -6,9 +6,10 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class ApparelShoesPage : BasePage
 
     {
-
+        public ProductsPage ProductsPage;
         public ApparelShoesPage(IWebDriverManager manager) : base(manager)
         {
+            ProductsPage = new ProductsPage(manager);
         }
 
         #region Maps of elements
@@ -50,7 +51,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsNames(By selector, By selector2)
         {
-            return base.GetProductCardsNames(selector, selector2);
+            return ProductsPage.GetProductCardsNames(selector, selector2);
         }
 
         public bool IsSortingByPriceAskRight(string[] actualArray)
@@ -65,7 +66,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public string[] GetProductCardsPrice(By selector, By selector2)
         {
-            return base.GetProductCardsPrice(selector, selector2);
+            return ProductsPage.GetProductCardsNames(selector, selector2);
         }
 
         public void ClickSortBYNameZtoA()

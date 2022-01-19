@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -19,28 +21,46 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _address = By.XPath("//div[@class='listbox']//a[contains(text(), 'Addresses')]");
         private readonly By _addressCard = By.CssSelector(".page-body");
         private readonly By _deleteButton = By.CssSelector(".button-2.delete-address-button");
+        private readonly By _clienOrderName =
+            By.XPath("//li[contains(@class, 'name') ][contains(text(), 'Андрей Гуляев')]");
+
+
+        private readonly By _section = By.CssSelector(".section.address-item");
 
         #endregion
+
+        //public void CheckingAndClearAddressCard()
+        //{
+        //    Wrapper.ClickElement(_myAccount);
+        //    Wrapper.ClickElement(_address);
+
+        //    if (Wrapper.IsElementExists(_addressCard))
+        //    {
+
+        //        var ListOfCarts = Wrapper.GetElements(_deleteButton);
+
+        //        foreach (var cart in ListOfCarts)
+        //        {
+        //            var x = RelativeBy.WithLocator(_deleteButton).RightOf(By.CssSelector("[value='Edit']"));
+        //            Wrapper.ClickElement(x);
+        //            Wrapper.SwitchToAlertAccept();
+        //        }
+        //    }
+        //}
 
         public void CheckingAndClearAddressCard()
         {
             Wrapper.ClickElement(_myAccount);
             Wrapper.ClickElement(_address);
 
-            if (Wrapper.IsElementExists(_addressCard))
+            var listOfAddressCards = Wrapper.GetElements(_section);
+            IWebElement[] buttonDelete = new IWebElement[listOfAddressCards.Count];
+
+            for (int i = 0; i < buttonDelete.Length; i++)
             {
-
-                var ListOfCarts = Wrapper.GetElements(_deleteButton);
-
-                foreach (var cart in ListOfCarts)
-                {
-                    //////var x = RelativeBy.WithLocator(_deleteButton).RightOf(By.XPath());
-                    ////Wrapper.ClickElement(x);
-                    Wrapper.ClickElement(_deleteButton);
-                    //Thread.Sleep(2000);
-                    Wrapper.SwitchToAlertAccept();
-                    //Thread.Sleep(2000);
-                }
+                buttonDelete[i] = listOfAddressCards[i].FindElement(_deleteButton);
+                buttonDelete[i].Click();
+                Wrapper.SwitchToAlertAccept();
             }
         }
     }

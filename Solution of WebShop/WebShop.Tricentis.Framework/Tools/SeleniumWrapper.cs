@@ -43,7 +43,7 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public void TypeAndSend(By by, string text)
         {
-            _driver.FindElement(by).SendKeys(text);
+            FindElement(by).SendKeys(text);
         }
 
         public void ClearTypeAndSend(By by, string text)
@@ -278,7 +278,21 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public void WaitElement(By by)
         {
-            _wait.Until(d => d.FindElement(by));
+            _wait.Until(d => WaiterTrueFalse(by));
+        }
+
+        public bool WaiterTrueFalse(By by)
+        {
+            try
+            {
+                _driver.FindElement(by);
+                return true;
+            }
+
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
 
         #endregion
