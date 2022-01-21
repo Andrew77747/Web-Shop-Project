@@ -120,6 +120,16 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -482,11 +492,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrstructures/Infrastructure.csproj",
+      "msbuildProject": "../Infrstructures/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "DotNetSeleniumExtras.WaitHelpers >= 3.11.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 6.0.0",
       "NUnit >= 3.13.2",
       "Selenium.Support >= 4.1.0",
@@ -519,7 +535,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj": {
+              "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

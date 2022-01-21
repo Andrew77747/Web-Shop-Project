@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Infrastructure.Settings;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.Tools;
 
@@ -6,11 +7,12 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class MainPage : BasePage
     {
-        public string Url = "http://demowebshop.tricentis.com";
+        public Appsettings Settings;
 
         public MainPage(IWebDriverManager manager) : base(manager)
         {
             TopMenu = new TopMenuElement(manager);
+            Settings = new Appsettings();
         }
 
         #region MapsOfElements
@@ -23,7 +25,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void OpenPage()
         {
-            Wrapper.Navigate(Url);
+            Wrapper.Navigate(Settings.Url);
         } 
 
         public void ClickLogin()

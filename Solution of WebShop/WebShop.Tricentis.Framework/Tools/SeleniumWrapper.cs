@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Infrastructure.Settings;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
@@ -36,9 +37,9 @@ namespace WebShop.Tricentis.Framework.Tools
             _driver.Navigate().Back();
         }
 
-        public void Navigate(string url)
+        public void Navigate(Appsettings settings)
         {
-            _driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(settings);
         }
 
         public void TypeAndSend(By by, string text)

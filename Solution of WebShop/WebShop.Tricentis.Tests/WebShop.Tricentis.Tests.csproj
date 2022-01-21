@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrstructures\Infrstructures.csproj" />
+    <ProjectReference Include="..\Infrstructures\Infrastructure.csproj" />
     <ProjectReference Include="..\WebShop.Tricentis.Framework\WebShop.Tricentis.Framework.csproj" />
   </ItemGroup>
 

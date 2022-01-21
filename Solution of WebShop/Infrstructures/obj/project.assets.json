@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrstructures.csproj",
-      "projectName": "Infrstructures",
-      "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrstructures.csproj",
+      "projectUniqueName": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\andy7\\.nuget\\packages\\",
       "outputPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\obj\\",
       "projectStyle": "PackageReference",

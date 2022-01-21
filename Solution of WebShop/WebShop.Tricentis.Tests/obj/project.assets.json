@@ -1926,14 +1926,14 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Infrstructures/1.0.0": {
+      "Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Infrstructures.dll": {}
+          "bin/placeholder/Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Infrstructures.dll": {}
+          "bin/placeholder/Infrastructure.dll": {}
         }
       },
       "WebShop.Tricentis.Framework/1.0.0": {
@@ -1941,6 +1941,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
+          "Infrastructure": "1.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
           "NUnit": "3.13.2",
           "Selenium.Support": "4.1.0",
@@ -6835,10 +6836,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Infrstructures/1.0.0": {
+    "Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../Infrstructures/Infrstructures.csproj",
-      "msbuildProject": "../Infrstructures/Infrstructures.csproj"
+      "path": "../Infrstructures/Infrastructure.csproj",
+      "msbuildProject": "../Infrstructures/Infrastructure.csproj"
     },
     "WebShop.Tricentis.Framework/1.0.0": {
       "type": "project",
@@ -6849,7 +6850,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
-      "Infrstructures >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 6.0.0",
       "Microsoft.Extensions.Configuration.Json >= 6.0.0",
       "Microsoft.Extensions.Configuration.UserSecrets >= 6.0.0",
@@ -6892,8 +6893,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrstructures.csproj": {
-              "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrstructures.csproj"
+            "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj": {
+              "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrstructures\\Infrastructure.csproj"
             },
             "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\WebShop.Tricentis.Framework\\WebShop.Tricentis.Framework.csproj": {
               "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\WebShop.Tricentis.Framework\\WebShop.Tricentis.Framework.csproj"

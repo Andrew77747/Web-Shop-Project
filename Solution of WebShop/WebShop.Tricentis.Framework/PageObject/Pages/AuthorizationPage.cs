@@ -1,12 +1,16 @@
-﻿using OpenQA.Selenium;
+﻿using Infrastructure.Settings;
+using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class AuthorizationPage : BasePage
     {
+
+        public Appsettings Settings;
         public AuthorizationPage(IWebDriverManager manager) : base(manager)
         {
+            Settings = new Appsettings();
         }
 
         #region Maps of elements
@@ -20,8 +24,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void Authorization()
         {
-            Wrapper.TypeAndSend(_inputEmail, "andrew-walker@yandex.ru");
-            Wrapper.TypeAndSend(_inputPassword, "Test2021");
+            Wrapper.TypeAndSend(_inputEmail, Settings.Login);
+            Wrapper.TypeAndSend(_inputPassword, Settings.Password);
             Wrapper.ClickElement(_loginButton);
         }
 

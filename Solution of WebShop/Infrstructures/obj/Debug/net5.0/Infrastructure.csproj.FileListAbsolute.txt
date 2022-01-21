@@ -1,0 +1,12 @@
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\bin\Debug\net5.0\Infrastructure.deps.json
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\bin\Debug\net5.0\Infrastructure.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\bin\Debug\net5.0\ref\Infrastructure.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\bin\Debug\net5.0\Infrastructure.pdb
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.AssemblyInfo.cs
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\ref\Infrastructure.dll
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.pdb

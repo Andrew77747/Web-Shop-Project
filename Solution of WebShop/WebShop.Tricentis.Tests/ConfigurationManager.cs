@@ -1,5 +1,4 @@
 ﻿using Infrastructure.Settings;
-using Infrastructures.Settings;
 using Microsoft.Extensions.Configuration;
 
 namespace WebShop.Tricentis.Tests
