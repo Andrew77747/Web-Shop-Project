@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop.Tricentis.Tests", "
 		{D043745D-8C58-40FF-814A-F224C3BC766E} = {D043745D-8C58-40FF-814A-F224C3BC766E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B3700336-CC40-426D-B9B3-72DE2F4E5C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructuress", "Infrastructure\Infrastructuress.csproj", "{B3700336-CC40-426D-B9B3-72DE2F4E5C19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

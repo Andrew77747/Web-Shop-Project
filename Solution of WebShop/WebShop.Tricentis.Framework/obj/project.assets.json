@@ -161,14 +161,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "Infrastructure/1.0.0": {
+      "Infrastructuress/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/Infrastructure.dll": {}
+          "bin/placeholder/Infrastructuress.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Infrastructure.dll": {}
+          "bin/placeholder/Infrastructuress.dll": {}
         }
       }
     }
@@ -606,15 +606,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Infrastructure/1.0.0": {
+    "Infrastructuress/1.0.0": {
       "type": "project",
-      "path": "../Infrastructure/Infrastructure.csproj",
-      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+      "path": "../Infrastructure/Infrastructuress.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructuress.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Infrastructure >= 1.0.0",
+      "Infrastructuress >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 6.0.0",
       "Microsoft.Extensions.Logging.Abstractions >= 6.0.0",
       "NUnit >= 3.13.2",
@@ -649,8 +649,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrastructure\\Infrastructuress.csproj": {
+              "projectPath": "C:\\Git\\Web-Shop-Project\\Solution of WebShop\\Infrastructure\\Infrastructuress.csproj"
             }
           }
         }
