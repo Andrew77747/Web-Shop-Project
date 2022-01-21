@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages
@@ -29,38 +26,22 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         #endregion
 
-        //public void CheckingAndClearAddressCard()
-        //{
-        //    Wrapper.ClickElement(_myAccount);
-        //    Wrapper.ClickElement(_address);
-
-        //    if (Wrapper.IsElementExists(_addressCard))
-        //    {
-
-        //        var ListOfCarts = Wrapper.GetElements(_deleteButton);
-
-        //        foreach (var cart in ListOfCarts)
-        //        {
-        //            var x = RelativeBy.WithLocator(_deleteButton).RightOf(By.CssSelector("[value='Edit']"));
-        //            Wrapper.ClickElement(x);
-        //            Wrapper.SwitchToAlertAccept();
-        //        }
-        //    }
-        //}
-
         public void CheckingAndClearAddressCard()
         {
             Wrapper.ClickElement(_myAccount);
             Wrapper.ClickElement(_address);
 
-            var listOfAddressCards = Wrapper.GetElements(_section);
-            IWebElement[] buttonDelete = new IWebElement[listOfAddressCards.Count];
-
-            for (int i = 0; i < buttonDelete.Length; i++)
+            if (Wrapper.IsElementExists(_addressCard))
             {
-                buttonDelete[i] = listOfAddressCards[i].FindElement(_deleteButton);
-                buttonDelete[i].Click();
-                Wrapper.SwitchToAlertAccept();
+
+                var ListOfCarts = Wrapper.GetElements(_deleteButton);
+
+                foreach (var cart in ListOfCarts)
+                {
+                    var x = RelativeBy.WithLocator(_deleteButton).RightOf(By.CssSelector("[value='Edit']"));
+                    Wrapper.ClickElement(x);
+                    Wrapper.SwitchToAlertAccept();
+                }
             }
         }
     }
