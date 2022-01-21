@@ -13,10 +13,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly MainPage page;
 
-        public TopMenuSteps(WebDriverManager manager, Appsettings settings)
+        public TopMenuSteps(WebDriverManager manager, ConfigurationManager configuration)
         {
             _baseElement = new BaseElement(manager);
-            page = new MainPage(manager, settings);
+            page = new MainPage(manager, configuration.GetSettings());
         }
 
         [When(@"I hover on '(.*)'")]

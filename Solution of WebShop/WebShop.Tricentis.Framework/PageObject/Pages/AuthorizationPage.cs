@@ -7,10 +7,10 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class AuthorizationPage : BasePage
     {
 
-        public Appsettings Settings;
-        public AuthorizationPage(IWebDriverManager manager) : base(manager)
+        private Appsettings _settings;
+        public AuthorizationPage(IWebDriverManager manager, Appsettings settings) : base(manager)
         {
-            Settings = new Appsettings();
+            _settings = settings;
         }
 
         #region Maps of elements
@@ -24,8 +24,8 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void Authorization()
         {
-            Wrapper.TypeAndSend(_inputEmail, Settings.Login);
-            Wrapper.TypeAndSend(_inputPassword, Settings.Password);
+            Wrapper.TypeAndSend(_inputEmail, _settings.Login);
+            Wrapper.TypeAndSend(_inputPassword, _settings.Password);
             Wrapper.ClickElement(_loginButton);
         }
 

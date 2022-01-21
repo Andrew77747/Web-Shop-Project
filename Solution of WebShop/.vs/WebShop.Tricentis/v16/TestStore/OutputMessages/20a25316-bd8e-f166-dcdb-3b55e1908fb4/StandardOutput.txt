@@ -1,0 +1,80 @@
+Given I'm on the main page
+-> done: BaseSteps.GivenIMOnTheMainPage() (4,4s)
+When I hover on 'Books'
+-> done: TopMenuSteps.WhenIHoverOn("Books") (0,4s)
+Then I don't see dropdown
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)
+When I hover on 'Computers'
+-> done: TopMenuSteps.WhenIHoverOn("Computers") (0,3s)
+Then I see dropdown
+-> done: TopMenuSteps.WhenISeeDropdown() (0,0s)
+When I hover on 'Electronics'
+-> done: TopMenuSteps.WhenIHoverOn("Electronics") (0,3s)
+Then I see dropdown
+-> done: TopMenuSteps.WhenISeeDropdown() (0,0s)
+When I hover on 'Apparel & Shoes'
+-> done: TopMenuSteps.WhenIHoverOn("Apparel & Shoes") (0,3s)
+Then I don't see dropdown
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)
+When I hover on 'Digital downloads'
+-> done: TopMenuSteps.WhenIHoverOn("Digital downloads") (0,3s)
+Then I don't see dropdown
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)
+When I hover on 'Jewelry'
+-> done: TopMenuSteps.WhenIHoverOn("Jewelry") (0,3s)
+Then I don't see dropdown
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,0s)
+When I hover on 'Gift Cards'
+-> done: TopMenuSteps.WhenIHoverOn("Gift Cards") (0,3s)
+Then I don't see dropdown
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+Здесь нет дропдауна
+OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
+   at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+   at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)

@@ -13,10 +13,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly MainPage _mainPage;
         private readonly AuthorizationPage _authorizationPage;
 
-        public AuthorizationSteps(WebDriverManager manager, Appsettings settings)
+        public AuthorizationSteps(WebDriverManager manager, ConfigurationManager configuration)
         {
-            _authorizationPage = new AuthorizationPage(manager);
-            _mainPage = new MainPage(manager, settings);
+            _authorizationPage = new AuthorizationPage(manager, configuration.GetSettings());
+            _mainPage = new MainPage(manager, configuration.GetSettings());
         }
 
         [When(@"I click login")]

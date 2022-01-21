@@ -15,9 +15,9 @@ namespace WebShop.Tricentis.Tests.Handlers
         //private readonly SeleniumWrapper _wrapper;
         private readonly TopMenuElement _topMenu;
 
-        public BaseSteps(WebDriverManager manager, Appsettings settings)
+        public BaseSteps(WebDriverManager manager, ConfigurationManager configuration)
         {
-            _mainPage = new MainPage(manager, settings);
+            _mainPage = new MainPage(manager, configuration.GetSettings());
             _topMenu = new TopMenuElement(manager);
             //_wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             //_shoppingCart = new ShoppingCart(manager.GetDriver());
