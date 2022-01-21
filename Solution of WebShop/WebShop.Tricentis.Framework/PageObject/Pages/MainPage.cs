@@ -7,12 +7,12 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 {
     public class MainPage : BasePage
     {
-        public Appsettings Settings;
+        private Appsettings _settings;
 
-        public MainPage(IWebDriverManager manager) : base(manager)
+        public MainPage(IWebDriverManager manager, Appsettings settings) : base(manager)
         {
             TopMenu = new TopMenuElement(manager);
-            Settings = new Appsettings();
+            _settings = settings;
         }
 
         #region MapsOfElements
@@ -25,7 +25,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public void OpenPage()
         {
-            Wrapper.Navigate(Settings.Url);
+            Wrapper.Navigate(_settings.Url);
         } 
 
         public void ClickLogin()

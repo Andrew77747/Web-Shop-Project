@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Infrastructure.Settings;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -12,10 +13,10 @@ namespace WebShop.Tricentis.Tests.Scenarios
         private readonly BaseElement _baseElement;
         private readonly MainPage page;
 
-        public TopMenuSteps(WebDriverManager manager)
+        public TopMenuSteps(WebDriverManager manager, Appsettings settings)
         {
             _baseElement = new BaseElement(manager);
-            page = new MainPage(manager);
+            page = new MainPage(manager, settings);
         }
 
         [When(@"I hover on '(.*)'")]

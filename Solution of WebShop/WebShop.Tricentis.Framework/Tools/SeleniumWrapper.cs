@@ -14,6 +14,7 @@ namespace WebShop.Tricentis.Framework.Tools
         private IWebDriver _driver;
         private WebDriverWait _wait;
         private WebDriverWait _customDriverWait;
+
         //public IAlert alert;
 
         public SeleniumWrapper(IWebDriver driver, WebDriverWait wait)
@@ -37,9 +38,9 @@ namespace WebShop.Tricentis.Framework.Tools
             _driver.Navigate().Back();
         }
 
-        public void Navigate(Appsettings settings)
+        public void Navigate(string url)
         {
-            _driver.Navigate().GoToUrl(settings);
+            _driver.Navigate().GoToUrl(url);
         }
 
         public void TypeAndSend(By by, string text)

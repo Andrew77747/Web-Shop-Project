@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Infrastructure.Settings;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.PageObject.Elements;
 using WebShop.Tricentis.Framework.PageObject.Pages;
@@ -14,9 +15,9 @@ namespace WebShop.Tricentis.Tests.Handlers
         //private readonly SeleniumWrapper _wrapper;
         private readonly TopMenuElement _topMenu;
 
-        public BaseSteps(WebDriverManager manager)
+        public BaseSteps(WebDriverManager manager, Appsettings settings)
         {
-            _mainPage = new MainPage(manager);
+            _mainPage = new MainPage(manager, settings);
             _topMenu = new TopMenuElement(manager);
             //_wrapper = new SeleniumWrapper(manager.GetDriver(), manager.GetWaiter());
             //_shoppingCart = new ShoppingCart(manager.GetDriver());
