@@ -20,7 +20,7 @@ namespace WebShop.Tricentis.Framework.Tools
         public SeleniumWrapper(IWebDriver driver, WebDriverWait wait)
         {
             _driver = driver;
-            _wait = wait;
+            _wait = wait; // тут тоже null
             _customDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
         }
 

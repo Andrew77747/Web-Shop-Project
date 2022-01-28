@@ -9,3 +9,4 @@ C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infr
 C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.dll
 C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\ref\Infrastructure.dll
 C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.pdb
+C:\Git\Web-Shop-Project\Solution of WebShop\Infrstructures\obj\Debug\net5.0\Infrastructure.csproj.AssemblyReference.cache

@@ -46,10 +46,10 @@ namespace WebShop.Tricentis.Framework.Tools
 
         public WebDriverWait GetWaiter()
         {
-            if (Wait != null)
-            {
-                return Wait;
-            }
+            //if (Wait != null)
+            //{
+            //    return Wait;
+            //}
 
             Wait = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(_settings.Timeout));
             return Wait;
