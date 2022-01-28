@@ -21,6 +21,18 @@ namespace WebShop.Tricentis.Framework.Tools
             Driver.Manage().Window.Maximize();
         }
 
+        //public IWebDriver Driver;
+        //public WebDriverWait Wait;
+        //public Appsettings Settings;
+
+        //public WebDriverManager()
+        //{
+        //    Driver = GetDriver();
+        //    Settings = new Appsettings();
+        //    Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(Settings.Timeout));
+        //    Driver.Manage().Window.Maximize();
+        //}
+
         public IWebDriver GetDriver()
         {
             if (Driver != null)
