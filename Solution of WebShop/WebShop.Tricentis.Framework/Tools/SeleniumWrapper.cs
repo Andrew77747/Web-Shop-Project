@@ -275,20 +275,33 @@ namespace WebShop.Tricentis.Framework.Tools
         public void WaitElementDisplayed(By by)
         {
             WaitElement(by);
-            _wait.Until(d => d.FindElement(by).Displayed);
+            _wait.Until(d => ElementVisible(by));
         }
 
         public void WaitElement(By by)
         {
-            _wait.Until(d => WaiterTrueFalse(by));
+            _wait.Until(d => ElementExists(by));
         }
 
-        public bool WaiterTrueFalse(By by)
+        public bool ElementExists(By by)
         {
             try
             {
                 _driver.FindElement(by);
                 return true;
+            }
+
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public bool ElementVisible(By by)
+        {
+            try
+            {
+                return _driver.FindElement(by).Displayed;
             }
 
             catch (NoSuchElementException)

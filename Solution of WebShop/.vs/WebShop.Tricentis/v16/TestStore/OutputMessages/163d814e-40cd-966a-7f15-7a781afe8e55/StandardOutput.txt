@@ -1,7 +1,7 @@
 Given I'm on the main page
--> done: BaseSteps.GivenIMOnTheMainPage() (4,4s)
+-> done: BaseSteps.GivenIMOnTheMainPage() (2,4s)
 When I hover on 'Books'
--> done: TopMenuSteps.WhenIHoverOn("Books") (0,4s)
+-> done: TopMenuSteps.WhenIHoverOn("Books") (0,3s)
 Then I don't see dropdown
 Здесь нет дропдауна
 Здесь нет дропдауна
@@ -49,7 +49,7 @@ OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
    at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
    at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
    at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
--> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,0s)
 When I hover on 'Jewelry'
 -> done: TopMenuSteps.WhenIHoverOn("Jewelry") (0,3s)
 Then I don't see dropdown
@@ -63,7 +63,7 @@ OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
    at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition, CancellationToken token)
    at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
    at WebShop.Tricentis.Framework.Tools.SeleniumWrapper.WaitElementVisible(By by) in C:\Git\Web-Shop-Project\Solution of WebShop\WebShop.Tricentis.Framework\Tools\SeleniumWrapper.cs:line 181
--> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,0s)
+-> done: TopMenuSteps.ThenIDonTSeeDropdown() (2,1s)
 When I hover on 'Gift Cards'
 -> done: TopMenuSteps.WhenIHoverOn("Gift Cards") (0,3s)
 Then I don't see dropdown
