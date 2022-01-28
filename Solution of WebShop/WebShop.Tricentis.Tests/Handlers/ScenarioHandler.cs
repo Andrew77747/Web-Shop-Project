@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Tests.Handlers
 {
@@ -12,7 +13,7 @@ namespace WebShop.Tricentis.Tests.Handlers
         {
             if (context.TestError != null)
             {
-                var screen = new ScreenshotMaker(driver, TestContext.CurrentContext.Test.Name);
+                var screen = new Screenshoter(driver, TestContext.CurrentContext.Test.Name);
                 TestContext.AddTestAttachment(screen.Path);
             }
         }
