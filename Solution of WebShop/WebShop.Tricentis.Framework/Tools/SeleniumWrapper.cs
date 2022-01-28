@@ -229,44 +229,6 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        //public bool IsSortingByPriceAskRight(string[] actualArray) //  IsSortingAskRight оставить, а этот удалить
-        //{
-        //    string[] expectedArray = new string[actualArray.Length];
-        //    actualArray.CopyTo(expectedArray, 0);
-
-        //    Array.Sort(expectedArray);
-
-        //    if (actualArray.SequenceEqual(expectedArray))
-        //    {
-        //        Console.WriteLine(expectedArray);
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine(expectedArray);
-        //        return false;
-        //    }
-        //}
-
-        //public bool IsSortingByPriceDescRight(string[] actualArray) // тоже самое
-        //{
-        //    string[] expectedArray = new string[actualArray.Length];
-        //    actualArray.CopyTo(expectedArray, 0);
-
-        //    Array.Sort(expectedArray);
-        //    Array.Reverse(expectedArray);
-
-        //    if (actualArray.SequenceEqual(expectedArray))
-        //    {
-        //        Console.WriteLine(expectedArray);
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine(expectedArray);
-        //        return false;
-        //    }
-        //}
 
         #endregion
 
