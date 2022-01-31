@@ -12,12 +12,14 @@ namespace WebShop.Tricentis.Framework.Tools
         public IWebDriver Driver;
         public WebDriverWait Wait;
         private readonly Appsettings _settings;
+        private readonly int x;
 
         public WebDriverManager(Appsettings settings)
         {
-            Driver = GetDriver();
             _settings = settings;
-            Wait = GetWaiter();
+            x = settings.Timeout;
+            Driver = GetDriver();
+            //Wait = GetWaiter();
             Driver.Manage().Window.Maximize();
         }
 
@@ -51,7 +53,7 @@ namespace WebShop.Tricentis.Framework.Tools
             //    return Wait;
             //}
 
-            Wait = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(_settings.Timeout));
+            Wait = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(x));
             return Wait;
         }
 
