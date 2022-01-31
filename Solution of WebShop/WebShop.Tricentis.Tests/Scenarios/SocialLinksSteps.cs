@@ -10,7 +10,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
     {
         private string _facebookUrl = "https://www.facebook.com/nopCommerce";
         private string _twitterUrl = "https://twitter.com/nopCommerce";
-        private string _youTube = "https://www.youtube.com/user/nopCommerce";
+        private string _youTube = "https://www.youtube.com/user/nopCommerce"; 
 
         private readonly Footer _footer;
 
