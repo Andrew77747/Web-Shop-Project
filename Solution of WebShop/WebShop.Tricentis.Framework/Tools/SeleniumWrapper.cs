@@ -33,6 +33,12 @@ namespace WebShop.Tricentis.Framework.Tools
             _driver.SwitchTo().Alert().Accept();
         }
 
+        public void SwitchToAnotherTab(int numberOfTab)
+        {
+            var tabs = new List<String>(_driver.WindowHandles);
+            _driver.SwitchTo().Window(tabs[numberOfTab]);
+        }
+
         public void NavigateBack()
         {
             _driver.Navigate().Back();

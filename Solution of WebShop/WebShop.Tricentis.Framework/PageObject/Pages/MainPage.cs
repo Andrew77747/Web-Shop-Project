@@ -8,6 +8,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
     public class MainPage : BasePage
     {
         private Appsettings _settings;
+        public readonly TopMenuElement TopMenu;
 
         public MainPage(IWebDriverManager manager, Appsettings settings) : base(manager)
         {
@@ -20,7 +21,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _inputSearch = By.CssSelector(".search-box-text");
         private readonly By _searchButton = By.CssSelector(".search-box .button-1");
         private readonly By _simpleComputer = By.CssSelector(".product-title");
-        public readonly TopMenuElement TopMenu;
+        
         #endregion
 
         public void OpenPage()
