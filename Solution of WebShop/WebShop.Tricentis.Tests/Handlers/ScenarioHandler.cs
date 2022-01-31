@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using WebShop.Tricentis.Framework.Tools;
@@ -17,6 +18,5 @@ namespace WebShop.Tricentis.Tests.Handlers
                 TestContext.AddTestAttachment(screen.Path);
             }
         }
-
     }
 }

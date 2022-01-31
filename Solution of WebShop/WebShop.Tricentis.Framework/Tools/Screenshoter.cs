@@ -6,18 +6,9 @@ namespace WebShop.Tricentis.Framework.Tools
     public class Screenshoter
     {
 
-        public void TakeScreenshot()
+        public void TakeScreenshot(string testName)
         {
-            try
-            {
-                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-                ss.SaveAsFile(@"D:\Screenshots\SeleniumTestingScreenshot.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
+            _driver.TakeScreenshot().SaveAsFile(GetFileName(path, testName)); 
         }
     }
 }
