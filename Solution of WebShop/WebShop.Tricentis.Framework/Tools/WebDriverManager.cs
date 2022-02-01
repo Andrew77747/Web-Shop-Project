@@ -11,17 +11,11 @@ namespace WebShop.Tricentis.Framework.Tools
     {
         public IWebDriver Driver;
         public WebDriverWait Wait;
-        private readonly Appsettings _settings;
         private readonly int x;
 
-        public WebDriverManager(Appsettings settings)
-        {
-            _settings = settings;
-            x = settings.Timeout;
-            Driver = GetDriver();
-            //Wait = GetWaiter();
-            
-        }
+        //public WebDriverManager()
+        //{
+        //}
 
         //public IWebDriver Driver;
         //public WebDriverWait Wait;
@@ -43,27 +37,21 @@ namespace WebShop.Tricentis.Framework.Tools
             }
 
             Driver = new ChromeDriver();
-            Driver.Manage().Timeouts().ImplicitWait =
-                TimeSpan.FromSeconds(10);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Driver.Manage().Window.Maximize();
             return Driver;
         }
 
-        public WebDriverWait GetWaiter()
-        {
-            //if (Wait != null)
-            //{
-            //    return Wait;
-            //}
-
-            Wait = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(x));
-            return Wait;
-        }
-
         //public WebDriverWait GetWaiter()
         //{
-        //    return new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(Settings.Timeout));
+        //    Wait = new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(3));
+        //    return Wait;
         //}
+
+        public WebDriverWait GetWaiter()
+        {
+            return new WebDriverWait(GetDriver(), TimeSpan.FromSeconds(3));
+        }
 
         public void Dispose()
         {
