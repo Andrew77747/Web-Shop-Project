@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using System;
 using WebShop.Tricentis.Framework.Tools;
 
 namespace WebShop.Tricentis.Framework.PageObject.Pages

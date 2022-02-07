@@ -11,7 +11,7 @@ namespace WebShop.Tricentis.Tests.Handlers
     public class BaseSteps
     {
         private readonly MainPage _mainPage;
-        private readonly ShoppingCart _shoppingCart;
+        //private readonly ShoppingCart _shoppingCart;
         //private readonly SeleniumWrapper _wrapper;
         private readonly TopMenuElement _topMenu;
 
