@@ -10,8 +10,7 @@ namespace WebShop.Tricentis.Framework.Tools
 
     {
         public IWebDriver Driver;
-        public WebDriverWait Wait;
-        private readonly int x;
+        //public WebDriverWait Wait;
 
         //public WebDriverManager()
         //{
