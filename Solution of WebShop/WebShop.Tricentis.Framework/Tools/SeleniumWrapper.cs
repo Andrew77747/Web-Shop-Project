@@ -50,6 +50,16 @@ namespace WebShop.Tricentis.Framework.Tools
             FindElement(by).SendKeys(text);
         }
 
+        public void SendKeysWithEscape(By by, string text)
+        {
+            FindElement(by).SendKeys(text + Keys.Escape);
+        }
+
+        public void TypeAndSendWithEnter(By by, string text)
+        {
+            FindElement(by).SendKeys(text + Keys.Enter);
+        }
+
         public void ClearTypeAndSend(By by, string text)
         {
             //_driver.FindElement(by).Clear();
@@ -89,6 +99,12 @@ namespace WebShop.Tricentis.Framework.Tools
             {
                 Console.WriteLine("There is no such element! Error: " + e);
             }
+        }
+
+        public void PointToElement(By selector)
+        {
+            Actions action = new Actions(_driver);
+            action.MoveToElement(FindElement(selector)).Build().Perform();
         }
 
         public List<IWebElement> GetElements(By selector)
