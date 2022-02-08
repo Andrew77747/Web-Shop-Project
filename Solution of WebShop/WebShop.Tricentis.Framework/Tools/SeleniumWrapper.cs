@@ -9,17 +9,14 @@ namespace WebShop.Tricentis.Framework.Tools
 {
     public class SeleniumWrapper
     {
-
         private IWebDriver _driver;
         private WebDriverWait _wait;
         private WebDriverWait _customDriverWait;
 
-        //public IAlert alert;
-
         public SeleniumWrapper(IWebDriver driver, WebDriverWait wait)
         {
             _driver = driver;
-            _wait = wait; // тут тоже null
+            _wait = wait;
             _customDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(2));
         }
 

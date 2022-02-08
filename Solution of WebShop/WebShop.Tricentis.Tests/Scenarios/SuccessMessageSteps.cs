@@ -29,7 +29,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         [Then(@"Success message is visible")]
         public void ThenSuccessMessageIsVisible()
         {
-            Assert.IsTrue(_productPage.IsSuccessMessageExists());
+            Assert.IsFalse(_productPage.IsSuccessMessageExists());
         }
 
         [When(@"I checkout the good")]

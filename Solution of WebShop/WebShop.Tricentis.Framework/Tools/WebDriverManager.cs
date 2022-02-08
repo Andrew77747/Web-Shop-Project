@@ -36,7 +36,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
 
             Driver = new ChromeDriver();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            //Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Driver.Manage().Window.Maximize();
             return Driver;
         }
