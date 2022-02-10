@@ -40,7 +40,7 @@ namespace WebShop.Tricentis.Framework.Tools
             _driver.Navigate().Back();
         }
 
-        public void Navigate(string url)
+        public void NavigateToUrl(string url)
         {
             _driver.Navigate().GoToUrl(url);
         }
@@ -116,54 +116,54 @@ namespace WebShop.Tricentis.Framework.Tools
 
         #region Validation
 
-        public bool IsElementExists(By selector)
-        {
-            try
-            {
-                _driver.FindElement(selector);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
+        //public bool IsElementExists(By selector) //
+        //{
+        //    try
+        //    {
+        //        _driver.FindElement(selector);
+        //        return true;
+        //    }
+        //    catch (NoSuchElementException)
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        public bool IsElementDisplayed(By selector)
-        {
-            try
-            {
-                return _driver.FindElement(selector).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
+        //public bool IsElementDisplayed(By selector) //
+        //{
+        //    try
+        //    {
+        //        return _driver.FindElement(selector).Displayed;
+        //    }
+        //    catch (NoSuchElementException)
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        public bool IsElementExistsWithWaiter(By selector)
-        {
-            try
-            {
-                //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(3));
-                _wait.Until(d => IsElementDisplayed(selector));
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-            catch (WebDriverTimeoutException)
-            {
-                return false;
-            }
-        }
+        //public bool IsElementDisplayedWithWaiter(By selector) //
+        //{
+        //    try
+        //    {
+        //        //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(3));
+        //        _wait.Until(d => IsElementDisplayed(selector));
+        //        return true;
+        //    }
+        //    catch (NoSuchElementException)
+        //    {
+        //        return false;
+        //    }
+        //    catch (WebDriverTimeoutException)
+        //    {
+        //        return false;
+        //    }
+        //}
 
         public bool IsTextExists(string text)
         {
             try
             {
-                _driver.FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
+                FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
                 Console.WriteLine($"Злобный Гурч злобно видит текст {text}");
                 return true;
             }
@@ -179,32 +179,18 @@ namespace WebShop.Tricentis.Framework.Tools
             return _driver.FindElement(by).GetAttribute("value");
         }
 
-        public bool IsElementVisible(By by)
-        {
-            try
-            {
-                return _driver.FindElement(by).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Здесь нет дропдауна");
-                return false;
-            }
-        }
-
-        public bool WaitElementVisible(By by)
-        {
-            try
-            {
-                _customDriverWait.Until(d => IsElementVisible(by)); //TODO investigate and fix
-                return true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                return false;
-            }
-        }
+        //public bool IsElementVisible(By by) ////
+        //{
+        //    try
+        //    {
+        //        return _driver.FindElement(by).Displayed;
+        //    }
+        //    catch (NoSuchElementException)
+        //    {
+        //        Console.WriteLine("Здесь нет дропдауна");
+        //        return false;
+        //    }
+        //}
 
         public bool IsSortingAskRight(string[] actualArray)
         {
@@ -255,15 +241,15 @@ namespace WebShop.Tricentis.Framework.Tools
         public void WaitElementDisplayed(By by)
         {
             WaitElement(by);
-            _wait.Until(d => ElementVisible(by));
+            _wait.Until(d => IsElementDisplayed(by));
         }
 
         public void WaitElement(By by)
         {
-            _wait.Until(d => ElementExists(by));
+            _wait.Until(d => IsElementExists(by));
         }
 
-        public bool ElementExists(By by)
+        public bool IsElementExists(By by)
         {
             try
             {
@@ -277,7 +263,7 @@ namespace WebShop.Tricentis.Framework.Tools
             }
         }
 
-        public bool ElementVisible(By by)
+        public bool IsElementDisplayed(By by)
         {
             try
             {
@@ -286,6 +272,38 @@ namespace WebShop.Tricentis.Framework.Tools
 
             catch (NoSuchElementException)
             {
+                return false;
+            }
+        }
+
+        public bool IsElementDisplayedWithWaiter(By selector)
+        {
+            try
+            {
+                //WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(3));
+                _wait.Until(d => IsElementDisplayed(selector));
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+        }
+
+        public bool IsElementDisplayedWithCustomWait(By by)
+        {
+            try
+            {
+                _customDriverWait.Until(d => IsElementDisplayed(by));
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 return false;
             }
         }

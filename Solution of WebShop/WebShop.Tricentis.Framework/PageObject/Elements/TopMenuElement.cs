@@ -45,7 +45,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Elements
 
         public bool IsDropdownVisible(By selector)
         {
-            return Wrapper.WaitElementVisible(selector);
+            return Wrapper.IsElementDisplayedWithCustomWait(selector);
         }
     }
 }

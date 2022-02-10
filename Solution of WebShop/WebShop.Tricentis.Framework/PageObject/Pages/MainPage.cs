@@ -20,13 +20,13 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         private readonly By _login = By.CssSelector(".ico-login");
         private readonly By _inputSearch = By.CssSelector(".search-box-text");
         private readonly By _searchButton = By.CssSelector(".search-box .button-1");
-        private readonly By _simpleComputer = By.CssSelector(".product-title");
+        private readonly By _simpleComputer = By.XPath("//*[text()='Simple Computer']");
         
         #endregion
 
         public void OpenPage()
         {
-            Wrapper.Navigate(_settings.Url);
+            Wrapper.NavigateToUrl(_settings.Url);
         } 
 
         public void ClickLogin()

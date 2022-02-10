@@ -65,11 +65,11 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
 
         public bool IsSuccessMessageExists()
         {
-            return Wrapper.IsElementExistsWithWaiter(_successMessage);
+            return Wrapper.IsElementDisplayedWithWaiter(_successMessage);
         }
         public bool IsAlertExists()
         {
-            return Wrapper.IsElementExistsWithWaiter(_alert);
+            return Wrapper.IsElementDisplayedWithWaiter(_alert);
         }
 
         public string[] GetProductCardsPartNames(By selector, By selector2, int startIndex, int length)
