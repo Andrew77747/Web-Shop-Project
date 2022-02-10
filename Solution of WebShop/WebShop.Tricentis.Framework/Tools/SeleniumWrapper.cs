@@ -163,7 +163,7 @@ namespace WebShop.Tricentis.Framework.Tools
         {
             try
             {
-                FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
+                _driver.FindElement(By.XPath($"//*[contains(text(), '{text}')]"));
                 Console.WriteLine($"Злобный Гурч злобно видит текст {text}");
                 return true;
             }

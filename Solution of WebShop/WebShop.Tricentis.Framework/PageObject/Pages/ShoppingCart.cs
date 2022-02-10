@@ -124,7 +124,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
             }
 
             else if (Wrapper.IsElementExists(_cart5dollars) == true)
-            {;
+            {
                 Wrapper.TypeAndSend(_recipientNameInput, "Юра");
                 Wrapper.TypeAndSend(_recipientEmailInput, "salabon@mail.ru");
             }
