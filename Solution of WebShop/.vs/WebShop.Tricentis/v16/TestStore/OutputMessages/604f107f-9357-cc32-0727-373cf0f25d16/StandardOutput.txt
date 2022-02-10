@@ -1,7 +1,7 @@
 Given I'm on the main page
--> done: BaseSteps.GivenIMOnTheMainPage() (2,4s)
+-> done: BaseSteps.GivenIMOnTheMainPage() (2,2s)
 When I hover on 'Books'
--> done: TopMenuSteps.WhenIHoverOn("Books") (0,3s)
+-> done: TopMenuSteps.WhenIHoverOn("Books") (0,4s)
 Then I don't see dropdown
 OpenQA.Selenium.WebDriverTimeoutException: Timed out after 2 seconds
    at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
