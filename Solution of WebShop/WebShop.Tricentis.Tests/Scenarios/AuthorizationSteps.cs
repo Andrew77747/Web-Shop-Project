@@ -20,6 +20,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         }
 
         [When(@"I click login")]
+        [Given(@"I click login")]
         public void WhenIClickLogin()
         {
             _mainPage.ClickLogin();
@@ -38,6 +39,7 @@ namespace WebShop.Tricentis.Tests.Scenarios
         }
 
         [When(@"I enter login, password and click login button")]
+        [Given(@"I enter login, password and click login button")]
         public void WhenIEnter()
         {
             _authorizationPage.Authorization();
