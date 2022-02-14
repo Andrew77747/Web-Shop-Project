@@ -67,6 +67,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         {
             return Wrapper.IsElementDisplayedWithWaiter(_successMessage);
         }
+
         public bool IsAlertExists()
         {
             return Wrapper.IsElementDisplayedWithWaiter(_alert);
