@@ -13,8 +13,8 @@ Scenario: Check user's data in inputs
 	And I click login
 	And I enter login, password and click login button
 	When I go to the contact page
-	Then Name in inputs is correct
-	And Email in inputs is correct
+	Then Name 'Андрей Гуляев' in inputs is correct
+	And Email 'andrew-walker@yandex.ru' in inputs is correct
 
 Scenario: Send message as authorized user
 	Given I'm on the main page

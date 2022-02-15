@@ -159,10 +159,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I go to the contact page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.Then("Name in inputs is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Name \'Андрей Гуляев\' in inputs is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 17
- testRunner.And("Email in inputs is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Email \'andrew-walker@yandex.ru\' in inputs is correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

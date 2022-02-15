@@ -96,7 +96,7 @@ namespace WebShop.Tricentis.Framework.PageObject.Pages
         public void AddGood(string goodName)
         {
 
-            if(Wrapper.IsElementExists(_desktops) == true)
+            if (Wrapper.IsElementExists(_desktops) == true)
             {
                 Wrapper.ClickElement(_desktops);
             }
